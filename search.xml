@@ -14,9 +14,9 @@
 <p>快速、简洁且高效的博客框架</p>
 </blockquote>
 <p>如其所言，我们可使用 Hexo 快速生成博客网站模板，并部署为我们自己的博客。<br>现在我们来看如何安装并使用 Hexo。</p>
-<h2 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><p>首先在任意盘里创建 Hexo 文件夹（特别说明，本篇博客中我的所有路径并不存在 Hexo 文件夹，即直接创建在 E:&#x2F; 盘中）。<br>然后我们对着空白地方点击鼠标右键，选择 <strong>Git Bash Here</strong>。我们将在 git 环境下安装并使用 Hexo。<br><img src="/1.png"></p>
+<h2 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><p>首先在任意盘里创建 Hexo 文件夹（特别说明，本篇博客中我的所有路径并不存在 Hexo 文件夹，即直接创建在 E:&#x2F; 盘中）。<br>然后我们对着空白地方点击鼠标右键，选择 <strong>Git Bash Here</strong>。我们将在 git 环境下安装并使用 Hexo。<br><img src="/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/%E5%8D%9A%E5%AE%A2/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Hexo-Next-%E6%90%AD%E5%BB%BA%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/1.png"></p>
 <h3 id="关于-windows-系统上禁止运行脚本"><a href="#关于-windows-系统上禁止运行脚本" class="headerlink" title="关于 windows 系统上禁止运行脚本"></a>关于 windows 系统上禁止运行脚本</h3><p>在设置里查找 powershell，找到并打开“允许本地 powershell 脚本在未签名的情况下运行”。</p>
-<p>打开后是一个黑窗口。<br><img src="/2.png"><br>依次输入</p>
+<p>打开后是一个黑窗口。<br><img src="/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/%E5%8D%9A%E5%AE%A2/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Hexo-Next-%E6%90%AD%E5%BB%BA%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/2.png"><br>依次输入</p>
 <div class='spoiler collapsed'>
     <div class='spoiler-title'>
         Code
@@ -47,9 +47,9 @@ Git Bash 窗口就会弹出以下信息：  <div class='spoiler collapsed'>
         <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">INFO Validating config</span><br><span class="line">INFO Start processing</span><br><span class="line">INFO Hexo is running at http:<span class="comment">//localhost:4000. Press Ctrl+C to stop.</span></span><br></pre></td></tr></table></figure>
     </div>
 </div>
-这代表我们能在本地网站 localhost:4000 看见我们的初始默认博客。使用 Ctrl+C 强制终止 Git Bash 运行本地网站。<br>打开浏览器，网址输入 localhost:4000 就能看见美妙的一页。<br><img src="/3.png"><br>当然，这只是一个 <strong>离线静态网站</strong>，即只有你自己能够看见。现在我们设法把它上传到 Github 上。</li>
+这代表我们能在本地网站 localhost:4000 看见我们的初始默认博客。使用 Ctrl+C 强制终止 Git Bash 运行本地网站。<br>打开浏览器，网址输入 localhost:4000 就能看见美妙的一页。<br><img src="/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/%E5%8D%9A%E5%AE%A2/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Hexo-Next-%E6%90%AD%E5%BB%BA%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/3.png"><br>当然，这只是一个 <strong>离线静态网站</strong>，即只有你自己能够看见。现在我们设法把它上传到 Github 上。</li>
 </ul>
-<h2 id="建立-GitHub-仓库"><a href="#建立-GitHub-仓库" class="headerlink" title="建立 GitHub 仓库"></a>建立 GitHub 仓库</h2><p>已经建立的同学可直接跳下一步。<br>首先得有一个 GitHub 账号（雾）。在主页选择创建 new 仓库。仓库名字采用 yourname.github.io 的形式。下面以我的作为例子。<br><img src="/4.png"><br>记得勾选 Public 选项建立公共仓库。<br>然后我们回到 Git Bash 中，逐条输入以下命令（yourname 改为你的GitHub 的用户名， youremail 改为你注册 GitHub 时的邮箱）:  </p>
+<h2 id="建立-GitHub-仓库"><a href="#建立-GitHub-仓库" class="headerlink" title="建立 GitHub 仓库"></a>建立 GitHub 仓库</h2><p>已经建立的同学可直接跳下一步。<br>首先得有一个 GitHub 账号（雾）。在主页选择创建 new 仓库。仓库名字采用 yourname.github.io 的形式。下面以我的作为例子。<br><img src="/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/%E5%8D%9A%E5%AE%A2/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Hexo-Next-%E6%90%AD%E5%BB%BA%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/4.png"><br>记得勾选 Public 选项建立公共仓库。<br>然后我们回到 Git Bash 中，逐条输入以下命令（yourname 改为你的GitHub 的用户名， youremail 改为你注册 GitHub 时的邮箱）:  </p>
 <div class='spoiler collapsed'>
     <div class='spoiler-title'>
         Code
@@ -273,7 +273,7 @@ Git Bash 窗口就会弹出以下信息：  <div class='spoiler collapsed'>
 <blockquote>
 <p>旋转卡壳（Rotating Calipers，也称 <strong>旋转卡尺</strong>）算法，在凸包算法的基础上，通过枚举凸包上某一条边的同时维护其他需要的点，能够在线性时间内求解如凸包直径、最小矩形覆盖等和凸包性质相关的问题。——某个靠谱的 wiki</p>
 </blockquote>
-<p>凸包直径，或着说多边形直径，也可理解成边上任意两点间的距离的最大值。<br>那么对于一个平面上的一个点集，求解任意两点间距离最大值，最朴素最暴力的办法就是枚举两个点，但是时间复杂度为 $O(n^2)$，不可接受。<br>那么这里就有一个 $O(n)$ 的妙妙做法：旋转卡壳，因计算时像一对平行线卡住凸包旋转得名。<br><img src="/test.gif"><br>定义如果过凸包上的两个点可以画一对平行直线，使凸包上的所有点都夹在两条平行线之间或落在平行线上，那么这两个点叫做一对对踵点。<br>那么可知直径是由多边形的平行切线的最远距离决定。那么我们查询对踵点，找到距离最远的那一对即可。<br>在卡壳旋转的过程中，会出现夹住点和点、点和线、线和线，但是我们只用考虑点和线的情况即可。这里其实有一个非常好的性质：随着我们不断按照凸包的顺序逆时针遍历凸包上的点，可知点与定点之间的距离不满足单调性，但是点到定直线的距离满足单调性，所以考虑点和线的情况可以保证正确性与时间复杂度。<br>一个对踵点到对应边的距离肯定是最大的，那我们在确定了一条边时就可以遍历找到它的对应对踵点。这个时候点到直线的距离随着遍历应该是一个单峰函数。那我们找到逆时针的下一个点，如果下一个点到该边的距离比当前点更优，那就跳到下一个点；否则当前点就是该边的对踵点。<br>判定点到直线距离可以用叉积，遍历复杂度为 $O(n)$，而可以证明，寻找对踵点的复杂度均摊也是 $O(n)$，中途记录对踵点到边的两个顶点的最大距离即可。遍历啊玩即可得到答案。</p>
+<p>凸包直径，或着说多边形直径，也可理解成边上任意两点间的距离的最大值。<br>那么对于一个平面上的一个点集，求解任意两点间距离最大值，最朴素最暴力的办法就是枚举两个点，但是时间复杂度为 $O(n^2)$，不可接受。<br>那么这里就有一个 $O(n)$ 的妙妙做法：旋转卡壳，因计算时像一对平行线卡住凸包旋转得名。<br><img src="/OI/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/%E6%97%8B%E8%BD%AC%E5%8D%A1%E5%A3%B3/test.gif"><br>定义如果过凸包上的两个点可以画一对平行直线，使凸包上的所有点都夹在两条平行线之间或落在平行线上，那么这两个点叫做一对对踵点。<br>那么可知直径是由多边形的平行切线的最远距离决定。那么我们查询对踵点，找到距离最远的那一对即可。<br>在卡壳旋转的过程中，会出现夹住点和点、点和线、线和线，但是我们只用考虑点和线的情况即可。这里其实有一个非常好的性质：随着我们不断按照凸包的顺序逆时针遍历凸包上的点，可知点与定点之间的距离不满足单调性，但是点到定直线的距离满足单调性，所以考虑点和线的情况可以保证正确性与时间复杂度。<br>一个对踵点到对应边的距离肯定是最大的，那我们在确定了一条边时就可以遍历找到它的对应对踵点。这个时候点到直线的距离随着遍历应该是一个单峰函数。那我们找到逆时针的下一个点，如果下一个点到该边的距离比当前点更优，那就跳到下一个点；否则当前点就是该边的对踵点。<br>判定点到直线距离可以用叉积，遍历复杂度为 $O(n)$，而可以证明，寻找对踵点的复杂度均摊也是 $O(n)$，中途记录对踵点到边的两个顶点的最大距离即可。遍历啊玩即可得到答案。</p>
 <h1 id="模板代码"><a href="#模板代码" class="headerlink" title="模板代码"></a>模板代码</h1><p>下面放一下 <a href="https://www.luogu.com.cn/problem/P1452">洛谷旋转卡壳模板</a></p>
 <div class='spoiler collapsed'>
     <div class='spoiler-title'>
@@ -357,14 +357,14 @@ Git Bash 窗口就会弹出以下信息：  <div class='spoiler collapsed'>
     <url>/OI/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/%E5%90%91%E9%87%8F/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>针对尚且不清楚向量的笔者这种水平零基础讲解，限于平面几何，立体暂不做讨论。</p>
 <span id="more"></span>
-<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>相对于标量来说，向量是有方向的。例：<br><img src="/ab.png"><br>上图表示以 A 为起点，B 为终点的向量 $\overrightarrow{ab}$。<br>向量的大小（即长度）$|\overrightarrow{ab}|$ 称为向量的模（模长）。<br>定义两个向量相等：当且仅当两个向量大小相等，方向一致（不能相反），记作 $\overrightarrow{a}&#x3D;\overrightarrow{b}$。<br>所以向量可以在坐标系内任意平移，与位置无关。</p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>相对于标量来说，向量是有方向的。例：<br><img src="/OI/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/%E5%90%91%E9%87%8F/ab.png"><br>上图表示以 A 为起点，B 为终点的向量 $\overrightarrow{ab}$。<br>向量的大小（即长度）$|\overrightarrow{ab}|$ 称为向量的模（模长）。<br>定义两个向量相等：当且仅当两个向量大小相等，方向一致（不能相反），记作 $\overrightarrow{a}&#x3D;\overrightarrow{b}$。<br>所以向量可以在坐标系内任意平移，与位置无关。</p>
 <h2 id="特殊向量"><a href="#特殊向量" class="headerlink" title="特殊向量"></a>特殊向量</h2><p>零向量：长度为 0 的向量，记作 $\overrightarrow{0}$，方向可以为任意方向，与任何向量共线或平行。<br>单位向量：长度为 1 的向量，记作 $\overrightarrow{e}$。  </p>
 <h2 id="向量的平行与共线的形象理解"><a href="#向量的平行与共线的形象理解" class="headerlink" title="向量的平行与共线的形象理解"></a>向量的平行与共线的形象理解</h2><p>即方向相同或相反的向量，记作 $\overrightarrow{a}&#x2F;&#x2F;\overrightarrow{b}$。</p>
-<h2 id="向量加法"><a href="#向量加法" class="headerlink" title="向量加法"></a>向量加法</h2><p>向量加法遵从三角形法则。即：<br><img src="/a+btri.png"><br>也遵从平行四边形法则，即：<br><img src="/a+b.png"><br>那么，$\overrightarrow{AB}+\overrightarrow{BC}&#x3D;\overrightarrow{BC}$。<br>且向量的加法满足交换律、结合律和交换律。<br>根据三角形法则：<br>$|\overrightarrow{a}+\overrightarrow{b}|\leq |\overrightarrow{a}|+|\overrightarrow{b}|$。  </p>
+<h2 id="向量加法"><a href="#向量加法" class="headerlink" title="向量加法"></a>向量加法</h2><p>向量加法遵从三角形法则。即：<br><img src="/OI/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/%E5%90%91%E9%87%8F/a+btri.png"><br>也遵从平行四边形法则，即：<br><img src="/OI/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/%E5%90%91%E9%87%8F/a+b.png"><br>那么，$\overrightarrow{AB}+\overrightarrow{BC}&#x3D;\overrightarrow{BC}$。<br>且向量的加法满足交换律、结合律和交换律。<br>根据三角形法则：<br>$|\overrightarrow{a}+\overrightarrow{b}|\leq |\overrightarrow{a}|+|\overrightarrow{b}|$。  </p>
 <h2 id="相反变量"><a href="#相反变量" class="headerlink" title="相反变量"></a>相反变量</h2><p>长度相同，方向相反的变量；$\overrightarrow{AB}&#x3D;-\overrightarrow{BA}$。</p>
-<h2 id="向量减法"><a href="#向量减法" class="headerlink" title="向量减法"></a>向量减法</h2><p>那么，$\overrightarrow{a}-\overrightarrow{b}&#x3D;\overrightarrow{a}+(\overrightarrow{-b})$.<br>$\overrightarrow{AB}-\overrightarrow{AC}&#x3D;\overrightarrow{CB}$：<br><img src="/a-b.png"></p>
+<h2 id="向量减法"><a href="#向量减法" class="headerlink" title="向量减法"></a>向量减法</h2><p>那么，$\overrightarrow{a}-\overrightarrow{b}&#x3D;\overrightarrow{a}+(\overrightarrow{-b})$.<br>$\overrightarrow{AB}-\overrightarrow{AC}&#x3D;\overrightarrow{CB}$：<br><img src="/OI/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/%E5%90%91%E9%87%8F/a-b.png"></p>
 <h2 id="向量夹角"><a href="#向量夹角" class="headerlink" title="向量夹角"></a>向量夹角</h2><p>将 $a$ 和 $b$ 平移到一个初始点，之间的夹角称为 $a$ 和 $b$ 的夹角，可以称之为 $\theta$。<br>$\theta &#x3D;0$ 时，两个向量同向。<br>$\theta &#x3D;\frac{\pi}{2}$ 时，两个向量垂直。<br>$\theta &#x3D;\pi$ 时，两个向量反向。</p>
-<h2 id="向量乘法"><a href="#向量乘法" class="headerlink" title="向量乘法"></a>向量乘法</h2><h3 id="数乘"><a href="#数乘" class="headerlink" title="数乘"></a>数乘</h3><h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><p>相当于向量的放缩，运算结果仍为向量。例：<br><img src="/2a.png">  </p>
+<h2 id="向量乘法"><a href="#向量乘法" class="headerlink" title="向量乘法"></a>向量乘法</h2><h3 id="数乘"><a href="#数乘" class="headerlink" title="数乘"></a>数乘</h3><h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><p>相当于向量的放缩，运算结果仍为向量。例：<br><img src="/OI/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/%E5%90%91%E9%87%8F/2a.png">  </p>
 <h4 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h4><ol>
 <li>$|\gamma \overrightarrow{a}|&#x3D;|\gamma| |\overrightarrow{a}|$。  </li>
 <li>$\gamma&gt;0$ 时，$\gamma\overrightarrow{a}$ 与 $\overrightarrow{a}$ 同向；$\gamma&lt;0$ 时，两者反向。  </li>
@@ -372,8 +372,8 @@ Git Bash 窗口就会弹出以下信息：  <div class='spoiler collapsed'>
 </ol>
 <h4 id="共线的定义"><a href="#共线的定义" class="headerlink" title="共线的定义"></a>共线的定义</h4><p>向量 $\overrightarrow{a}(a\ne \overrightarrow{0})$ 与 $\overrightarrow{b}$ 共线的充要条件为：存在唯一一个实数  $\gamma$  使得  $\gamma \overrightarrow{a}&#x3D;\overrightarrow{a}$。</p>
 <h3 id="内积"><a href="#内积" class="headerlink" title="内积"></a>内积</h3><h4 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h4><p>$\overrightarrow{a}\cdot \overrightarrow{b}&#x3D;|\overrightarrow{a}| |\overrightarrow{b}| \cos\theta$，又称点乘（点积），结果为标量。满足交换律、结合律和分配律。<br>那么就可以用 $\cos\theta&#x3D;\frac{\overrightarrow{a}\cdot\overrightarrow{b}}{|\overrightarrow{a}||\overrightarrow{b}|}$ 来方便的计算夹角。</p>
-<h4 id="几何意义"><a href="#几何意义" class="headerlink" title="几何意义"></a>几何意义</h4><p>一个向量在另一个向量上的投影长度与后者的模长乘积。<br><img src="/shadow.png">  </p>
-<h3 id="外积（二维）"><a href="#外积（二维）" class="headerlink" title="外积（二维）"></a>外积（二维）</h3><h4 id="定义-3"><a href="#定义-3" class="headerlink" title="定义"></a>定义</h4><p>$\overrightarrow{a}\times\overrightarrow{b}&#x3D;|\overrightarrow{a}||\overrightarrow{b}|\sin\theta$，又称叉乘（叉积），结果为向量。两个向量的外积与这两个向量所在的平面垂直（右手定则），也称作法向量：<br><img src="/cross.png"><br>外积模长等于两个向量组成的平行四边形面积（但是是有向面积，可这样理解：如果 $\overrightarrow{a}$ 逆时针转向 $\overrightarrow{b}$，结果为正，否则为负）</p>
+<h4 id="几何意义"><a href="#几何意义" class="headerlink" title="几何意义"></a>几何意义</h4><p>一个向量在另一个向量上的投影长度与后者的模长乘积。<br><img src="/OI/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/%E5%90%91%E9%87%8F/shadow.png">  </p>
+<h3 id="外积（二维）"><a href="#外积（二维）" class="headerlink" title="外积（二维）"></a>外积（二维）</h3><h4 id="定义-3"><a href="#定义-3" class="headerlink" title="定义"></a>定义</h4><p>$\overrightarrow{a}\times\overrightarrow{b}&#x3D;|\overrightarrow{a}||\overrightarrow{b}|\sin\theta$，又称叉乘（叉积），结果为向量。两个向量的外积与这两个向量所在的平面垂直（右手定则），也称作法向量：<br><img src="/OI/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/%E5%90%91%E9%87%8F/cross.png"><br>外积模长等于两个向量组成的平行四边形面积（但是是有向面积，可这样理解：如果 $\overrightarrow{a}$ 逆时针转向 $\overrightarrow{b}$，结果为正，否则为负）</p>
 <h4 id="性质-1"><a href="#性质-1" class="headerlink" title="性质"></a>性质</h4><ol>
 <li>$\overrightarrow{a}\times\overrightarrow{a}&#x3D;0$  </li>
 <li>$\overrightarrow{a}\times\overrightarrow{b}&#x3D;-\overrightarrow{a}\times\overrightarrow{b}$（不满足交换律）。  </li>
