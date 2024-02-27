@@ -6,7 +6,7 @@
   <link href="http://fatedshadow.github.io/atom.xml" rel="self"/>
   
   <link href="http://fatedshadow.github.io/"/>
-  <updated>2024-02-26T06:53:06.811Z</updated>
+  <updated>2024-02-27T13:55:28.649Z</updated>
   <id>http://fatedshadow.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2-SAT</title>
+    <link href="http://fatedshadow.github.io/OI/%E5%9B%BE%E8%AE%BA/2-SAT/"/>
+    <id>http://fatedshadow.github.io/OI/%E5%9B%BE%E8%AE%BA/2-SAT/</id>
+    <published>2024-02-26T08:45:49.000Z</published>
+    <updated>2024-02-27T13:55:28.649Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;其实是一种常用的建图方式。部分内容参考一本通。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="OI" scheme="http://fatedshadow.github.io/categories/OI/"/>
+    
+    <category term="图论" scheme="http://fatedshadow.github.io/categories/OI/%E5%9B%BE%E8%AE%BA/"/>
+    
+    
+    <category term="OI" scheme="http://fatedshadow.github.io/tags/OI/"/>
+    
+    <category term="算法讲解" scheme="http://fatedshadow.github.io/tags/%E7%AE%97%E6%B3%95%E8%AE%B2%E8%A7%A3/"/>
+    
+    <category term="图论" scheme="http://fatedshadow.github.io/tags/%E5%9B%BE%E8%AE%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>点分治</title>
