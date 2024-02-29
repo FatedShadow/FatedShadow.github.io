@@ -6,7 +6,7 @@
   <link href="http://fatedshadow.github.io/atom.xml" rel="self"/>
   
   <link href="http://fatedshadow.github.io/"/>
-  <updated>2024-02-27T13:55:28.649Z</updated>
+  <updated>2024-02-29T14:31:41.270Z</updated>
   <id>http://fatedshadow.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何使用 Hexo+Next 美化博客</title>
+    <link href="http://fatedshadow.github.io/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/%E5%8D%9A%E5%AE%A2/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Hexo-Next-%E7%BE%8E%E5%8C%96%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://fatedshadow.github.io/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/%E5%8D%9A%E5%AE%A2/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Hexo-Next-%E7%BE%8E%E5%8C%96%E5%8D%9A%E5%AE%A2/</id>
+    <published>2024-02-27T13:58:06.000Z</published>
+    <updated>2024-02-29T14:31:41.270Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;没看过如何搭建的建议这边走：&lt;a href=&quot;https://fatedshadow.github.io/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/%E5%8D%9A%E5%AE%A2/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Hexo-Next-%E6%90%AD%E5%BB%BA%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/#more&quot;&gt;link&lt;/a&gt;&lt;br&gt;注意，本博客基于 next 的 Gemini 主题进行美化。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="实用工具" scheme="http://fatedshadow.github.io/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="博客" scheme="http://fatedshadow.github.io/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+    <category term="博客" scheme="http://fatedshadow.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
   
   <entry>
     <title>2-SAT</title>
@@ -35,9 +56,9 @@
     
     <category term="OI" scheme="http://fatedshadow.github.io/tags/OI/"/>
     
-    <category term="算法讲解" scheme="http://fatedshadow.github.io/tags/%E7%AE%97%E6%B3%95%E8%AE%B2%E8%A7%A3/"/>
-    
     <category term="图论" scheme="http://fatedshadow.github.io/tags/%E5%9B%BE%E8%AE%BA/"/>
+    
+    <category term="算法讲解" scheme="http://fatedshadow.github.io/tags/%E7%AE%97%E6%B3%95%E8%AE%B2%E8%A7%A3/"/>
     
   </entry>
   
@@ -60,9 +81,9 @@
     
     <category term="OI" scheme="http://fatedshadow.github.io/tags/OI/"/>
     
-    <category term="算法讲解" scheme="http://fatedshadow.github.io/tags/%E7%AE%97%E6%B3%95%E8%AE%B2%E8%A7%A3/"/>
-    
     <category term="图论" scheme="http://fatedshadow.github.io/tags/%E5%9B%BE%E8%AE%BA/"/>
+    
+    <category term="算法讲解" scheme="http://fatedshadow.github.io/tags/%E7%AE%97%E6%B3%95%E8%AE%B2%E8%A7%A3/"/>
     
   </entry>
   
@@ -177,9 +198,9 @@
     
     <category term="OI" scheme="http://fatedshadow.github.io/tags/OI/"/>
     
-    <category term="几何" scheme="http://fatedshadow.github.io/tags/%E5%87%A0%E4%BD%95/"/>
-    
     <category term="算法讲解" scheme="http://fatedshadow.github.io/tags/%E7%AE%97%E6%B3%95%E8%AE%B2%E8%A7%A3/"/>
+    
+    <category term="几何" scheme="http://fatedshadow.github.io/tags/%E5%87%A0%E4%BD%95/"/>
     
   </entry>
   
@@ -202,9 +223,9 @@
     
     <category term="OI" scheme="http://fatedshadow.github.io/tags/OI/"/>
     
-    <category term="几何" scheme="http://fatedshadow.github.io/tags/%E5%87%A0%E4%BD%95/"/>
-    
     <category term="算法讲解" scheme="http://fatedshadow.github.io/tags/%E7%AE%97%E6%B3%95%E8%AE%B2%E8%A7%A3/"/>
+    
+    <category term="几何" scheme="http://fatedshadow.github.io/tags/%E5%87%A0%E4%BD%95/"/>
     
   </entry>
   
@@ -227,9 +248,9 @@
     
     <category term="OI" scheme="http://fatedshadow.github.io/tags/OI/"/>
     
-    <category term="几何" scheme="http://fatedshadow.github.io/tags/%E5%87%A0%E4%BD%95/"/>
-    
     <category term="算法讲解" scheme="http://fatedshadow.github.io/tags/%E7%AE%97%E6%B3%95%E8%AE%B2%E8%A7%A3/"/>
+    
+    <category term="几何" scheme="http://fatedshadow.github.io/tags/%E5%87%A0%E4%BD%95/"/>
     
   </entry>
   
@@ -252,9 +273,9 @@
     
     <category term="OI" scheme="http://fatedshadow.github.io/tags/OI/"/>
     
-    <category term="几何" scheme="http://fatedshadow.github.io/tags/%E5%87%A0%E4%BD%95/"/>
-    
     <category term="算法讲解" scheme="http://fatedshadow.github.io/tags/%E7%AE%97%E6%B3%95%E8%AE%B2%E8%A7%A3/"/>
+    
+    <category term="几何" scheme="http://fatedshadow.github.io/tags/%E5%87%A0%E4%BD%95/"/>
     
   </entry>
   
@@ -332,7 +353,7 @@
     <link href="http://fatedshadow.github.io/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/%E5%8D%9A%E5%AE%A2/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Hexo-Next-%E6%90%AD%E5%BB%BA%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
     <id>http://fatedshadow.github.io/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/%E5%8D%9A%E5%AE%A2/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Hexo-Next-%E6%90%AD%E5%BB%BA%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</id>
     <published>2023-11-26T02:03:00.000Z</published>
-    <updated>2024-01-01T13:18:06.820Z</updated>
+    <updated>2024-02-27T13:57:49.874Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;蒟蒻乱写的建立博客方式，针对新手。神犇勿喷。&lt;/p&gt;</summary>
