@@ -1004,7 +1004,7 @@ Git Bash 窗口就会弹出以下信息：  <div class='spoiler collapsed'>
 <h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h3><p>若 $f(x), g(x)$ 都为积性函数，那么 $f(x)*g(x)$ 为积性函数。  </p>
 <h3 id="常用积性函数"><a href="#常用积性函数" class="headerlink" title="常用积性函数"></a>常用积性函数</h3><ol>
 <li>$I(x)&#x3D;1$ （完全积性）</li>
-<li>$if_k(x)&#x3D;x^k,id_1(n)$ 简记为 $id(n)&#x3D;n$ （完全积性）</li>
+<li>$id_k(x)&#x3D;x^k,id_1(n)$ 简记为 $id(n)&#x3D;n$ （完全积性）</li>
 <li>$\varepsilon(x)&#x3D;[x&#x3D;&#x3D;1]$</li>
 <li>$\varphi(x)&#x3D;n\prod_{p|n}(1-\frac{1}{p})$ （欧拉函数，即 $1\sim n$ 中与 $n$ 互质的数的个数）</li>
 <li>$d(x)&#x3D;\prod_{1}^{k}(p_i+1)$，$p_i$ 为质因子 $q_i$ 的幂数。</li>
