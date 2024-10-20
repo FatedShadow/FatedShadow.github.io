@@ -29,7 +29,7 @@
 <meta property="og:description" content="前言想不出骚话了。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-01-01T13:20:26.000Z">
-<meta property="article:modified_time" content="2024-10-04T10:06:59.779Z">
+<meta property="article:modified_time" content="2024-10-15T07:13:00.589Z">
 <meta property="article:author" content="FatedShadow">
 <meta property="article:tag" content="OI">
 <meta property="article:tag" content="算法讲解">
@@ -145,7 +145,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E8%AE%B2%E8%A7%A3"><span class="nav-text">算法讲解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E5%A2%9E%E9%87%8F%E6%B3%95"><span class="nav-text">随机增量法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%90%861"><span class="nav-text">引理1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%90%862"><span class="nav-text">引理2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%90%863"><span class="nav-text">引理3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E8%A7%A3"><span class="nav-text">求解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-text">复杂度</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98"><span class="nav-text">例题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#P1742-%E6%9C%80%E5%B0%8F%E5%9C%86%E8%A6%86%E7%9B%96"><span class="nav-text">P1742 最小圆覆盖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P4288-SHOI2014-%E4%BF%A1%E5%8F%B7%E5%A2%9E%E5%B9%85%E4%BB%AA"><span class="nav-text">P4288 [SHOI2014] 信号增幅仪</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%BE%E5%A3%B0"><span class="nav-text">尾声</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E8%AE%B2%E8%A7%A3"><span class="nav-text">算法讲解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E5%A2%9E%E9%87%8F%E6%B3%95"><span class="nav-text">随机增量法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E7%90%861"><span class="nav-text">引理1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E7%90%862"><span class="nav-text">引理2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E7%90%863"><span class="nav-text">引理3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B1%82%E8%A7%A3"><span class="nav-text">求解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-text">复杂度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98"><span class="nav-text">例题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#P1742-%E6%9C%80%E5%B0%8F%E5%9C%86%E8%A6%86%E7%9B%96"><span class="nav-text">P1742 最小圆覆盖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#P4288-SHOI2014-%E4%BF%A1%E5%8F%B7%E5%A2%9E%E5%B9%85%E4%BB%AA"><span class="nav-text">P4288 [SHOI2014] 信号增幅仪</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%BE%E5%A3%B0"><span class="nav-text">尾声</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -233,6 +233,9 @@
             <li class="links-of-blogroll-item">
               <a href="https://www.luogu.com.cn/user/109659" title="https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;109659" rel="noopener" target="_blank">Kevinlive</a>
             </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://yzljyawa.github.io/" title="https:&#x2F;&#x2F;yzljyawa.github.io" rel="noopener" target="_blank">yzljy</a>
+            </li>
         </ul>
       </div>
     </div>
@@ -288,7 +291,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-10-04 18:06:59" itemprop="dateModified" datetime="2024-10-04T18:06:59+08:00">2024-10-04</time>
+      <time title="修改时间：2024-10-15 15:13:00" itemprop="dateModified" datetime="2024-10-15T15:13:00+08:00">2024-10-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -318,14 +321,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>7k</span>
+      <span>6k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>13 分钟</span>
+      <span>11 分钟</span>
     </span>
 </div>
 
@@ -335,13 +338,13 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>想不出骚话了。</p>
+    <div class="post-body" itemprop="articleBody"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>想不出骚话了。</p>
 <span id="more"></span>
-<h1 id="算法讲解"><a href="#算法讲解" class="headerlink" title="算法讲解"></a>算法讲解</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>用半径最小的圆覆盖所有的点。</p>
-<h2 id="随机增量法"><a href="#随机增量法" class="headerlink" title="随机增量法"></a>随机增量法</h2><h3 id="引理1"><a href="#引理1" class="headerlink" title="引理1"></a>引理1</h3><p>最小圆覆盖唯一存在。</p>
-<h3 id="引理2"><a href="#引理2" class="headerlink" title="引理2"></a>引理2</h3><p>给定点集中，最多根据三个点确定最小覆盖圆。</p>
-<h3 id="引理3"><a href="#引理3" class="headerlink" title="引理3"></a>引理3</h3><p>如果一个点 $P$ 不在集合 $S(P\notin S)$ 的最小圆覆盖内，那么 $P$ 一定在 $P\cup S$ 的最小圆覆盖上。</p>
-<h3 id="求解"><a href="#求解" class="headerlink" title="求解"></a>求解</h3><p>那么根据以上引理。我们可以得出求解方法：  </p>
+<h2 id="算法讲解"><a href="#算法讲解" class="headerlink" title="算法讲解"></a>算法讲解</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>用半径最小的圆覆盖所有的点。</p>
+<h3 id="随机增量法"><a href="#随机增量法" class="headerlink" title="随机增量法"></a>随机增量法</h3><h4 id="引理1"><a href="#引理1" class="headerlink" title="引理1"></a>引理1</h4><p>最小圆覆盖唯一存在。</p>
+<h4 id="引理2"><a href="#引理2" class="headerlink" title="引理2"></a>引理2</h4><p>给定点集中，最多根据三个点确定最小覆盖圆。</p>
+<h4 id="引理3"><a href="#引理3" class="headerlink" title="引理3"></a>引理3</h4><p>如果一个点 $P$ 不在集合 $S(P\notin S)$ 的最小圆覆盖内，那么 $P$ 一定在 $P\cup S$ 的最小圆覆盖上。</p>
+<h4 id="求解"><a href="#求解" class="headerlink" title="求解"></a>求解</h4><p>那么根据以上引理。我们可以得出求解方法：  </p>
 <ol>
 <li>当前已经求得前 $i-1$ 个点的最小覆盖圆为 $C$。  </li>
 <li>如果第 $i$ 个点在圆 $C$ 内，那么最小覆盖圆仍然是 $C$。  </li>
@@ -350,27 +353,299 @@
 <li>固定了两个点时：找到不在当前覆盖圆上的点，当前覆盖圆为 $P_i$、$P_j$、$P_k$ 的外接圆。</li>
 </ol>
 <p>其中求外接圆直接套用向量旋转、向量求交即可。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1742">洛谷最小圆覆盖模板</a>。  </p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1742">洛谷最小圆覆盖模板</a>。  </p>
 <div class='spoiler collapsed'>
     <div class='spoiler-title'>
         Code
     </div>
     <div class='spoiler-content'>
-        <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> put putchar</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ls(a) (a &lt;&lt; 1)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> rs(a) (a &lt;&lt; 1 | 1)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> pii pair<span class="string">&lt;int, int&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">double</span> eps = <span class="number">1e-10</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"><span class="type">double</span> r = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">point</span> &#123;</span><br><span class="line">	<span class="type">double</span> x, y;</span><br><span class="line">	<span class="built_in">point</span> (<span class="type">const</span> <span class="type">double</span>&amp; x0 = <span class="number">0</span>, <span class="type">const</span> <span class="type">double</span>&amp; y0 = <span class="number">0</span>) : <span class="built_in">x</span>(x0), <span class="built_in">y</span>(y0) &#123; &#125;</span><br><span class="line">	point <span class="keyword">operator</span> + (<span class="type">const</span> point&amp; t)  <span class="type">const</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">point</span>(x + t.x, y + t.y);</span><br><span class="line">	&#125;</span><br><span class="line">	point <span class="keyword">operator</span> - (<span class="type">const</span> point&amp; t)  <span class="type">const</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">point</span>(x - t.x, y - t.y);</span><br><span class="line">	&#125;</span><br><span class="line">	point <span class="keyword">operator</span> * (<span class="type">const</span> <span class="type">double</span>&amp; t)  <span class="type">const</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">point</span>(x * t, y * t);</span><br><span class="line">	&#125;</span><br><span class="line">	point <span class="keyword">operator</span> / (<span class="type">const</span> <span class="type">double</span>&amp; t) <span class="type">const</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">point</span>(x / t, y / t);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">point <span class="title">rotate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">point</span>(y, -x);</span><br><span class="line">	&#125;</span><br><span class="line">&#125; p[N], o;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">dot</span><span class="params">(<span class="type">const</span> point&amp; a, <span class="type">const</span> point&amp; b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a.x * b.x + a.y * b.y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">cross</span><span class="params">(<span class="type">const</span> point&amp; a, <span class="type">const</span> point&amp; b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a.x * b.y - a.y * b.x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">len</span><span class="params">(<span class="type">const</span> point&amp; a)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">sqrt</span>(<span class="built_in">dot</span>(a, a));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">dis</span><span class="params">(<span class="type">const</span> point &amp;a, <span class="type">const</span> point &amp;b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">sqrt</span>(<span class="built_in">dot</span>(a - b, a - b));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">read</span><span class="params">(T &amp;x)</span> </span>&#123;</span><br><span class="line">    T res = <span class="number">0</span>, f = <span class="number">1</span>; <span class="type">char</span> cc = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span>(! <span class="built_in">isdigit</span>(cc)) &#123;</span><br><span class="line">        <span class="keyword">if</span>(cc == <span class="string">&#x27;-&#x27;</span>) f = <span class="number">-1</span>;</span><br><span class="line">        cc = <span class="built_in">getchar</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">isdigit</span>(cc)) res = (res &lt;&lt; <span class="number">1</span>) + (res &lt;&lt; <span class="number">3</span>) + cc - <span class="number">48</span>, cc = <span class="built_in">getchar</span>();</span><br><span class="line">    x = res * f; <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> ...T1&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">read</span><span class="params">(T &amp;x, T1 &amp;...x1)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">read</span>(x), <span class="built_in">read</span>(x1...); <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">write</span><span class="params">(T x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x &lt; <span class="number">0</span>) x = -x, <span class="built_in">put</span>(<span class="string">&#x27;-&#x27;</span>);</span><br><span class="line">    <span class="keyword">if</span>(x &gt; <span class="number">9</span>) <span class="built_in">write</span>(x / <span class="number">10</span>);</span><br><span class="line">    <span class="built_in">put</span>(x % <span class="number">10</span> + <span class="number">48</span>); <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">write</span><span class="params">(<span class="type">char</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">put</span>(x); <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> ...T1&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">write</span><span class="params">(T x, T1 ...x1)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">write</span>(x),<span class="built_in">write</span>(x1...); <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">bool</span> <span class="title">chkmax</span><span class="params">(T &amp;x, T y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &lt; y ? x = y , <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">sign</span><span class="params">(<span class="type">double</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="built_in">fabs</span>(a) &lt; eps)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">return</span> a &gt; <span class="number">0</span> ? <span class="number">1</span> : <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">point <span class="title">get_cross</span><span class="params">(point p0, point v0, point p1, point v1)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">double</span> t = <span class="built_in">cross</span>(p1 - p0, v1) / <span class="built_in">cross</span>(v0, v1);</span><br><span class="line">	<span class="keyword">return</span> p0 + v0 * t;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">point <span class="title">get_circle</span><span class="params">(point a, point b, point c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">get_cross</span>((a + b) / <span class="number">2</span>, (b - a).<span class="built_in">rotate</span>(), (a + c) / <span class="number">2</span>, (c - a).<span class="built_in">rotate</span>());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="comment">// freopen(&quot;.in&quot;, &quot;r&quot;, stdin);</span></span><br><span class="line">   <span class="comment">// freopen(&quot;.out&quot;, &quot;w&quot;, stdout);</span></span><br><span class="line">    <span class="built_in">read</span>(n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++ i)</span><br><span class="line">    	<span class="built_in">scanf</span>(<span class="string">&quot;%lf%lf&quot;</span>, &amp;p[i].x, &amp;p[i].y);</span><br><span class="line">    <span class="built_in">random_shuffle</span>(p + <span class="number">1</span>, p + n + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++ i)</span><br><span class="line">    	<span class="keyword">if</span>(<span class="built_in">sign</span>(<span class="built_in">dis</span>(p[i], o) - r) &gt; <span class="number">0</span>)</span><br><span class="line">    	&#123;</span><br><span class="line">    		o = p[i], r = <span class="number">0</span>;</span><br><span class="line">    		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt; i; ++ j)</span><br><span class="line">    			<span class="keyword">if</span>(<span class="built_in">sign</span>(<span class="built_in">dis</span>(p[j], o) - r) &gt; <span class="number">0</span>)</span><br><span class="line">    			&#123;</span><br><span class="line">    				o = (p[i] + p[j]) / <span class="number">2</span>, r = <span class="built_in">dis</span>(p[i], p[j]) / <span class="number">2</span>;</span><br><span class="line">    				<span class="keyword">for</span>(<span class="type">int</span> k = <span class="number">1</span>; k &lt; j; ++ k)</span><br><span class="line">    					<span class="keyword">if</span>(<span class="built_in">sign</span>(<span class="built_in">dis</span>(p[k], o) - r) &gt; <span class="number">0</span>)</span><br><span class="line">    						o = <span class="built_in">get_circle</span>(p[i], p[j], p[k]), r = <span class="built_in">dis</span>(o, p[i]);</span><br><span class="line">    			&#125;</span><br><span class="line">    	&#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.10lf\n%.10lf %.10lf&quot;</span>, r, o.x, o.y);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;cstring&gt;
+#include&lt;vector&gt;
+#include&lt;queue&gt;
+#include&lt;string&gt;
+#include&lt;algorithm&gt;
+#include&lt;cmath&gt;
+#include&lt;cstdio&gt;
+#include&lt;set&gt;
+##define put putchar
+##define ls(a) (a &lt;&lt; 1)
+##define rs(a) (a &lt;&lt; 1 | 1)
+##define pii pair&lt;int, int&gt;
+
+using namespace std;
+
+const int N = 1e5 + 10;
+const double eps = 1e-10;
+
+int n;
+double r = 0;
+
+struct point {
+    double x, y;
+    point (const double&amp; x0 = 0, const double&amp; y0 = 0) : x(x0), y(y0) { }
+    point operator + (const point&amp; t)  const {
+        return point(x + t.x, y + t.y);
+    }
+    point operator - (const point&amp; t)  const {
+        return point(x - t.x, y - t.y);
+    }
+    point operator * (const double&amp; t)  const {
+        return point(x * t, y * t);
+    }
+    point operator / (const double&amp; t) const {
+        return point(x / t, y / t);
+    }
+    point rotate() {
+        return point(y, -x);
+    }
+} p[N], o;
+
+double dot(const point&amp; a, const point&amp; b) {
+    return a.x * b.x + a.y * b.y;
+}
+double cross(const point&amp; a, const point&amp; b) {
+    return a.x * b.y - a.y * b.x;
+}
+double len(const point&amp; a) {
+    return sqrt(dot(a, a));
+}
+double dis(const point &amp;a, const point &amp;b) {
+    return sqrt(dot(a - b, a - b));
+}
+
+template&lt;class T&gt;
+inline void read(T &amp;x) {
+    T res = 0, f = 1; char cc = getchar();
+    while(! isdigit(cc)) {
+        if(cc == &#39;-&#39;) f = -1;
+        cc = getchar();
+    }
+    while(isdigit(cc)) res = (res &lt;&lt; 1) + (res &lt;&lt; 3) + cc - 48, cc = getchar();
+    x = res * f; return ;
+}
+template&lt;class T, class ...T1&gt;
+inline void read(T &amp;x, T1 &amp;...x1) {
+    read(x), read(x1...); return ;
+}
+template&lt;class T&gt;
+inline void write(T x) {
+    if(x &lt; 0) x = -x, put(&#39;-&#39;);
+    if(x &gt; 9) write(x / 10);
+    put(x % 10 + 48); return ;
+}
+template&lt;&gt;
+inline void write(char x) {
+    put(x); return ;
+}
+template&lt;class T, class ...T1&gt;
+inline void write(T x, T1 ...x1) {
+    write(x),write(x1...); return ;
+}
+template &lt;class T&gt;
+inline bool chkmax(T &amp;x, T y) {
+    return x &lt; y ? x = y , 1 : 0;
+}
+
+int sign(double a)
+{
+    if(fabs(a) &lt; eps)
+        return 0;
+    return a &gt; 0 ? 1 : -1;
+}
+
+point get_cross(point p0, point v0, point p1, point v1)
+{
+    double t = cross(p1 - p0, v1) / cross(v0, v1);
+    return p0 + v0 * t;
+}
+
+point get_circle(point a, point b, point c)
+{
+    return get_cross((a + b) / 2, (b - a).rotate(), (a + c) / 2, (c - a).rotate());
+}
+
+signed main()
+{
+   // freopen(&quot;.in&quot;, &quot;r&quot;, stdin);
+   // freopen(&quot;.out&quot;, &quot;w&quot;, stdout);
+    read(n);
+    for(int i = 1; i &lt;= n; ++ i)
+        scanf(&quot;%lf%lf&quot;, &amp;p[i].x, &amp;p[i].y);
+    random_shuffle(p + 1, p + n + 1);
+    for(int i = 1; i &lt;= n; ++ i)
+        if(sign(dis(p[i], o) - r) &gt; 0)
+        {
+            o = p[i], r = 0;
+            for(int j = 1; j &lt; i; ++ j)
+                if(sign(dis(p[j], o) - r) &gt; 0)
+                {
+                    o = (p[i] + p[j]) / 2, r = dis(p[i], p[j]) / 2;
+                    for(int k = 1; k &lt; j; ++ k)
+                        if(sign(dis(p[k], o) - r) &gt; 0)
+                            o = get_circle(p[i], p[j], p[k]), r = dis(o, p[i]);
+                }
+        }
+    printf(&quot;%.10lf\n%.10lf %.10lf&quot;, r, o.x, o.y);
+    return 0;
+}
+</code></pre>
+
     </div>
 </div>
-<h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><p>这是一个比较 <strong>玄学</strong> 的复杂度。<br>点集中最多根据 3 个点即可确定最小覆盖圆，那么每个点参与确定最小点覆盖的概率不大于 $\frac{3}{n}$。<br>那么进入下一层循环的概率不大于 $\frac{3}{i}$。<br>则三层循环复杂度分别 $T_1(n)$，$T_2(n)$，$T_3(n)$，那么：<br>$T_1(n)&#x3D;O(n)+\sum_{n}^{i&#x3D;1}\frac{3}{i}T_2(i)$<br>$T_2(n)&#x3D;O(n)+\sum_{n}^{i&#x3D;1}\frac{3}{i}T_3(i)$<br>$T_3(n)&#x3D;O(n)$<br>得 $T_1(n)&#x3D;T_2(n)&#x3D;T_3(n)&#x3D;O(n)$，即复杂度 $O(n)$。</p>
-<h1 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h1><h2 id="P1742-最小圆覆盖"><a href="#P1742-最小圆覆盖" class="headerlink" title="P1742 最小圆覆盖"></a>P1742 最小圆覆盖</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1742">links</a>，模板题。</p>
-<h2 id="P4288-SHOI2014-信号增幅仪"><a href="#P4288-SHOI2014-信号增幅仪" class="headerlink" title="P4288 [SHOI2014] 信号增幅仪"></a>P4288 [SHOI2014] 信号增幅仪</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4288">links</a>，稍微转化一下即可。<br>把坐标轴顺时针旋转 $a$ 度，再把 x 轴按比例缩小至 $\frac{1}{p}$，做最小圆覆盖即可。</p>
+
+<h3 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h3><p>这是一个比较 <strong>玄学</strong> 的复杂度。<br>点集中最多根据 3 个点即可确定最小覆盖圆，那么每个点参与确定最小点覆盖的概率不大于 $\frac{3}{n}$。<br>那么进入下一层循环的概率不大于 $\frac{3}{i}$。<br>则三层循环复杂度分别 $T_1(n)$，$T_2(n)$，$T_3(n)$，那么：<br>$T_1(n)&#x3D;O(n)+\sum_{n}^{i&#x3D;1}\frac{3}{i}T_2(i)$<br>$T_2(n)&#x3D;O(n)+\sum_{n}^{i&#x3D;1}\frac{3}{i}T_3(i)$<br>$T_3(n)&#x3D;O(n)$  </p>
+<p>得 $T_1(n)&#x3D;T_2(n)&#x3D;T_3(n)&#x3D;O(n)$，即复杂度 $O(n)$。</p>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><h3 id="P1742-最小圆覆盖"><a href="#P1742-最小圆覆盖" class="headerlink" title="P1742 最小圆覆盖"></a>P1742 最小圆覆盖</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1742">links</a>，模板题。</p>
+<h3 id="P4288-SHOI2014-信号增幅仪"><a href="#P4288-SHOI2014-信号增幅仪" class="headerlink" title="P4288 [SHOI2014] 信号增幅仪"></a>P4288 [SHOI2014] 信号增幅仪</h3><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4288">links</a>，稍微转化一下即可。<br>把坐标轴顺时针旋转 $a$ 度，再把 x 轴按比例缩小至 $\frac{1}{p}$，做最小圆覆盖即可。</p>
 <div class='spoiler collapsed'>
     <div class='spoiler-title'>
         Code
     </div>
     <div class='spoiler-content'>
-        <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> put putchar</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ls(a) (a &lt;&lt; 1)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> rs(a) (a &lt;&lt; 1 | 1)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> pii pair<span class="string">&lt;int, int&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">double</span> eps = <span class="number">1e-6</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">double</span> pi = <span class="built_in">acos</span>(<span class="number">-1</span>);</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"><span class="type">double</span> r = <span class="number">0.0</span>, the, mul;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">point</span> &#123;</span><br><span class="line">	<span class="type">double</span> x, y;</span><br><span class="line">	<span class="built_in">point</span> (<span class="type">const</span> <span class="type">double</span>&amp; x0 = <span class="number">0.0</span>, <span class="type">const</span> <span class="type">double</span>&amp; y0 = <span class="number">0.0</span>) : <span class="built_in">x</span>(x0), <span class="built_in">y</span>(y0) &#123; &#125;</span><br><span class="line">	point <span class="keyword">operator</span> + (<span class="type">const</span> point&amp; t)  <span class="type">const</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">point</span>(x + t.x, y + t.y);</span><br><span class="line">	&#125;</span><br><span class="line">	point <span class="keyword">operator</span> - (<span class="type">const</span> point&amp; t)  <span class="type">const</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">point</span>(x - t.x, y - t.y);</span><br><span class="line">	&#125;</span><br><span class="line">	point <span class="keyword">operator</span> * (<span class="type">const</span> <span class="type">double</span>&amp; t)  <span class="type">const</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">point</span>(x * t, y * t);</span><br><span class="line">	&#125;</span><br><span class="line">	point <span class="keyword">operator</span> / (<span class="type">const</span> <span class="type">double</span>&amp; t) <span class="type">const</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">point</span>(x / t, y / t);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">point <span class="title">rotate</span><span class="params">(<span class="type">double</span> t)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">point</span>(x * <span class="built_in">cos</span>(t) - y * <span class="built_in">sin</span>(t), x * <span class="built_in">sin</span>(t) + y * <span class="built_in">cos</span>(t));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function">point <span class="title">rotate90</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">point</span>(-y, x);</span><br><span class="line">	&#125;</span><br><span class="line">&#125; p[N], o;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">dot</span><span class="params">(<span class="type">const</span> point&amp; a, <span class="type">const</span> point&amp; b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a.x * b.x + a.y * b.y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">cross</span><span class="params">(<span class="type">const</span> point&amp; a, <span class="type">const</span> point&amp; b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a.x * b.y - a.y * b.x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">len</span><span class="params">(<span class="type">const</span> point&amp; a)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">sqrt</span>(<span class="built_in">dot</span>(a, a));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">dis</span><span class="params">(<span class="type">const</span> point &amp;a, <span class="type">const</span> point &amp;b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">sqrt</span>(<span class="built_in">dot</span>(a - b, a - b));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">read</span><span class="params">(T &amp;x)</span> </span>&#123;</span><br><span class="line">    T res = <span class="number">0</span>, f = <span class="number">1</span>; <span class="type">char</span> cc = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span>(! <span class="built_in">isdigit</span>(cc)) &#123;</span><br><span class="line">        <span class="keyword">if</span>(cc == <span class="string">&#x27;-&#x27;</span>) f = <span class="number">-1</span>;</span><br><span class="line">        cc = <span class="built_in">getchar</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">isdigit</span>(cc)) res = (res &lt;&lt; <span class="number">1</span>) + (res &lt;&lt; <span class="number">3</span>) + cc - <span class="number">48</span>, cc = <span class="built_in">getchar</span>();</span><br><span class="line">    x = res * f; <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> ...T1&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">read</span><span class="params">(T &amp;x, T1 &amp;...x1)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">read</span>(x), <span class="built_in">read</span>(x1...); <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">write</span><span class="params">(T x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x &lt; <span class="number">0</span>) x = -x, <span class="built_in">put</span>(<span class="string">&#x27;-&#x27;</span>);</span><br><span class="line">    <span class="keyword">if</span>(x &gt; <span class="number">9</span>) <span class="built_in">write</span>(x / <span class="number">10</span>);</span><br><span class="line">    <span class="built_in">put</span>(x % <span class="number">10</span> + <span class="number">48</span>); <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">write</span><span class="params">(<span class="type">char</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">put</span>(x); <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> ...T1&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">write</span><span class="params">(T x, T1 ...x1)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">write</span>(x),<span class="built_in">write</span>(x1...); <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">bool</span> <span class="title">chkmax</span><span class="params">(T &amp;x, T y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &lt; y ? x = y , <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">sign</span><span class="params">(<span class="type">double</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="built_in">fabs</span>(a) &lt; eps)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">return</span> a &gt; <span class="number">0</span> ? <span class="number">1</span> : <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">point <span class="title">get_cross</span><span class="params">(point p0, point v0, point p1, point v1)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">double</span> t = <span class="built_in">cross</span>(p1 - p0, v1) / <span class="built_in">cross</span>(v0, v1);</span><br><span class="line">	<span class="keyword">return</span> p0 + v0 * t;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">point <span class="title">get_circle</span><span class="params">(point a, point b, point c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">get_cross</span>((a + b) * <span class="number">0.5</span>, (b - a).<span class="built_in">rotate90</span>(), (a + c) * <span class="number">0.5</span>, (c - a).<span class="built_in">rotate90</span>());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="comment">// freopen(&quot;.in&quot;, &quot;r&quot;, stdin);</span></span><br><span class="line">   <span class="comment">// freopen(&quot;.out&quot;, &quot;w&quot;, stdout);</span></span><br><span class="line">    <span class="built_in">read</span>(n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++ i)</span><br><span class="line">    	<span class="built_in">scanf</span>(<span class="string">&quot;%lf%lf&quot;</span>, &amp;p[i].x, &amp;p[i].y);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lf%lf&quot;</span>, &amp;the, &amp;mul), the = -the / <span class="number">180.0</span> * pi, mul = <span class="number">1.0</span> / mul;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++ i)</span><br><span class="line">    	p[i] = p[i].<span class="built_in">rotate</span>(the), p[i].x *= mul;</span><br><span class="line">    <span class="built_in">random_shuffle</span>(p + <span class="number">1</span>, p + n + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++ i)</span><br><span class="line">    	<span class="keyword">if</span>(<span class="built_in">sign</span>(<span class="built_in">dis</span>(p[i], o) - r) &gt; <span class="number">0</span>)</span><br><span class="line">    	&#123;</span><br><span class="line">    		o = p[i], r = <span class="number">0.0</span>;</span><br><span class="line">    		<span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt; i; ++ j)</span><br><span class="line">    			<span class="keyword">if</span>(<span class="built_in">sign</span>(<span class="built_in">dis</span>(p[j], o) - r) &gt; <span class="number">0</span>)</span><br><span class="line">    			&#123;</span><br><span class="line">    				o = (p[i] + p[j]) * <span class="number">0.5</span>, r = <span class="built_in">dis</span>(p[i], p[j]) * <span class="number">0.5</span>;</span><br><span class="line">    				<span class="keyword">for</span>(<span class="type">int</span> k = <span class="number">1</span>; k &lt; j; ++ k)</span><br><span class="line">    					<span class="keyword">if</span>(<span class="built_in">sign</span>(<span class="built_in">dis</span>(p[k], o) - r) &gt; <span class="number">0</span>)</span><br><span class="line">    						o = <span class="built_in">get_circle</span>(p[i], p[j], p[k]), r = <span class="built_in">dis</span>(o, p[i]);</span><br><span class="line">    			&#125;</span><br><span class="line">    	&#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.3lf&quot;</span>, r);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;cstring&gt;
+#include&lt;vector&gt;
+#include&lt;queue&gt;
+#include&lt;string&gt;
+#include&lt;algorithm&gt;
+#include&lt;cmath&gt;
+#include&lt;cstdio&gt;
+#include&lt;set&gt;
+##define put putchar
+##define ls(a) (a &lt;&lt; 1)
+##define rs(a) (a &lt;&lt; 1 | 1)
+##define pii pair&lt;int, int&gt;
+
+using namespace std;
+
+const int N = 1e5 + 10;
+const double eps = 1e-6;
+const double pi = acos(-1);
+
+int n;
+double r = 0.0, the, mul;
+
+struct point {
+    double x, y;
+    point (const double&amp; x0 = 0.0, const double&amp; y0 = 0.0) : x(x0), y(y0) { }
+    point operator + (const point&amp; t)  const {
+        return point(x + t.x, y + t.y);
+    }
+    point operator - (const point&amp; t)  const {
+        return point(x - t.x, y - t.y);
+    }
+    point operator * (const double&amp; t)  const {
+        return point(x * t, y * t);
+    }
+    point operator / (const double&amp; t) const {
+        return point(x / t, y / t);
+    }
+    point rotate(double t) {
+        return point(x * cos(t) - y * sin(t), x * sin(t) + y * cos(t));
+    }
+    point rotate90() {
+        return point(-y, x);
+    }
+} p[N], o;
+
+double dot(const point&amp; a, const point&amp; b) {
+    return a.x * b.x + a.y * b.y;
+}
+double cross(const point&amp; a, const point&amp; b) {
+    return a.x * b.y - a.y * b.x;
+}
+double len(const point&amp; a) {
+    return sqrt(dot(a, a));
+}
+double dis(const point &amp;a, const point &amp;b) {
+    return sqrt(dot(a - b, a - b));
+}
+
+template&lt;class T&gt;
+inline void read(T &amp;x) {
+    T res = 0, f = 1; char cc = getchar();
+    while(! isdigit(cc)) {
+        if(cc == &#39;-&#39;) f = -1;
+        cc = getchar();
+    }
+    while(isdigit(cc)) res = (res &lt;&lt; 1) + (res &lt;&lt; 3) + cc - 48, cc = getchar();
+    x = res * f; return ;
+}
+template&lt;class T, class ...T1&gt;
+inline void read(T &amp;x, T1 &amp;...x1) {
+    read(x), read(x1...); return ;
+}
+template&lt;class T&gt;
+inline void write(T x) {
+    if(x &lt; 0) x = -x, put(&#39;-&#39;);
+    if(x &gt; 9) write(x / 10);
+    put(x % 10 + 48); return ;
+}
+template&lt;&gt;
+inline void write(char x) {
+    put(x); return ;
+}
+template&lt;class T, class ...T1&gt;
+inline void write(T x, T1 ...x1) {
+    write(x),write(x1...); return ;
+}
+template &lt;class T&gt;
+inline bool chkmax(T &amp;x, T y) {
+    return x &lt; y ? x = y , 1 : 0;
+}
+
+int sign(double a)
+{
+    if(fabs(a) &lt; eps)
+        return 0;
+    return a &gt; 0 ? 1 : -1;
+}
+
+point get_cross(point p0, point v0, point p1, point v1)
+{
+    double t = cross(p1 - p0, v1) / cross(v0, v1);
+    return p0 + v0 * t;
+}
+
+point get_circle(point a, point b, point c)
+{
+    return get_cross((a + b) * 0.5, (b - a).rotate90(), (a + c) * 0.5, (c - a).rotate90());
+}
+
+signed main()
+{
+   // freopen(&quot;.in&quot;, &quot;r&quot;, stdin);
+   // freopen(&quot;.out&quot;, &quot;w&quot;, stdout);
+    read(n);
+    for(int i = 1; i &lt;= n; ++ i)
+        scanf(&quot;%lf%lf&quot;, &amp;p[i].x, &amp;p[i].y);
+    scanf(&quot;%lf%lf&quot;, &amp;the, &amp;mul), the = -the / 180.0 * pi, mul = 1.0 / mul;
+    for(int i = 1; i &lt;= n; ++ i)
+        p[i] = p[i].rotate(the), p[i].x *= mul;
+    random_shuffle(p + 1, p + n + 1);
+    for(int i = 1; i &lt;= n; ++ i)
+        if(sign(dis(p[i], o) - r) &gt; 0)
+        {
+            o = p[i], r = 0.0;
+            for(int j = 1; j &lt; i; ++ j)
+                if(sign(dis(p[j], o) - r) &gt; 0)
+                {
+                    o = (p[i] + p[j]) * 0.5, r = dis(p[i], p[j]) * 0.5;
+                    for(int k = 1; k &lt; j; ++ k)
+                        if(sign(dis(p[k], o) - r) &gt; 0)
+                            o = get_circle(p[i], p[j], p[k]), r = dis(o, p[i]);
+                }
+        }
+    printf(&quot;%.3lf&quot;, r);
+    return 0;
+}
+</code></pre>
+
     </div>
 </div>
-<h1 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h1><p>Just this.</p>
+
+<h2 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h2><p>Just this.</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
     </div>
 
@@ -444,13 +719,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">211k</span>
+    <span title="站点总字数">192k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">6:24</span>
+    <span title="站点阅读时长">5:49</span>
   </span>
 </div>
 <div class="busuanzi-count">
