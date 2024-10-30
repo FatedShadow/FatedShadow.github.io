@@ -3772,6 +3772,253 @@ signed main()
       </tags>
   </entry>
   <entry>
+    <title>ARC138A Larger Score 题解</title>
+    <url>/OI/%E9%A2%98%E8%A7%A3/ARC138A-%E9%A2%98%E8%A7%A3/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><a href="https://www.luogu.com.cn/problem/AT_arc138_a">题目传送门</a>，到<a href="https://fatedshadow.github.io/OI/%E9%A2%98%E8%A7%A3/ARC138A-%E9%A2%98%E8%A7%A3//#more">博客</a>食用。<br>@Split_shadow 特荐我此题，现记录题目（已知），贪心方法（求证）与思路（证明），附上暴力思路（代码解析）。<br>只能说是一道<del>用数据结构</del>或<del>神奇二分</del>的<del>神仙</del> 贪心题。</p>
+<h2 id="思路证明"><a href="#思路证明" class="headerlink" title="思路证明"></a>思路证明</h2><h3 id="已知"><a href="#已知" class="headerlink" title="已知"></a>已知</h3><p>现存在一个长度为 $n$ 的数列 $a_{1},a_{2},a_{3},a_{4}\dots a_{n}$，给定数 $k$，求最少的交换次数 $times$ 使得交换后的数列 $b$ 中 $(\sum_{i&#x3D;1}^{k}b_{i})&gt;(\sum_{i&#x3D;1}^{k}a_{i})$。<br>（规定交换为 $\operatorname{swap}(a_{i},a_{i+1})$，且 $(1\le i&lt;n)$）。</p>
+<h3 id="求证"><a href="#求证" class="headerlink" title="求证"></a>求证</h3><p>为使 $times$ 尽量小，则所有交换操作和并起来应该是一次不比较大小的冒泡操作（即在 $a_{1}$ 到 $a_{k}$ 中仍有 $k-1$ 个不考虑位置的数不变）。</p>
+<h3 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h3><p>假设在 $times$ 最小时，前 $k$ 个数中变换后不变的数（不考虑位置）小于 $k-1$ 个，即变化的数大于 $2$ 个。<br>先就 $2$ 个的情况讨论。<br>设在前 $k$ 个数中 $a_{x},a_{y}$ 在冒泡操作后被替换为 $a_{m},a_{n}(1\le x,y\le k&lt;m,n)$。<br>则有：$a_{x}+a_{y}&lt;a_{m}+a_{n}$。<br>不妨令 $a_{x}&lt;a_{m}$（这个是一定存在的），且在 $a_{x},a_{y}$ 与 $a_{m},a_{n}$ 两组中，非同组元素互换时，$a_{x}$ 与 $a_{m}$ 互换冒泡所费次数最少。<br>则存在一种方案，使 $a_{x}$ 与 $a_{m}$ 互换冒泡符合题意，且比当前方案花费次数更优（如果要 $4$ 个元素互换，那么必然比 $2$ 个元素互换花费次数更多），与假设矛盾，则可以证得该结论。<br>至于变化的数更多的情况，依次推理即可证得。</p>
+<h2 id="实现解析"><a href="#实现解析" class="headerlink" title="实现解析"></a>实现解析</h2><h3 id="暴力（30-5-pts）"><a href="#暴力（30-5-pts）" class="headerlink" title="暴力（30.5 pts）"></a>暴力（30.5 pts）</h3><p>假令 $a_{x}$ 与 $a_{m}$ 交换冒泡，最小花费 $m-x$ 的次数。<br>那么便可枚举 $a_{i}(k+1\le i\le n)$，找的最大的 $j$ 使得 $a_{i}&gt;a_{j}(1\le j\le k)$。<br>其中 $i$ 从小到大枚举，$j$ 则从大到小枚举。<br>然后在此等条件下，$ans&#x3D;\min(i-j)$。<br>笔者现提供一种暴力优化<del>wtcl 不会打正解</del>：<br>枚举时，如果当前最优答案的 $i$ 为 $i_{0}$ 且 $p&gt;i_{0},a_{i_{0}}\ge a_{p}$，则可以跳过 $p$ 寻找下一个 $i$。（$i$ 的含义与上同）。<br>同理，对于 $j$ 也可记录最优答案 $j_{0}$，则每次寻找下一个 $j$ 的范围为 $j_{0}&lt;j\le k$。<br>理论上时间复杂度可从 $O(n^{2})$ 优化到 $O(m^{2})(0&lt;m\le n)$。<del>（然鹅好像没什么卵用）</del>。<br>贴一下贪心暴力部分代码。</p>
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        Code
+    </div>
+    <div class='spoiler-content'>
+        <pre><code class="cpp">l = 0, r = n + 1;
+for(int i = k + 1; i &lt;= n; ++ i)
+{
+    if(a[r] &gt;= a[i]) continue;
+    for(int j = k; j &gt; l; -- j)
+    {
+        if(i - j &gt; ans) break;
+        if(a[j] &lt; a[i])
+        {
+            r = i, l = j;
+            break;
+        }
+    }
+    ans = r - l;
+}
+</code></pre>
+
+    </div>
+</div>
+
+<h3 id="二分（100-pts）"><a href="#二分（100-pts）" class="headerlink" title="二分（100 pts）"></a>二分（100 pts）</h3><p>不难发现，在寻找 $j$ 时，本质上是寻找最后一个比 $a_{i}$ 小的 $a_{j}$。<br>那么先求一遍 $a_{1}$ 到 $a_{k}$ 后缀最小值，我们发现，现在的后缀最小值满足单调性，那么就可以高高兴兴地套上二分来求最后一个满足条件地后缀最小值的位置了。<br>那么再用二分维护一下，期望 $O(n\log_{2}{n})$。</p>
+<h2 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a>AC代码</h2><p>贴上 AC 链接：<a href="https://www.luogu.com.cn/record/106181398">link</a>（跑得有点慢）</p>
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        Code
+    </div>
+    <div class='spoiler-content'>
+        <pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;cmath&gt;
+#include&lt;cstdio&gt;
+#include&lt;cstring&gt;
+#include&lt;string&gt;
+#include&lt;vector&gt;
+#include&lt;queue&gt;
+#include&lt;map&gt;
+#include&lt;algorithm&gt;
+#define put putchar
+#define max(a, b) a &gt; b ? a : b
+#define min(a, b) a &lt; b ? a : b
+using namespace std;
+
+const int N = 4e5 + 10;
+const int INF = 1e9;
+const int mod = 1e9 + 7;
+
+int n, k;
+int a[N];
+int ans = INF, l, r;
+int sum[N];
+
+inline long long read(){
+    long long res = 0, f = 1;
+    char c = getchar();
+    while(! isdigit(c)){
+        if(c == &#39;-&#39;) f = -1;
+        c = getchar();
+    }
+    while(isdigit(c)) res = (res &lt;&lt; 1) + (res &lt;&lt; 3) + c - 48, c = getchar();
+    return res * f;
+}
+inline void write(long long x){
+    if(x &gt;= 10) write(x / 10);
+    put(x % 10 + 48);
+    return ;
+}
+inline void print(long long x){
+    if(x &lt; 0) x = -x, put(&#39;-&#39;);
+    write(x);
+    return ;
+}
+
+int change(int x)
+{
+    if(sum[1] &gt;= x) return 0;
+    int l = 1, r = k, mid;
+    int res;
+    while(l &lt;= r)
+    {
+        mid = l + r &gt;&gt; 1;
+        if(sum[mid] &gt;= x) r = mid - 1;
+        else l = mid + 1, res = mid;
+    }
+    return res;
+}
+
+bool tp()
+{
+    if(n == k) return true;
+    int mina = INF, maxa = -INF;
+    for(int i = 1; i &lt;= k; ++ i)
+        mina = min(mina, a[i]);
+    for(int i = k + 1; i &lt;= n; ++ i)
+        maxa = max(maxa, a[i]);
+    if(maxa &lt;= mina) return true;
+    return false;
+}
+
+int main()
+{
+    memset(sum, 0x3f3f3f3f, sizeof sum);
+    n = read(), k = read();
+    for(int i = 1; i &lt;= n; ++ i)
+        a[i] = read();
+    for(int i = k; i ; -- i)
+        sum[i] = min(a[i], sum[i + 1]);
+    if(tp())
+    {
+        print(-1);
+        return 0;
+    }
+    int w;
+    for(int i = k + 1; i &lt;= n; ++ i)
+    {
+        w = change(a[i]);
+        if(! w) continue;
+        ans = min(ans, i - w);
+    }
+    print(ans);
+    return 0;
+}
+</code></pre>
+
+    </div>
+</div>
+
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>懒得想了，就只给出一种暴力优化与二分思路。<br>我觉得就以各位 dalao 的实力，应该能做出来更快做法。<br>（其实正解是二分，但是 Split_shadow 巨佬竟然用线段树过了？）<br>—— Fated_Shadow</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>OI</category>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>OI</tag>
+        <tag>题解</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>P8801 [蓝桥杯 2022 国 B] 最大数字  题解</title>
+    <url>/OI/%E9%A2%98%E8%A7%A3/P8801-%E9%A2%98%E8%A7%A3/</url>
+    <content><![CDATA[<h2 id="foreword"><a href="#foreword" class="headerlink" title="foreword"></a>foreword</h2><p><a href="https://www.luogu.com.cn/problem/P8801">题目传送门</a>，同时，<a href="https://fatedshadow.github.io/OI/%E9%A2%98%E8%A7%A3/P8801-%E9%A2%98%E8%A7%A3/#more">到博客使用更好</a>。</p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>对于这道 数位 dp 偏简单例题——<br>（怎么看出来的？<del>标签</del>，处理数较大，处理部分按数位进行，是数位 dp 罢。）<br>楼下大佬用递归搜索 dp 或贪心暴力切题，本人秉着应有尽有的原则，为社区着想 <del>（蹭估值）</del> 地交了一篇递推写法的 dp。</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>先将输入的数字按位处理好后，应该建立状态转移方程。<br>因为本题数据太水了（bushi，<del>蒟蒻懒得想</del>，故构造了一个三维数组 $dp_{i,k,p}$，其中：</p>
+<ul>
+<li>$i$ 表示已经推到了第 $i$ 位（从低位向高位）。</li>
+<li>$k$ 表示还剩下 $j$ 次 操作 $1$ 的次数。</li>
+<li>$p$ 则表示还剩下 $k$ 次操作 $2$ 的次数。</li>
+</ul>
+<p>那么依照背包问题的处理方式，假设将当前位数字 $x$ 变换为 $y$，需操作 $1$ 共 $a$ 次，操作 $2$ 共 $b$ 次，那么：</p>
+<pre><code class="cpp">dp[i][k][p] = max(dp[i][k][p],dp[i - 1][k - a][p] + sum);
+dp[i][k][p] = max(dp[i][k][p],dp[i - 1][k][p - b] + sum);
+</code></pre>
+<p>(此时请注意 $j - a$ 与 $k - b$ 是否大于等于 $0$，其中 $sum$ 表示 <code>pow(10,i - 1) * y</code>。)<br>然后在将 $y$ 枚举：<code>for（y : x ~ 9)</code>。（为什么不从 $x + 1$ 开始呢，因为即使预处理过了，但随着低位的递推，那么 $x$ 位也应该有所更替，<del>蒟蒻就在这里写挂了</del>。）<br>通过动态规划递推得到的数组，按照其定义，只用输出 $dp_{[\text{数的长度}][\text{操作 }1\text{ 次数}][\text{操作 }2\text{ 次数}]}$ 即可。<br>依照贪心思想，那如果执行操作 $2$，则 $y$ 会递减，那只有将 $y$ 变化为 $9$ 才是当前最优解，否则当前的答案不是最优解，可以直接舍去。<br>（代码中未给出优化，想要再调时间的 dalao 可以自己去试一试）。</p>
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        Code
+    </div>
+    <div class='spoiler-content'>
+        <pre><code class="cpp">#include&lt;iostream&gt;
+#include&lt;cstdio&gt;
+using namespace std;
+
+const int N = 30,M = 110;
+long long dp[N][M][M],ans[N][2],num;//十年 OI 一场空，不开 long long ___
+int n,m,q[N],len = 0;
+
+long long turn(long long a,long long b)//比较方便的快速幂
+{
+    long long s = 1;
+    while(b)
+    {
+        if(b &amp; 1) s *= a;
+        a *= a;
+        b &gt;&gt;= 1;
+    }
+    return s;
+}
+void deal()//预处理一部分数组，最开始都是原数字的一部分
+{
+    memset(dp,0,sizeof dp);
+    for(int i = 1;i &lt;= len;++ i)
+    {
+        long long sum = q[i] * turn(10,i - 1);
+        for(int k = 0;k &lt;= n;++ k)
+            dp[i][k][0] = dp[i - 1][k][0] + sum;
+        for(int p = 0;p &lt;= m;++ p)
+            dp[i][0][p] = dp[i - 1][0][p] + sum;
+    }
+}
+void solve(long long x)
+{
+    memset(q,0,sizeof q);
+    while(x) q[++ len] = x % 10,x /= 10;//将整个数处理为数位
+    deal();
+    
+    for(int i = 1;i &lt;= len;++ i)//用背包的方式处理数组，思想同上
+    {
+        for(int j = q[i];j &lt;= 9;++ j)
+        {
+            int a = j - q[i],b = q[i] + 10 - j;
+            long long sum = j * turn(10,i - 1);
+            for(int k = 0;k &lt;= n;++ k)
+            for(int p = 0;p &lt;= m;++ p)
+            {
+                if(k &gt;= a) dp[i][k][p] = max(dp[i][k][p],dp[i - 1][k - a][p] + sum);
+                if(p &gt;= b) dp[i][k][p] = max(dp[i][k][p],dp[i - 1][k][p - b] + sum);//记得判断是否够用
+            }
+        }
+    }
+    return ;
+}
+
+int main()
+{
+    scanf(&quot;%lld%d%d&quot;,&amp;num,&amp;n,&amp;m);
+    solve(num);
+    printf(&quot;%lld&quot;,dp[len][n][m]);//输出即可
+    return 0;
+}
+</code></pre>
+
+    </div>
+</div>
+
+<h2 id="Afterword"><a href="#Afterword" class="headerlink" title="Afterword"></a>Afterword</h2><p>第一次写 tj，如有 bug 或 hack，请联系本蒟蒻，一定改正。<br><del>（没有也可以点个赞或关注啊）。</del></p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>OI</category>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>OI</tag>
+        <tag>题解</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Test2024-3-1</title>
     <url>/%E6%A8%A1%E6%8B%9F%E8%B5%9B/%E4%B8%80%E6%9C%AC%E9%80%9A%E8%80%83%E8%AF%95/Test2024-3-1/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
