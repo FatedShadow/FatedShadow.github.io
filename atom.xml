@@ -6,7 +6,7 @@
   <link href="http://fatedshadow.github.io/atom.xml" rel="self"/>
   
   <link href="http://fatedshadow.github.io/"/>
-  <updated>2024-10-30T07:16:37.125Z</updated>
+  <updated>2024-10-30T07:20:04.477Z</updated>
   <id>http://fatedshadow.github.io/</id>
   
   <author>
@@ -21,13 +21,13 @@
     <link href="http://fatedshadow.github.io/OI/%E9%A2%98%E8%A7%A3/P11202-%E9%A2%98%E8%A7%A3/"/>
     <id>http://fatedshadow.github.io/OI/%E9%A2%98%E8%A7%A3/P11202-%E9%A2%98%E8%A7%A3/</id>
     <published>2024-10-30T03:19:55.000Z</published>
-    <updated>2024-10-30T07:16:37.125Z</updated>
+    <updated>2024-10-30T07:20:04.477Z</updated>
     
     
       
       
     <summary type="html">&lt;p&gt;看了下题解区，全是 bfs 写法，所以专门搓了一篇 dp 来补一下。&lt;/p&gt;
-&lt;h2 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h2&gt;&lt;p&gt;发现去掉 k 的限制（即 k&amp;#x3D;0 的时候），就</summary>
+&lt;h2 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h2&gt;&lt;p&gt;发现去掉 $k$ 的限制（即 $k&amp;#x3D;0$ 的时</summary>
       
     
     
