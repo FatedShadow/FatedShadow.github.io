@@ -155,7 +155,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -779,6 +779,211 @@
             </div>
           <!--/noindex-->
         
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://fatedshadow.github.io/OI/%E9%A2%98%E8%A7%A3/P11202-%E9%A2%98%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="FatedShadow">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FatedShadow's Blog">
+      <meta itemprop="description" content="My excllence is undeniable">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | FatedShadow's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/OI/%E9%A2%98%E8%A7%A3/P11202-%E9%A2%98%E8%A7%A3/" class="post-title-link" itemprop="url">P11202 题解</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2024-10-30 11:19:55 / 修改时间：15:16:37" itemprop="dateCreated datePublished" datetime="2024-10-30T11:19:55+08:00">2024-10-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/OI/" itemprop="url" rel="index"><span itemprop="name">OI</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/OI/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>6 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>看了下题解区，全是 bfs 写法，所以专门搓了一篇 dp 来补一下。</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>发现去掉 k 的限制（即 k&#x3D;0 的时候），就是类似公共子序列的做法，但是有 k 的限制，这部分不太好处理。容易想到直接压进去前 k 位字母分别填了什么，这样是正确的，但是复杂度不允许，时空间 O(nm52^3) 易爆炸。<br>现在考虑哪些状态可以优化掉。由于 k 比较小，我们发现：如果需要向序列中补一些既不属于 s 又不属于 t 的字母（不如成为集合外的字母），那么我们并不用考虑集合外的字母之间的间隔问题（k 很小，全集比较大），也就是说：需要补一些集合外的字母的情况，只会在只考虑集合中的字母之间间隔过小时出现。<br>那么这 k 维可以由 52 个状态优化成 4 个状态：这一位的字母是选择的 s 中的字母 &#x2F; 选择 t 中的字母 &#x2F; 是两者当前共同的字母 &#x2F; 是补的集合外的字母。我们可以由这些状态推出前 k 个字母中两个串各有几个，从而得出哪些字母不能选。<br>为了方便，可以直接使用 4 进制的状压，直接进行滚动即可。<br>最后再处理一下往当前结尾的状态里面塞集合外的字母的最小值即可。</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p>Talk is cheap, show me the code.</p>
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        Code
+    </div>
+    <div class='spoiler-content'>
+        <pre><code class="cpp">// Problem: P11202 [JOIG 2024] 名前 / Name
+// Contest: Luogu
+// URL: https://www.luogu.com.cn/problem/P11202
+// Memory Limit: 1 MB
+// Time Limit: 1000 ms
+// 
+// Powered by CP Editor (https://cpeditor.org)
+
+#include&lt;bits/stdc++.h&gt;
+#define int long long
+using namespace std;
+namespace FastIO {
+    char gc() {
+        static char buf[1 &lt;&lt; 24], *is = buf, *it = buf;
+        if (is == it) is = buf, it = is + fread(buf, 1, 1 &lt;&lt; 24, stdin);
+        return is == it ? EOF : *is ++;
+    }
+    char out[1 &lt;&lt; 24];
+    int len;
+    void flush() { fwrite(out, 1, len, stdout), len = 0; }
+    void pc(char x) {if (len == 1 &lt;&lt; 24) flush(); out[len ++] = x;}
+    struct Flusher {~Flusher() {flush();} } Fls;
+    // #define gc() getchar()
+    // #define pc(X) putchar(X)
+    inline void read(char&amp; ch) {ch = gc();}
+    inline void read(char *s) {
+        char ch = gc();
+        while (ch &lt; 33 || ch &gt; 126) ch = gc();
+        for (; ch &gt;= 33 &amp;&amp; ch &lt;= 126; ch = gc()) *s++ = ch;
+        *s = &#39;\0&#39;;
+    }
+    template &lt;class T&gt;
+    inline void read(T &amp;x) {
+        char c, flag = 0;
+        while ((c = gc()) &lt; &#39;0&#39; || c &gt; &#39;9&#39;) flag |= c == &#39;-&#39;;
+        x = c &amp; 15;
+        while ((c = gc()) &gt;= &#39;0&#39; &amp;&amp; c &lt;= &#39;9&#39;)
+        x = (x &lt;&lt; 3) + (x &lt;&lt; 1) + (c &amp; 15);
+        if (flag) x = ~x + 1;
+    }
+    template &lt;class T, class ...T1&gt;
+    inline void read(T &amp;x, T1 &amp;...x1) {read(x), read(x1...);}
+    template &lt;class T&gt;
+    inline void _put(T x) {if(x &gt; 9) _put(x / 10); pc((x % 10) | 48);}
+    template &lt;class T&gt;
+    inline void write(T x) {if(x &lt; 0) pc(&#39;-&#39;), x = ~x + 1; _put(x);}
+    template &lt;&gt; inline void write(char x) {pc(x);}
+    template &lt;class T, class ...T1&gt;
+    inline void write(T x, T1 ...x1) {write(x), write(x1...);}
+}
+using FastIO::read;
+using FastIO::write;
+template &lt;class T&gt;
+inline bool chkmin(T &amp;x, T y) {return x &gt; y ? x = y, 1 : 0;}
+template &lt;class T&gt;
+inline bool chkmax(T &amp;x, T y) {return x &lt; y ? x = y, 1 : 0;}
+
+const int N = 5e2 + 10, M = 1 &lt;&lt; 6;
+int n, m, k, dp[N][N][M], ans, lim;
+char s[N], t[N];
+bool check(int i, int j, int sta, int f1, int f2) {
+    int cs = 0, ct = 0, flag = 0;
+    while(sta) cs += sta &amp; 3 &amp; 1, ct += (sta &amp; 3 &amp; 2) &gt;&gt; 1, sta &gt;&gt;= 2;
+    if(f1) for(int p = 1; p &lt;= cs &amp;&amp; p &lt; i; ++p) flag |= (s[i] == s[i - p]);
+    if(f1) for(int p = 1; p &lt;= ct &amp;&amp; j - p - f2 + 1 &gt; 0; ++p)
+        flag |= (s[i] == t[j - p - f2 + 1]);
+    if(f2) for(int p = 1; p &lt;= ct &amp;&amp; p &lt; j; ++p) flag |= (t[j] == t[j - p]);
+    if(f2) for(int p = 1; p &lt;= cs &amp;&amp; i - p - f1 + 1 &gt; 0; ++p)
+        flag |= (t[j] == s[i - p - f1 + 1]);
+    return !flag;
+}
+void solve(int i, int j, int f1, int f2) {
+    int now = f1 * 1 + f2 * 2;
+    for(int sta = 0; sta &lt;= lim; ++sta) if(check(i, j, sta, f1, f2))
+        chkmin(dp[i][j][((sta &lt;&lt; 2) + now) &amp; lim], dp[i - f1][j - f2][sta] + 1);
+    for(int sta = lim; ~sta; --sta) for(int p = 1; p &lt;= k; ++p)
+        chkmin(dp[i][j][(sta &lt;&lt; (p * 2)) &amp; lim], dp[i][j][sta] + p);
+}
+
+signed main() {
+    // freopen(&quot;.in&quot;, &quot;r&quot;, stdin);
+    // freopen(&quot;.out&quot;, &quot;w&quot;, stdout);
+    read(n, m, k), read(s + 1), read(t + 1); memset(dp, 0x3f, sizeof dp);
+    dp[0][0][0] = 0, ans = (n + m) * (k + 1), lim = (1 &lt;&lt; (2 * k)) - 1;
+    for(int i = 0; i &lt;= n; ++i)
+        for(int j = 0; j &lt;= m; ++j) {
+            if(i &amp;&amp; j &amp;&amp; s[i] == t[j]) solve(i, j, 1, 1);
+            if(i) solve(i, j, 1, 0);
+            if(j) solve(i, j, 0, 1);
+        }
+    for(int sta = 0; sta &lt;= lim; ++sta) chkmin(ans, dp[n][m][sta]);
+    write(ans);
+    return 0;
+}
+</code></pre>
+
+    </div>
+</div>
+
+<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>如有问题，欢迎指正。</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
       
     </div>
 
@@ -1445,117 +1650,6 @@ int main()
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://fatedshadow.github.io/%E6%A8%A1%E6%8B%9F%E8%B5%9B/%E6%A0%A1%E5%86%85%E8%87%AA%E6%B5%8B/Test2024-1-15/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="FatedShadow">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="FatedShadow's Blog">
-      <meta itemprop="description" content="My excllence is undeniable">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | FatedShadow's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/%E6%A8%A1%E6%8B%9F%E8%B5%9B/%E6%A0%A1%E5%86%85%E8%87%AA%E6%B5%8B/Test2024-1-15/" class="post-title-link" itemprop="url">Test2024-1-15</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2024-01-15 21:02:44" itemprop="dateCreated datePublished" datetime="2024-01-15T21:02:44+08:00">2024-01-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-10-15 15:40:25" itemprop="dateModified" datetime="2024-10-15T15:40:25+08:00">2024-10-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%A8%A1%E6%8B%9F%E8%B5%9B/" itemprop="url" rel="index"><span itemprop="name">模拟赛</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%A8%A1%E6%8B%9F%E8%B5%9B/%E6%A0%A1%E5%86%85%E8%87%AA%E6%B5%8B/" itemprop="url" rel="index"><span itemprop="name">校内自测</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>12k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>22 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          TEST
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/%E6%A8%A1%E6%8B%9F%E8%B5%9B/%E6%A0%A1%E5%86%85%E8%87%AA%E6%B5%8B/Test2024-1-15/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -1579,13 +1673,13 @@ int main()
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">200k</span>
+    <span title="站点总字数">203k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">6:03</span>
+    <span title="站点阅读时长">6:09</span>
   </span>
 </div>
 <div class="busuanzi-count">

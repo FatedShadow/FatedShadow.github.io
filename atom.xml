@@ -6,7 +6,7 @@
   <link href="http://fatedshadow.github.io/atom.xml" rel="self"/>
   
   <link href="http://fatedshadow.github.io/"/>
-  <updated>2024-10-30T00:26:28.827Z</updated>
+  <updated>2024-10-30T07:16:37.125Z</updated>
   <id>http://fatedshadow.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>P11202 题解</title>
+    <link href="http://fatedshadow.github.io/OI/%E9%A2%98%E8%A7%A3/P11202-%E9%A2%98%E8%A7%A3/"/>
+    <id>http://fatedshadow.github.io/OI/%E9%A2%98%E8%A7%A3/P11202-%E9%A2%98%E8%A7%A3/</id>
+    <published>2024-10-30T03:19:55.000Z</published>
+    <updated>2024-10-30T07:16:37.125Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;看了下题解区，全是 bfs 写法，所以专门搓了一篇 dp 来补一下。&lt;/p&gt;
+&lt;h2 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h2&gt;&lt;p&gt;发现去掉 k 的限制（即 k&amp;#x3D;0 的时候），就</summary>
+      
+    
+    
+    
+    <category term="OI" scheme="http://fatedshadow.github.io/categories/OI/"/>
+    
+    <category term="题解" scheme="http://fatedshadow.github.io/categories/OI/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+    <category term="OI" scheme="http://fatedshadow.github.io/tags/OI/"/>
+    
+    <category term="题解" scheme="http://fatedshadow.github.io/tags/%E9%A2%98%E8%A7%A3/"/>
+    
+  </entry>
   
   <entry>
     <title>O.I.</title>
@@ -456,29 +483,6 @@
     <category term="算法讲解" scheme="http://fatedshadow.github.io/tags/%E7%AE%97%E6%B3%95%E8%AE%B2%E8%A7%A3/"/>
     
     <category term="几何" scheme="http://fatedshadow.github.io/tags/%E5%87%A0%E4%BD%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Test2023-12-11</title>
-    <link href="http://fatedshadow.github.io/%E6%A8%A1%E6%8B%9F%E8%B5%9B/%E6%A0%A1%E5%86%85%E8%87%AA%E6%B5%8B/Test2023-12-11/"/>
-    <id>http://fatedshadow.github.io/%E6%A8%A1%E6%8B%9F%E8%B5%9B/%E6%A0%A1%E5%86%85%E8%87%AA%E6%B5%8B/Test2023-12-11/</id>
-    <published>2023-12-11T04:58:23.000Z</published>
-    <updated>2024-10-15T07:31:51.672Z</updated>
-    
-    
-    <summary type="html">TEST</summary>
-    
-    
-    
-    <category term="模拟赛" scheme="http://fatedshadow.github.io/categories/%E6%A8%A1%E6%8B%9F%E8%B5%9B/"/>
-    
-    <category term="校内自测" scheme="http://fatedshadow.github.io/categories/%E6%A8%A1%E6%8B%9F%E8%B5%9B/%E6%A0%A1%E5%86%85%E8%87%AA%E6%B5%8B/"/>
-    
-    
-    <category term="OI" scheme="http://fatedshadow.github.io/tags/OI/"/>
-    
-    <category term="模拟赛" scheme="http://fatedshadow.github.io/tags/%E6%A8%A1%E6%8B%9F%E8%B5%9B/"/>
     
   </entry>
   

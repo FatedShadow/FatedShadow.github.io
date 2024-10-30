@@ -21,29 +21,26 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"fatedshadow.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"fold":{"enable":false,"height":1000},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="foreword题目传送门，同时，到博客使用更好。 Introduction对于这道 数位 dp 偏简单例题——（怎么看出来的？标签，处理数较大，处理部分按数位进行，是数位 dp 罢。）楼下大佬用递归搜索 dp 或贪心暴力切题，本人秉着应有尽有的原则，为社区着想 （蹭估值） 地交了一篇递推写法的 dp。 Solution先将输入的数字按位处理好后，应该建立状态转移方程。因为本题数据太水了（bush">
-<meta property="og:type" content="article">
-<meta property="og:title" content="P8801 [蓝桥杯 2022 国 B] 最大数字  题解">
-<meta property="og:url" content="http://fatedshadow.github.io/OI/%E9%A2%98%E8%A7%A3/P8801-%E9%A2%98%E8%A7%A3/index.html">
+    <meta name="description" content="My excllence is undeniable">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FatedShadow&#39;s Blog">
+<meta property="og:url" content="http://fatedshadow.github.io/categories/OI/page/2/index.html">
 <meta property="og:site_name" content="FatedShadow&#39;s Blog">
-<meta property="og:description" content="foreword题目传送门，同时，到博客使用更好。 Introduction对于这道 数位 dp 偏简单例题——（怎么看出来的？标签，处理数较大，处理部分按数位进行，是数位 dp 罢。）楼下大佬用递归搜索 dp 或贪心暴力切题，本人秉着应有尽有的原则，为社区着想 （蹭估值） 地交了一篇递推写法的 dp。 Solution先将输入的数字按位处理好后，应该建立状态转移方程。因为本题数据太水了（bush">
+<meta property="og:description" content="My excllence is undeniable">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-01-01T13:36:07.000Z">
-<meta property="article:modified_time" content="2024-10-30T03:07:56.027Z">
 <meta property="article:author" content="FatedShadow">
-<meta property="article:tag" content="OI">
-<meta property="article:tag" content="题解">
+<meta property="article:tag" content="c++,blog,OI">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://fatedshadow.github.io/OI/%E9%A2%98%E8%A7%A3/P8801-%E9%A2%98%E8%A7%A3/">
+<link rel="canonical" href="http://fatedshadow.github.io/categories/OI/page/2/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://fatedshadow.github.io/OI/%E9%A2%98%E8%A7%A3/P8801-%E9%A2%98%E8%A7%A3/","path":"OI/题解/P8801-题解/","title":"P8801 [蓝桥杯 2022 国 B] 最大数字  题解"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"categories/OI/page/2/index.html","title":""}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>P8801 [蓝桥杯 2022 国 B] 最大数字  题解 | FatedShadow's Blog</title>
+<title>分类: OI | FatedShadow's Blog</title>
   
 
 
@@ -131,7 +128,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -144,7 +141,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#foreword"><span class="nav-text">foreword</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Afterword"><span class="nav-text">Afterword</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -243,234 +239,53 @@
 
     </div>
 
-    <div class="main-inner post posts-expand">
+    <div class="main-inner category posts-collapse">
 
 
   
-
-
-<div class="post-block">
   
   
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://fatedshadow.github.io/OI/%E9%A2%98%E8%A7%A3/P8801-%E9%A2%98%E8%A7%A3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="FatedShadow">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="FatedShadow's Blog">
-      <meta itemprop="description" content="My excllence is undeniable">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="P8801 [蓝桥杯 2022 国 B] 最大数字  题解 | FatedShadow's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          P8801 [蓝桥杯 2022 国 B] 最大数字  题解
+  <div class="post-block">
+    <div class="post-content">
+      <div class="collection-title">
+        <h1 class="collection-header">OI
+          <small>分类</small>
         </h1>
+      </div>
 
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-01-01 21:36:07" itemprop="dateCreated datePublished" datetime="2023-01-01T21:36:07+08:00">2023-01-01</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-10-30 11:07:56" itemprop="dateModified" datetime="2024-10-30T11:07:56+08:00">2024-10-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/OI/" itemprop="url" rel="index"><span itemprop="name">OI</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/OI/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span id="busuanzi_value_page_pv"></span>
-    </span>
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.8k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody"><h2 id="foreword"><a href="#foreword" class="headerlink" title="foreword"></a>foreword</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P8801">题目传送门</a>，同时，<a href="https://fatedshadow.github.io/OI/%E9%A2%98%E8%A7%A3/P8801-%E9%A2%98%E8%A7%A3/#more">到博客使用更好</a>。</p>
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>对于这道 数位 dp 偏简单例题——<br>（怎么看出来的？<del>标签</del>，处理数较大，处理部分按数位进行，是数位 dp 罢。）<br>楼下大佬用递归搜索 dp 或贪心暴力切题，本人秉着应有尽有的原则，为社区着想 <del>（蹭估值）</del> 地交了一篇递推写法的 dp。</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>先将输入的数字按位处理好后，应该建立状态转移方程。<br>因为本题数据太水了（bushi，<del>蒟蒻懒得想</del>，故构造了一个三维数组 $dp_{i,k,p}$，其中：</p>
-<ul>
-<li>$i$ 表示已经推到了第 $i$ 位（从低位向高位）。</li>
-<li>$k$ 表示还剩下 $j$ 次 操作 $1$ 的次数。</li>
-<li>$p$ 则表示还剩下 $k$ 次操作 $2$ 的次数。</li>
-</ul>
-<p>那么依照背包问题的处理方式，假设将当前位数字 $x$ 变换为 $y$，需操作 $1$ 共 $a$ 次，操作 $2$ 共 $b$ 次，那么：</p>
-<pre><code class="cpp">dp[i][k][p] = max(dp[i][k][p],dp[i - 1][k - a][p] + sum);
-dp[i][k][p] = max(dp[i][k][p],dp[i - 1][k][p - b] + sum);
-</code></pre>
-<p>(此时请注意 $j - a$ 与 $k - b$ 是否大于等于 $0$，其中 $sum$ 表示 <code>pow(10,i - 1) * y</code>。)<br>然后在将 $y$ 枚举：<code>for（y : x ~ 9)</code>。（为什么不从 $x + 1$ 开始呢，因为即使预处理过了，但随着低位的递推，那么 $x$ 位也应该有所更替，<del>蒟蒻就在这里写挂了</del>。）<br>通过动态规划递推得到的数组，按照其定义，只用输出 $dp_{[\text{数的长度}][\text{操作 }1\text{ 次数}][\text{操作 }2\text{ 次数}]}$ 即可。<br>依照贪心思想，那如果执行操作 $2$，则 $y$ 会递减，那只有将 $y$ 变化为 $9$ 才是当前最优解，否则当前的答案不是最优解，可以直接舍去。<br>（代码中未给出优化，想要再调时间的 dalao 可以自己去试一试）。</p>
-<div class='spoiler collapsed'>
-    <div class='spoiler-title'>
-        Code
-    </div>
-    <div class='spoiler-content'>
-        <pre><code class="cpp">#include&lt;iostream&gt;
-#include&lt;cstdio&gt;
-using namespace std;
-
-const int N = 30,M = 110;
-long long dp[N][M][M],ans[N][2],num;//十年 OI 一场空，不开 long long ___
-int n,m,q[N],len = 0;
-
-long long turn(long long a,long long b)//比较方便的快速幂
-{
-    long long s = 1;
-    while(b)
-    {
-        if(b &amp; 1) s *= a;
-        a *= a;
-        b &gt;&gt;= 1;
-    }
-    return s;
-}
-void deal()//预处理一部分数组，最开始都是原数字的一部分
-{
-    memset(dp,0,sizeof dp);
-    for(int i = 1;i &lt;= len;++ i)
-    {
-        long long sum = q[i] * turn(10,i - 1);
-        for(int k = 0;k &lt;= n;++ k)
-            dp[i][k][0] = dp[i - 1][k][0] + sum;
-        for(int p = 0;p &lt;= m;++ p)
-            dp[i][0][p] = dp[i - 1][0][p] + sum;
-    }
-}
-void solve(long long x)
-{
-    memset(q,0,sizeof q);
-    while(x) q[++ len] = x % 10,x /= 10;//将整个数处理为数位
-    deal();
-    
-    for(int i = 1;i &lt;= len;++ i)//用背包的方式处理数组，思想同上
-    {
-        for(int j = q[i];j &lt;= 9;++ j)
-        {
-            int a = j - q[i],b = q[i] + 10 - j;
-            long long sum = j * turn(10,i - 1);
-            for(int k = 0;k &lt;= n;++ k)
-            for(int p = 0;p &lt;= m;++ p)
-            {
-                if(k &gt;= a) dp[i][k][p] = max(dp[i][k][p],dp[i - 1][k - a][p] + sum);
-                if(p &gt;= b) dp[i][k][p] = max(dp[i][k][p],dp[i - 1][k][p - b] + sum);//记得判断是否够用
-            }
-        }
-    }
-    return ;
-}
-
-int main()
-{
-    scanf(&quot;%lld%d%d&quot;,&amp;num,&amp;n,&amp;m);
-    solve(num);
-    printf(&quot;%lld&quot;,dp[len][n][m]);//输出即可
-    return 0;
-}
-</code></pre>
-
-    </div>
-</div>
-
-<h2 id="Afterword"><a href="#Afterword" class="headerlink" title="Afterword"></a>Afterword</h2><p>第一次写 tj，如有 bug 或 hack，请联系本蒟蒻，一定改正。<br><del>（没有也可以点个赞或关注啊）。</del></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+      
+    <div class="collection-year">
+      <span class="collection-header">2023</span>
     </div>
 
-    
-    
-    
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <div class="post-meta-container">
+        <time itemprop="dateCreated"
+              datetime="2023-01-01T21:36:07+08:00"
+              content="2023-01-01">
+          01-01
+        </time>
+      </div>
 
-    <footer class="post-footer">
-          
+      <div class="post-title">
+        <a class="post-title-link" href="/OI/%E9%A2%98%E8%A7%A3/P8801-%E9%A2%98%E8%A7%A3/" itemprop="url">
+          <span itemprop="name">P8801 [蓝桥杯 2022 国 B] 最大数字  题解</span>
+        </a>
+      </div>
 
-<div class="post-copyright">
-<ul>
-  <li class="post-copyright-author">
-      <strong>本文作者： </strong>FatedShadow
-  </li>
-  <li class="post-copyright-link">
-      <strong>本文链接：</strong>
-      <a href="http://fatedshadow.github.io/OI/%E9%A2%98%E8%A7%A3/P8801-%E9%A2%98%E8%A7%A3/" title="P8801 [蓝桥杯 2022 国 B] 最大数字  题解">http://fatedshadow.github.io/OI/题解/P8801-题解/</a>
-  </li>
-  <li class="post-copyright-license">
-      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
-  </li>
-</ul>
-</div>
-
-          <div class="post-tags">
-              <a href="/tags/OI/" rel="tag"><i class="fa fa-tag"> OI</i>
-              <a href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag"><i class="fa fa-tag"> 题解</i>
-          </div>
-
-        
-
-          <div class="post-nav">
-            <div class="post-nav-item">
-            </div>
-            <div class="post-nav-item">
-                <a href="/OI/%E9%A2%98%E8%A7%A3/ARC138A-%E9%A2%98%E8%A7%A3/" rel="next" title="ARC138A Larger Score 题解">
-                  ARC138A Larger Score 题解 <i class="fa fa-angle-right"></i>
-                </a>
-            </div>
-          </div>
-    </footer>
+      
+    </header>
   </article>
-</div>
 
-
-
-
-
+    </div>
+  </div>
+  
+  
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/categories/OI/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/categories/OI/">1</a><span class="page-number current">2</span>
+  </nav>
 
 </div>
   </main>
@@ -572,7 +387,7 @@ setInterval("createtime()",250);
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
