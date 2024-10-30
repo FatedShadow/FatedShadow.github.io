@@ -3774,7 +3774,9 @@ signed main()
   <entry>
     <title>P11202 题解</title>
     <url>/OI/%E9%A2%98%E8%A7%A3/P11202-%E9%A2%98%E8%A7%A3/</url>
-    <content><![CDATA[<p>看了下题解区，全是 bfs 写法，所以专门搓了一篇 dp 来补一下。</p>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>看了下题解区，全是 bfs 写法，所以专门搓了一篇 dp 来补一下。</p>
+<span id="more"></span>
+
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>发现去掉 $k$ 的限制（即 $k&#x3D;0$ 的时候），就是类似公共子序列的做法，但是有 $k$ 的限制，这部分不太好处理。容易想到直接压进去前 k 位字母分别填了什么，这样是正确的，但是复杂度不允许，时空间 $O(52^k\times nm)$ 易爆炸。<br>现在考虑哪些状态可以优化掉。由于 $k$ 比较小，我们发现：如果需要向序列中补一些既不属于 $s$ 又不属于 $t$ 的字母（不如成为集合外的字母），那么我们并不用考虑集合外的字母之间的间隔问题（$k$ 很小，全集比较大），也就是说：需要补一些集合外的字母的情况，只会在只考虑集合中的字母之间间隔过小时出现。<br>那么这 $k$ 维可以由 52 个状态优化成 4 个状态：这一位的字母是 选择的字符串 $S$ 中的字母 &#x2F; 选择字符串 $T$ 中的字母 &#x2F; 两者当前位相同的字母（即两个串都选择） &#x2F; 补的集合外的字母。我们可以由这些状态推出前 $k$ 个字母中两个串各有几个，从而得出哪些字母不能选。<br>为了方便，可以直接使用 4 进制的状压，直接进行滚动即可。<br>最后再处理一下往当前结尾的状态里面塞集合外的字母的最小值即可，时空复杂 $O(4^k\times nm)$。</p>
 <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p><strong>Talk is cheap, show me the code.</strong></p>
 <div class='spoiler collapsed'>
@@ -3896,6 +3898,8 @@ signed main() {
     <title>ARC138A Larger Score 题解</title>
     <url>/OI/%E9%A2%98%E8%A7%A3/ARC138A-%E9%A2%98%E8%A7%A3/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><a href="https://www.luogu.com.cn/problem/AT_arc138_a">题目传送门</a>，到<a href="https://fatedshadow.github.io/OI/%E9%A2%98%E8%A7%A3/ARC138A-%E9%A2%98%E8%A7%A3//#more">博客</a>食用。<br>@Split_shadow 特荐我此题，现记录题目（已知），贪心方法（求证）与思路（证明），附上暴力思路（代码解析）。<br>只能说是一道<del>用数据结构</del>或<del>神奇二分</del>的<del>神仙</del> 贪心题。</p>
+<span id="more"></span>
+
 <h2 id="思路证明"><a href="#思路证明" class="headerlink" title="思路证明"></a>思路证明</h2><h3 id="已知"><a href="#已知" class="headerlink" title="已知"></a>已知</h3><p>现存在一个长度为 $n$ 的数列 $a_{1},a_{2},a_{3},a_{4}\dots a_{n}$，给定数 $k$，求最少的交换次数 $times$ 使得交换后的数列 $b$ 中 $(\sum_{i&#x3D;1}^{k}b_{i})&gt;(\sum_{i&#x3D;1}^{k}a_{i})$。<br>（规定交换为 $\operatorname{swap}(a_{i},a_{i+1})$，且 $(1\le i&lt;n)$）。</p>
 <h3 id="求证"><a href="#求证" class="headerlink" title="求证"></a>求证</h3><p>为使 $times$ 尽量小，则所有交换操作和并起来应该是一次不比较大小的冒泡操作（即在 $a_{1}$ 到 $a_{k}$ 中仍有 $k-1$ 个不考虑位置的数不变）。</p>
 <h3 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h3><p>假设在 $times$ 最小时，前 $k$ 个数中变换后不变的数（不考虑位置）小于 $k-1$ 个，即变化的数大于 $2$ 个。<br>先就 $2$ 个的情况讨论。<br>设在前 $k$ 个数中 $a_{x},a_{y}$ 在冒泡操作后被替换为 $a_{m},a_{n}(1\le x,y\le k&lt;m,n)$。<br>则有：$a_{x}+a_{y}&lt;a_{m}+a_{n}$。<br>不妨令 $a_{x}&lt;a_{m}$（这个是一定存在的），且在 $a_{x},a_{y}$ 与 $a_{m},a_{n}$ 两组中，非同组元素互换时，$a_{x}$ 与 $a_{m}$ 互换冒泡所费次数最少。<br>则存在一种方案，使 $a_{x}$ 与 $a_{m}$ 互换冒泡符合题意，且比当前方案花费次数更优（如果要 $4$ 个元素互换，那么必然比 $2$ 个元素互换花费次数更多），与假设矛盾，则可以证得该结论。<br>至于变化的数更多的情况，依次推理即可证得。</p>
@@ -4045,6 +4049,8 @@ int main()
     <title>P8801 [蓝桥杯 2022 国 B] 最大数字  题解</title>
     <url>/OI/%E9%A2%98%E8%A7%A3/P8801-%E9%A2%98%E8%A7%A3/</url>
     <content><![CDATA[<h2 id="foreword"><a href="#foreword" class="headerlink" title="foreword"></a>foreword</h2><p><a href="https://www.luogu.com.cn/problem/P8801">题目传送门</a>，同时，<a href="https://fatedshadow.github.io/OI/%E9%A2%98%E8%A7%A3/P8801-%E9%A2%98%E8%A7%A3/#more">到博客使用更好</a>。</p>
+<span id="more"></span>
+
 <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>对于这道 数位 dp 偏简单例题——<br>（怎么看出来的？<del>标签</del>，处理数较大，处理部分按数位进行，是数位 dp 罢。）<br>楼下大佬用递归搜索 dp 或贪心暴力切题，本人秉着应有尽有的原则，为社区着想 <del>（蹭估值）</del> 地交了一篇递推写法的 dp。</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>先将输入的数字按位处理好后，应该建立状态转移方程。<br>因为本题数据太水了（bushi，<del>蒟蒻懒得想</del>，故构造了一个三维数组 $dp_{i,k,p}$，其中：</p>
 <ul>

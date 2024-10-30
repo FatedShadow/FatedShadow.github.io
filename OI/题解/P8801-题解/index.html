@@ -21,15 +21,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"fatedshadow.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"fold":{"enable":false,"height":1000},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="foreword题目传送门，同时，到博客使用更好。 Introduction对于这道 数位 dp 偏简单例题——（怎么看出来的？标签，处理数较大，处理部分按数位进行，是数位 dp 罢。）楼下大佬用递归搜索 dp 或贪心暴力切题，本人秉着应有尽有的原则，为社区着想 （蹭估值） 地交了一篇递推写法的 dp。 Solution先将输入的数字按位处理好后，应该建立状态转移方程。因为本题数据太水了（bush">
+    <meta name="description" content="foreword题目传送门，同时，到博客使用更好。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="P8801 [蓝桥杯 2022 国 B] 最大数字  题解">
 <meta property="og:url" content="http://fatedshadow.github.io/OI/%E9%A2%98%E8%A7%A3/P8801-%E9%A2%98%E8%A7%A3/index.html">
 <meta property="og:site_name" content="FatedShadow&#39;s Blog">
-<meta property="og:description" content="foreword题目传送门，同时，到博客使用更好。 Introduction对于这道 数位 dp 偏简单例题——（怎么看出来的？标签，处理数较大，处理部分按数位进行，是数位 dp 罢。）楼下大佬用递归搜索 dp 或贪心暴力切题，本人秉着应有尽有的原则，为社区着想 （蹭估值） 地交了一篇递推写法的 dp。 Solution先将输入的数字按位处理好后，应该建立状态转移方程。因为本题数据太水了（bush">
+<meta property="og:description" content="foreword题目传送门，同时，到博客使用更好。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-01-01T13:36:07.000Z">
-<meta property="article:modified_time" content="2024-10-30T03:07:56.027Z">
+<meta property="article:modified_time" content="2024-10-30T07:21:00.556Z">
 <meta property="article:author" content="FatedShadow">
 <meta property="article:tag" content="OI">
 <meta property="article:tag" content="题解">
@@ -290,7 +290,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-10-30 11:07:56" itemprop="dateModified" datetime="2024-10-30T11:07:56+08:00">2024-10-30</time>
+      <time title="修改时间：2024-10-30 15:21:00" itemprop="dateModified" datetime="2024-10-30T15:21:00+08:00">2024-10-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -338,6 +338,8 @@
     
     
     <div class="post-body" itemprop="articleBody"><h2 id="foreword"><a href="#foreword" class="headerlink" title="foreword"></a>foreword</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P8801">题目传送门</a>，同时，<a href="https://fatedshadow.github.io/OI/%E9%A2%98%E8%A7%A3/P8801-%E9%A2%98%E8%A7%A3/#more">到博客使用更好</a>。</p>
+<span id="more"></span>
+
 <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>对于这道 数位 dp 偏简单例题——<br>（怎么看出来的？<del>标签</del>，处理数较大，处理部分按数位进行，是数位 dp 罢。）<br>楼下大佬用递归搜索 dp 或贪心暴力切题，本人秉着应有尽有的原则，为社区着想 <del>（蹭估值）</del> 地交了一篇递推写法的 dp。</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>先将输入的数字按位处理好后，应该建立状态转移方程。<br>因为本题数据太水了（bushi，<del>蒟蒻懒得想</del>，故构造了一个三维数组 $dp_{i,k,p}$，其中：</p>
 <ul>
