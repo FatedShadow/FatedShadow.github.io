@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.ico">
@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-flash.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"fatedshadow.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"fold":{"enable":false,"height":1000},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"fatedshadow.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"fold":{"enable":false,"height":1000},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="前言二维凸包。但是笔者学的依托答辩。">
 <meta property="og:type" content="article">
@@ -324,14 +324,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>7.4k</span>
+      <span>8.6k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>13 分钟</span>
+      <span>16 分钟</span>
     </span>
 </div>
 
@@ -372,125 +372,7 @@
         Code
     </div>
     <div class='spoiler-content'>
-        <pre><code class="cpp">#include&lt;iostream&gt;
-#include&lt;cstring&gt;
-#include&lt;vector&gt;
-#include&lt;queue&gt;
-#include&lt;string&gt;
-#include&lt;algorithm&gt;
-#include&lt;cmath&gt;
-#include&lt;cstdio&gt;
-#include&lt;set&gt;
-using namespace std;
-const int N = 1e5 + 10;
-const double eps = 1e-6;
-int n;
-int cnt = 0;
-double sum = 0.0;
-struct point {
-    double x, y;
-    point (const double&amp; x0 = 0, const double&amp; y0 = 0) : x(x0), y(y0) { }
-    point operator + (const point&amp; t)  const {
-        return point(x + t.x, y + t.y);
-    }
-    point operator - (const point&amp; t)  const {
-        return point(x - t.x, y - t.y);
-    }
-    point operator * (const double&amp; t)  const {
-        return point(x * t, y * t);
-    }
-    point operator / (const double&amp; t) const {
-        return point(x / t, y / t);
-    }
-    point rotate() {
-        return point(y, -x);
-    }
-} p[N], low, q[N];
-double dot(const point&amp; a, const point&amp; b) {
-    return a.x * b.x + a.y * b.y;
-}
-double cross(const point&amp; a, const point&amp; b) {
-    return a.x * b.y - a.y * b.x;
-}
-double len(const point&amp; a) {
-    return sqrt(dot(a, a));
-}
-double dis(const point &amp;a, const point &amp;b) {
-    return sqrt(dot(a - b, a - b));
-}
-
-template&lt;class T&gt;
-inline void read(T &amp;x) {
-    T res = 0, f = 1; char cc = getchar();
-    while(! isdigit(cc)) {
-        if(cc == &#39;-&#39;) f = -1;
-        cc = getchar();
-    }
-    while(isdigit(cc)) res = (res &lt;&lt; 1) + (res &lt;&lt; 3) + cc - 48, cc = getchar();
-    x = res * f; return ;
-}
-template&lt;class T, class ...T1&gt;
-inline void read(T &amp;x, T1 &amp;...x1) {
-    read(x), read(x1...); return ;
-}
-template&lt;class T&gt;
-inline void write(T x) {
-    if(x &lt; 0) x = -x, put(&#39;-&#39;);
-    if(x &gt; 9) write(x / 10);
-    put(x % 10 + 48); return ;
-}
-template&lt;&gt;
-inline void write(char x) {
-    put(x); return ;
-}
-template&lt;class T, class ...T1&gt;
-inline void write(T x, T1 ...x1) {
-    write(x),write(x1...); return ;
-}
-template &lt;class T&gt;
-inline bool chkmax(T &amp;x, T y) {
-    return x &lt; y ? x = y , 1 : 0;
-}
-int sign(double a) {
-    if(fabs(a) &lt; eps)
-        return 0;
-    return a &gt; 0 ? 1 : -1;
-}
-bool cmp(point a, point b) {
-    if(sign(cross(a - low, b - low)) &gt; 0)
-        return true;
-    if(sign(cross(a - low, b - low)) == 0 &amp;&amp; sign(dis(low, a) - dis(low, b)) &lt; 0)
-        return true;
-    return false;
-}
-bool check(point a, point b, point c) {
-    return sign(cross(b - a, c - b)) &lt;= 0;
-}
-signed main()
-{
-   // freopen(&quot;.in&quot;, &quot;r&quot;, stdin);
-   // freopen(&quot;.out&quot;, &quot;w&quot;, stdout);
-    read(n), low.y = 1e6;
-    for(int i = 1; i &lt;= n; ++ i)
-        scanf(&quot;%lf%lf&quot;, &amp;p[i].x, &amp;p[i].y),
-        low = (sign(p[i].y - low.y) &lt; 0 || (sign(p[i].y - low.y) == 0 &amp;&amp; sign(p[i].x - low.x) &lt; 0)) ? p[i] : low;
-    sort(p + 1, p + n + 1, cmp);
-    q[++ cnt] = low;
-    for(int i = 1; i &lt;= n; ++ i)
-    {
-        if(sign(p[i].x - low.x) == 0 &amp;&amp; sign(p[i].y - low.y) == 0)
-            continue;
-        while(cnt &gt; 1 &amp;&amp; check(q[cnt - 1], q[cnt], p[i]))
-            -- cnt;
-        q[++ cnt] = p[i];
-    }
-    q[++ cnt] = q[1];
-    for(int i = 1; i &lt; cnt; ++ i)
-        sum += dis(q[i], q[i + 1]);
-    printf(&quot;%.2lf&quot;, sum);
-    return 0;
-}
-</code></pre>
+        <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;set&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">double</span> eps = <span class="number">1e-6</span>;</span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"><span class="type">int</span> cnt = <span class="number">0</span>;</span><br><span class="line"><span class="type">double</span> sum = <span class="number">0.0</span>;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">point</span> &#123;</span><br><span class="line">    <span class="type">double</span> x, y;</span><br><span class="line">    <span class="built_in">point</span> (<span class="type">const</span> <span class="type">double</span>&amp; x0 = <span class="number">0</span>, <span class="type">const</span> <span class="type">double</span>&amp; y0 = <span class="number">0</span>) : <span class="built_in">x</span>(x0), <span class="built_in">y</span>(y0) &#123; &#125;</span><br><span class="line">    point <span class="keyword">operator</span> + (<span class="type">const</span> point&amp; t)  <span class="type">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">point</span>(x + t.x, y + t.y);</span><br><span class="line">    &#125;</span><br><span class="line">    point <span class="keyword">operator</span> - (<span class="type">const</span> point&amp; t)  <span class="type">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">point</span>(x - t.x, y - t.y);</span><br><span class="line">    &#125;</span><br><span class="line">    point <span class="keyword">operator</span> * (<span class="type">const</span> <span class="type">double</span>&amp; t)  <span class="type">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">point</span>(x * t, y * t);</span><br><span class="line">    &#125;</span><br><span class="line">    point <span class="keyword">operator</span> / (<span class="type">const</span> <span class="type">double</span>&amp; t) <span class="type">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">point</span>(x / t, y / t);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">point <span class="title">rotate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">point</span>(y, -x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125; p[N], low, q[N];</span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">dot</span><span class="params">(<span class="type">const</span> point&amp; a, <span class="type">const</span> point&amp; b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.x * b.x + a.y * b.y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">cross</span><span class="params">(<span class="type">const</span> point&amp; a, <span class="type">const</span> point&amp; b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.x * b.y - a.y * b.x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">len</span><span class="params">(<span class="type">const</span> point&amp; a)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sqrt</span>(<span class="built_in">dot</span>(a, a));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">dis</span><span class="params">(<span class="type">const</span> point &amp;a, <span class="type">const</span> point &amp;b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sqrt</span>(<span class="built_in">dot</span>(a - b, a - b));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">read</span><span class="params">(T &amp;x)</span> </span>&#123;</span><br><span class="line">    T res = <span class="number">0</span>, f = <span class="number">1</span>; <span class="type">char</span> cc = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span>(! <span class="built_in">isdigit</span>(cc)) &#123;</span><br><span class="line">        <span class="keyword">if</span>(cc == <span class="string">&#x27;-&#x27;</span>) f = <span class="number">-1</span>;</span><br><span class="line">        cc = <span class="built_in">getchar</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">isdigit</span>(cc)) res = (res &lt;&lt; <span class="number">1</span>) + (res &lt;&lt; <span class="number">3</span>) + cc - <span class="number">48</span>, cc = <span class="built_in">getchar</span>();</span><br><span class="line">    x = res * f; <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> ...T1&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">read</span><span class="params">(T &amp;x, T1 &amp;...x1)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">read</span>(x), <span class="built_in">read</span>(x<span class="number">1.</span>..); <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">write</span><span class="params">(T x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x &lt; <span class="number">0</span>) x = -x, <span class="built_in">put</span>(<span class="string">&#x27;-&#x27;</span>);</span><br><span class="line">    <span class="keyword">if</span>(x &gt; <span class="number">9</span>) <span class="built_in">write</span>(x / <span class="number">10</span>);</span><br><span class="line">    <span class="built_in">put</span>(x % <span class="number">10</span> + <span class="number">48</span>); <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">write</span><span class="params">(<span class="type">char</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">put</span>(x); <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> ...T1&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">write</span><span class="params">(T x, T1 ...x1)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">write</span>(x),<span class="built_in">write</span>(x<span class="number">1.</span>..); <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">bool</span> <span class="title">chkmax</span><span class="params">(T &amp;x, T y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &lt; y ? x = y , <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">sign</span><span class="params">(<span class="type">double</span> a)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">fabs</span>(a) &lt; eps)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> a &gt; <span class="number">0</span> ? <span class="number">1</span> : <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">(point a, point b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">sign</span>(<span class="built_in">cross</span>(a - low, b - low)) &gt; <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">sign</span>(<span class="built_in">cross</span>(a - low, b - low)) == <span class="number">0</span> &amp;&amp; <span class="built_in">sign</span>(<span class="built_in">dis</span>(low, a) - <span class="built_in">dis</span>(low, b)) &lt; <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span><span class="params">(point a, point b, point c)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sign</span>(<span class="built_in">cross</span>(b - a, c - b)) &lt;= <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="comment">// freopen(&quot;.in&quot;, &quot;r&quot;, stdin);</span></span><br><span class="line">   <span class="comment">// freopen(&quot;.out&quot;, &quot;w&quot;, stdout);</span></span><br><span class="line">    <span class="built_in">read</span>(n), low.y = <span class="number">1e6</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++ i)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lf%lf&quot;</span>, &amp;p[i].x, &amp;p[i].y),</span><br><span class="line">        low = (<span class="built_in">sign</span>(p[i].y - low.y) &lt; <span class="number">0</span> || (<span class="built_in">sign</span>(p[i].y - low.y) == <span class="number">0</span> &amp;&amp; <span class="built_in">sign</span>(p[i].x - low.x) &lt; <span class="number">0</span>)) ? p[i] : low;</span><br><span class="line">    <span class="built_in">sort</span>(p + <span class="number">1</span>, p + n + <span class="number">1</span>, cmp);</span><br><span class="line">    q[++ cnt] = low;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++ i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">sign</span>(p[i].x - low.x) == <span class="number">0</span> &amp;&amp; <span class="built_in">sign</span>(p[i].y - low.y) == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">while</span>(cnt &gt; <span class="number">1</span> &amp;&amp; <span class="built_in">check</span>(q[cnt - <span class="number">1</span>], q[cnt], p[i]))</span><br><span class="line">            -- cnt;</span><br><span class="line">        q[++ cnt] = p[i];</span><br><span class="line">    &#125;</span><br><span class="line">    q[++ cnt] = q[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; cnt; ++ i)</span><br><span class="line">        sum += <span class="built_in">dis</span>(q[i], q[i + <span class="number">1</span>]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.2lf&quot;</span>, sum);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 </div></li>
@@ -503,42 +385,7 @@ signed main()
         Code
     </div>
     <div class='spoiler-content'>
-        <pre><code class="cpp">double cross(point A, point B)
-{
-    return A.x * B.y - A.y * B.x;
-}
-double side(point a, point b, point p)
-{
-    point A = point(b.x - a.x, b.y - a.y);
-    point B = point(p.x - a.x, p.y - a.y);
-    return cross(A, B);
-}
-int Andrew(int top)
-{
-    sort(p + 1, p + n + 1);
-    if(n &lt; 3)
-    {
-        puts(&quot;-1&quot;);
-        return;
-    }
-    st[0] = p[1], st[1] = p[2];
-    top = 1;
-    for (int i = 3; i &lt;=n ; ++ i)//下凸包
-    {
-        while(top &amp;&amp; side(st[top - 1], st[top], p[i]) &lt;= 0)
-            -- top;
-        st[++ top] = p[i];
-    }
-    st[++ top] = p[n - 1];
-    for(int i = n - 2; i &gt;= 1; -- i)//上凸包 
-    {
-        while(top &amp;&amp; side(st[top - 1], st[top], p[i]) &lt;= 0)
-            -- top;
-        st[++ top] = p[i];
-    }
-    return top;
-}
-</code></pre>
+        <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">double</span> <span class="title">cross</span><span class="params">(point A, point B)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> A.x * B.y - A.y * B.x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">side</span><span class="params">(point a, point b, point p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    point A = <span class="built_in">point</span>(b.x - a.x, b.y - a.y);</span><br><span class="line">    point B = <span class="built_in">point</span>(p.x - a.x, p.y - a.y);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">cross</span>(A, B);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">Andrew</span><span class="params">(<span class="type">int</span> top)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">sort</span>(p + <span class="number">1</span>, p + n + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span>(n &lt; <span class="number">3</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">&quot;-1&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    st[<span class="number">0</span>] = p[<span class="number">1</span>], st[<span class="number">1</span>] = p[<span class="number">2</span>];</span><br><span class="line">    top = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">3</span>; i &lt;=n ; ++ i)<span class="comment">//下凸包</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(top &amp;&amp; <span class="built_in">side</span>(st[top - <span class="number">1</span>], st[top], p[i]) &lt;= <span class="number">0</span>)</span><br><span class="line">            -- top;</span><br><span class="line">        st[++ top] = p[i];</span><br><span class="line">    &#125;</span><br><span class="line">    st[++ top] = p[n - <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = n - <span class="number">2</span>; i &gt;= <span class="number">1</span>; -- i)<span class="comment">//上凸包 </span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(top &amp;&amp; <span class="built_in">side</span>(st[top - <span class="number">1</span>], st[top], p[i]) &lt;= <span class="number">0</span>)</span><br><span class="line">            -- top;</span><br><span class="line">        st[++ top] = p[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> top;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 </div></li>
@@ -550,155 +397,7 @@ int Andrew(int top)
         Code
     </div>
     <div class='spoiler-content'>
-        <pre><code class="cpp">#include&lt;iostream&gt;
-#include&lt;cstring&gt;
-#include&lt;vector&gt;
-#include&lt;queue&gt;
-#include&lt;string&gt;
-#include&lt;algorithm&gt;
-#include&lt;cmath&gt;
-#include&lt;cstdio&gt;
-#include&lt;set&gt;
-##define put putchar
-##define ls(a) (a &lt;&lt; 1)
-##define rs(a) (a &lt;&lt; 1 | 1)
-##define pii pair&lt;int, int&gt;
-
-using namespace std;
-
-const int N = 1e5 + 10;
-const double eps = 1e-6;
-const double pi = acos(-1);
-
-int n, cnt = 0;
-double w, h, r, sum = 0.0;
-
-struct point {
-    double x, y;
-    point (const double&amp; x0 = 0, const double&amp; y0 = 0) : x(x0), y(y0) { }
-    point operator + (const point&amp; t)  const {
-        return point(x + t.x, y + t.y);
-    }
-    point operator - (const point&amp; t)  const {
-        return point(x - t.x, y - t.y);
-    }
-    point operator * (const double&amp; t)  const {
-        return point(x * t, y * t);
-    }
-    point operator / (const double&amp; t) const {
-        return point(x / t, y / t);
-    }
-    point rotate() {
-        return point(y, -x);
-    }
-} p[N], q[N];
-
-double dot(const point&amp; a, const point&amp; b) {
-    return a.x * b.x + a.y * b.y;
-}
-double cross(const point&amp; a, const point&amp; b) {
-    return a.x * b.y - a.y * b.x;
-}
-double len(const point&amp; a) {
-    return sqrt(dot(a, a));
-}
-double dis(const point &amp;a, const point &amp;b) {
-    return sqrt(dot(a - b, a - b));
-}
-
-template&lt;class T&gt;
-inline void read(T &amp;x) {
-    T res = 0, f = 1; char cc = getchar();
-    while(! isdigit(cc)) {
-        if(cc == &#39;-&#39;) f = -1;
-        cc = getchar();
-    }
-    while(isdigit(cc)) res = (res &lt;&lt; 1) + (res &lt;&lt; 3) + cc - 48, cc = getchar();
-    x = res * f; return ;
-}
-template&lt;class T, class ...T1&gt;
-inline void read(T &amp;x, T1 &amp;...x1) {
-    read(x), read(x1...); return ;
-}
-template&lt;class T&gt;
-inline void write(T x) {
-    if(x &lt; 0) x = -x, put(&#39;-&#39;);
-    if(x &gt; 9) write(x / 10);
-    put(x % 10 + 48); return ;
-}
-template&lt;&gt;
-inline void write(char x) {
-    put(x); return ;
-}
-template&lt;class T, class ...T1&gt;
-inline void write(T x, T1 ...x1) {
-    write(x),write(x1...); return ;
-}
-template &lt;class T&gt;
-inline bool chkmax(T &amp;x, T y) {
-    return x &lt; y ? x = y , 1 : 0;
-}
-
-int sign(double a)
-{
-    if(fabs(a) &lt; eps)
-        return 0;
-    return a &gt; 0 ? 1 : -1;
-}
-
-bool cmp(point a, point b) {
-    if(sign(cross(a - p[1], b - p[1])) &gt; 0)
-        return true;
-    if(sign(cross(a - p[1], b - p[1])) == 0 &amp;&amp; sign(dis(p[1], a) - dis(p[1], b)) &lt; 0)
-        return true;
-    return false;
-}
-bool check(point a, point b, point c) {
-    return sign(cross(b - a, c - b)) &lt;= 0;
-}
-
-void get_ans()
-{
-    int t = 1;
-    for(int i = 2; i &lt;= n; ++ i)
-        if(sign(p[i].y - p[t].y) &lt; 0 || (sign(p[i].y - p[t].y) == 0 &amp;&amp; sign(p[i].x - p[t].x) &lt; 0))
-            t = i;
-    swap(p[t], p[1]);
-    sort(p + 2, p + n + 1, cmp);
-    q[++ cnt] = p[1];
-    for(int i = 2; i &lt;= n; ++ i)
-    {
-        while(cnt &gt; 1 &amp;&amp; check(q[cnt - 1], q[cnt], p[i]))
-            -- cnt;
-        q[++ cnt] = p[i];
-    }
-    q[++ cnt] = q[1];
-    for(int i = 1; i &lt; cnt; ++ i)
-        sum += dis(q[i], q[i + 1]);
-    printf(&quot;%.2lf&quot;, sum + r * pi * 2);
-}
-
-signed main()
-{
-   // freopen(&quot;.in&quot;, &quot;r&quot;, stdin);
-   // freopen(&quot;.out&quot;, &quot;w&quot;, stdout);
-    read(n);
-    scanf(&quot;%lf%lf%lf&quot;, &amp;w, &amp;h, &amp;r);
-    int idx = 0;
-    for(int i = 1; i &lt;= n; ++ i)
-    {
-        double a, b, c;
-        scanf(&quot;%lf%lf%lf&quot;, &amp;a, &amp;b, &amp;c);
-        p[++ idx] = (point) {(h / 2 - r) * cos(c) - (w / 2 - r) * sin(c) + a, (w / 2 - r) * cos(c) + (h / 2 - r) * sin(c) + b};
-        p[++ idx] = (point) {-(h / 2 - r) * cos(c) - (w / 2 - r) * sin(c) + a, (w / 2 - r) * cos(c) - (h / 2 - r) * sin(c) + b};
-        p[++ idx] = (point) {(h / 2 - r) * cos(c) + (w / 2 - r) * sin(c) + a, -(w / 2 - r) * cos(c) + (h / 2 - r) * sin(c) + b};
-        p[++ idx] = (point) {-(h / 2 - r) * cos(c) + (w / 2 - r) * sin(c) + a, -(w / 2 - r) * cos(c) - (h / 2 - r) * sin(c) + b};
-    }
-    n &lt;&lt;= 2;
-    get_ans();
-    return 0;
-}
-</code></pre>
+        <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;set&gt;</span></span></span><br><span class="line">#<span class="meta">#<span class="keyword">define</span> put putchar</span></span><br><span class="line">#<span class="meta">#<span class="keyword">define</span> ls(a) (a &lt;&lt; 1)</span></span><br><span class="line">#<span class="meta">#<span class="keyword">define</span> rs(a) (a &lt;&lt; 1 | 1)</span></span><br><span class="line">#<span class="meta">#<span class="keyword">define</span> pii pair<span class="string">&lt;int, int&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">double</span> eps = <span class="number">1e-6</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">double</span> pi = <span class="built_in">acos</span>(<span class="number">-1</span>);</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n, cnt = <span class="number">0</span>;</span><br><span class="line"><span class="type">double</span> w, h, r, sum = <span class="number">0.0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">point</span> &#123;</span><br><span class="line">    <span class="type">double</span> x, y;</span><br><span class="line">    <span class="built_in">point</span> (<span class="type">const</span> <span class="type">double</span>&amp; x0 = <span class="number">0</span>, <span class="type">const</span> <span class="type">double</span>&amp; y0 = <span class="number">0</span>) : <span class="built_in">x</span>(x0), <span class="built_in">y</span>(y0) &#123; &#125;</span><br><span class="line">    point <span class="keyword">operator</span> + (<span class="type">const</span> point&amp; t)  <span class="type">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">point</span>(x + t.x, y + t.y);</span><br><span class="line">    &#125;</span><br><span class="line">    point <span class="keyword">operator</span> - (<span class="type">const</span> point&amp; t)  <span class="type">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">point</span>(x - t.x, y - t.y);</span><br><span class="line">    &#125;</span><br><span class="line">    point <span class="keyword">operator</span> * (<span class="type">const</span> <span class="type">double</span>&amp; t)  <span class="type">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">point</span>(x * t, y * t);</span><br><span class="line">    &#125;</span><br><span class="line">    point <span class="keyword">operator</span> / (<span class="type">const</span> <span class="type">double</span>&amp; t) <span class="type">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">point</span>(x / t, y / t);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">point <span class="title">rotate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">point</span>(y, -x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125; p[N], q[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">dot</span><span class="params">(<span class="type">const</span> point&amp; a, <span class="type">const</span> point&amp; b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.x * b.x + a.y * b.y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">cross</span><span class="params">(<span class="type">const</span> point&amp; a, <span class="type">const</span> point&amp; b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.x * b.y - a.y * b.x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">len</span><span class="params">(<span class="type">const</span> point&amp; a)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sqrt</span>(<span class="built_in">dot</span>(a, a));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">dis</span><span class="params">(<span class="type">const</span> point &amp;a, <span class="type">const</span> point &amp;b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sqrt</span>(<span class="built_in">dot</span>(a - b, a - b));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">read</span><span class="params">(T &amp;x)</span> </span>&#123;</span><br><span class="line">    T res = <span class="number">0</span>, f = <span class="number">1</span>; <span class="type">char</span> cc = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span>(! <span class="built_in">isdigit</span>(cc)) &#123;</span><br><span class="line">        <span class="keyword">if</span>(cc == <span class="string">&#x27;-&#x27;</span>) f = <span class="number">-1</span>;</span><br><span class="line">        cc = <span class="built_in">getchar</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">isdigit</span>(cc)) res = (res &lt;&lt; <span class="number">1</span>) + (res &lt;&lt; <span class="number">3</span>) + cc - <span class="number">48</span>, cc = <span class="built_in">getchar</span>();</span><br><span class="line">    x = res * f; <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> ...T1&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">read</span><span class="params">(T &amp;x, T1 &amp;...x1)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">read</span>(x), <span class="built_in">read</span>(x<span class="number">1.</span>..); <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">write</span><span class="params">(T x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x &lt; <span class="number">0</span>) x = -x, <span class="built_in">put</span>(<span class="string">&#x27;-&#x27;</span>);</span><br><span class="line">    <span class="keyword">if</span>(x &gt; <span class="number">9</span>) <span class="built_in">write</span>(x / <span class="number">10</span>);</span><br><span class="line">    <span class="built_in">put</span>(x % <span class="number">10</span> + <span class="number">48</span>); <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">write</span><span class="params">(<span class="type">char</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">put</span>(x); <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> ...T1&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">write</span><span class="params">(T x, T1 ...x1)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">write</span>(x),<span class="built_in">write</span>(x<span class="number">1.</span>..); <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">bool</span> <span class="title">chkmax</span><span class="params">(T &amp;x, T y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x &lt; y ? x = y , <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">sign</span><span class="params">(<span class="type">double</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">fabs</span>(a) &lt; eps)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> a &gt; <span class="number">0</span> ? <span class="number">1</span> : <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">(point a, point b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">sign</span>(<span class="built_in">cross</span>(a - p[<span class="number">1</span>], b - p[<span class="number">1</span>])) &gt; <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">sign</span>(<span class="built_in">cross</span>(a - p[<span class="number">1</span>], b - p[<span class="number">1</span>])) == <span class="number">0</span> &amp;&amp; <span class="built_in">sign</span>(<span class="built_in">dis</span>(p[<span class="number">1</span>], a) - <span class="built_in">dis</span>(p[<span class="number">1</span>], b)) &lt; <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span><span class="params">(point a, point b, point c)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sign</span>(<span class="built_in">cross</span>(b - a, c - b)) &lt;= <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">get_ans</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> t = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; ++ i)</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">sign</span>(p[i].y - p[t].y) &lt; <span class="number">0</span> || (<span class="built_in">sign</span>(p[i].y - p[t].y) == <span class="number">0</span> &amp;&amp; <span class="built_in">sign</span>(p[i].x - p[t].x) &lt; <span class="number">0</span>))</span><br><span class="line">            t = i;</span><br><span class="line">    <span class="built_in">swap</span>(p[t], p[<span class="number">1</span>]);</span><br><span class="line">    <span class="built_in">sort</span>(p + <span class="number">2</span>, p + n + <span class="number">1</span>, cmp);</span><br><span class="line">    q[++ cnt] = p[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; ++ i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(cnt &gt; <span class="number">1</span> &amp;&amp; <span class="built_in">check</span>(q[cnt - <span class="number">1</span>], q[cnt], p[i]))</span><br><span class="line">            -- cnt;</span><br><span class="line">        q[++ cnt] = p[i];</span><br><span class="line">    &#125;</span><br><span class="line">    q[++ cnt] = q[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; cnt; ++ i)</span><br><span class="line">        sum += <span class="built_in">dis</span>(q[i], q[i + <span class="number">1</span>]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.2lf&quot;</span>, sum + r * pi * <span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="comment">// freopen(&quot;.in&quot;, &quot;r&quot;, stdin);</span></span><br><span class="line">   <span class="comment">// freopen(&quot;.out&quot;, &quot;w&quot;, stdout);</span></span><br><span class="line">    <span class="built_in">read</span>(n);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lf%lf%lf&quot;</span>, &amp;w, &amp;h, &amp;r);</span><br><span class="line">    <span class="type">int</span> idx = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; ++ i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">double</span> a, b, c;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lf%lf%lf&quot;</span>, &amp;a, &amp;b, &amp;c);</span><br><span class="line">        p[++ idx] = (point) &#123;(h / <span class="number">2</span> - r) * <span class="built_in">cos</span>(c) - (w / <span class="number">2</span> - r) * <span class="built_in">sin</span>(c) + a, (w / <span class="number">2</span> - r) * <span class="built_in">cos</span>(c) + (h / <span class="number">2</span> - r) * <span class="built_in">sin</span>(c) + b&#125;;</span><br><span class="line">        p[++ idx] = (point) &#123;-(h / <span class="number">2</span> - r) * <span class="built_in">cos</span>(c) - (w / <span class="number">2</span> - r) * <span class="built_in">sin</span>(c) + a, (w / <span class="number">2</span> - r) * <span class="built_in">cos</span>(c) - (h / <span class="number">2</span> - r) * <span class="built_in">sin</span>(c) + b&#125;;</span><br><span class="line">        p[++ idx] = (point) &#123;(h / <span class="number">2</span> - r) * <span class="built_in">cos</span>(c) + (w / <span class="number">2</span> - r) * <span class="built_in">sin</span>(c) + a, -(w / <span class="number">2</span> - r) * <span class="built_in">cos</span>(c) + (h / <span class="number">2</span> - r) * <span class="built_in">sin</span>(c) + b&#125;;</span><br><span class="line">        p[++ idx] = (point) &#123;-(h / <span class="number">2</span> - r) * <span class="built_in">cos</span>(c) + (w / <span class="number">2</span> - r) * <span class="built_in">sin</span>(c) + a, -(w / <span class="number">2</span> - r) * <span class="built_in">cos</span>(c) - (h / <span class="number">2</span> - r) * <span class="built_in">sin</span>(c) + b&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    n &lt;&lt;= <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">get_ans</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 </div>
@@ -777,13 +476,13 @@ signed main()
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">203k</span>
+    <span title="站点总字数">226k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">6:09</span>
+    <span title="站点阅读时长">6:52</span>
   </span>
 </div>
 <div class="busuanzi-count">

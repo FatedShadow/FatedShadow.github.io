@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.ico">
@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-flash.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"fatedshadow.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"fold":{"enable":false,"height":1000},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"fatedshadow.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"fold":{"enable":false,"height":1000},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="前言看了下题解区，全是 bfs 写法，所以专门搓了一篇 dp 来补一下。">
 <meta property="og:type" content="article">
@@ -29,7 +29,7 @@
 <meta property="og:description" content="前言看了下题解区，全是 bfs 写法，所以专门搓了一篇 dp 来补一下。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-10-30T03:19:55.000Z">
-<meta property="article:modified_time" content="2024-10-30T07:21:27.913Z">
+<meta property="article:modified_time" content="2024-11-01T02:55:55.147Z">
 <meta property="article:author" content="FatedShadow">
 <meta property="article:tag" content="OI">
 <meta property="article:tag" content="题解">
@@ -282,9 +282,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2024-10-30 11:19:55 / 修改时间：15:21:27" itemprop="dateCreated datePublished" datetime="2024-10-30T11:19:55+08:00">2024-10-30</time>
+      <time title="创建时间：2024-10-30 11:19:55" itemprop="dateCreated datePublished" datetime="2024-10-30T11:19:55+08:00">2024-10-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-11-01 10:55:55" itemprop="dateModified" datetime="2024-11-01T10:55:55+08:00">2024-11-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -314,14 +320,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>3.4k</span>
+      <span>3.8k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>6 分钟</span>
+      <span>7 分钟</span>
     </span>
 </div>
 
@@ -341,101 +347,7 @@
         Code
     </div>
     <div class='spoiler-content'>
-        <pre><code class="cpp">// Problem: P11202 [JOIG 2024] 名前 / Name
-// Contest: Luogu
-// URL: https://www.luogu.com.cn/problem/P11202
-// Memory Limit: 1 MB
-// Time Limit: 1000 ms
-// 
-// Powered by CP Editor (https://cpeditor.org)
-
-#include&lt;bits/stdc++.h&gt;
-#define int long long
-using namespace std;
-namespace FastIO {
-    char gc() {
-        static char buf[1 &lt;&lt; 24], *is = buf, *it = buf;
-        if (is == it) is = buf, it = is + fread(buf, 1, 1 &lt;&lt; 24, stdin);
-        return is == it ? EOF : *is ++;
-    }
-    char out[1 &lt;&lt; 24];
-    int len;
-    void flush() { fwrite(out, 1, len, stdout), len = 0; }
-    void pc(char x) {if (len == 1 &lt;&lt; 24) flush(); out[len ++] = x;}
-    struct Flusher {~Flusher() {flush();} } Fls;
-    // #define gc() getchar()
-    // #define pc(X) putchar(X)
-    inline void read(char&amp; ch) {ch = gc();}
-    inline void read(char *s) {
-        char ch = gc();
-        while (ch &lt; 33 || ch &gt; 126) ch = gc();
-        for (; ch &gt;= 33 &amp;&amp; ch &lt;= 126; ch = gc()) *s++ = ch;
-        *s = &#39;\0&#39;;
-    }
-    template &lt;class T&gt;
-    inline void read(T &amp;x) {
-        char c, flag = 0;
-        while ((c = gc()) &lt; &#39;0&#39; || c &gt; &#39;9&#39;) flag |= c == &#39;-&#39;;
-        x = c &amp; 15;
-        while ((c = gc()) &gt;= &#39;0&#39; &amp;&amp; c &lt;= &#39;9&#39;)
-        x = (x &lt;&lt; 3) + (x &lt;&lt; 1) + (c &amp; 15);
-        if (flag) x = ~x + 1;
-    }
-    template &lt;class T, class ...T1&gt;
-    inline void read(T &amp;x, T1 &amp;...x1) {read(x), read(x1...);}
-    template &lt;class T&gt;
-    inline void _put(T x) {if(x &gt; 9) _put(x / 10); pc((x % 10) | 48);}
-    template &lt;class T&gt;
-    inline void write(T x) {if(x &lt; 0) pc(&#39;-&#39;), x = ~x + 1; _put(x);}
-    template &lt;&gt; inline void write(char x) {pc(x);}
-    template &lt;class T, class ...T1&gt;
-    inline void write(T x, T1 ...x1) {write(x), write(x1...);}
-}
-using FastIO::read;
-using FastIO::write;
-template &lt;class T&gt;
-inline bool chkmin(T &amp;x, T y) {return x &gt; y ? x = y, 1 : 0;}
-template &lt;class T&gt;
-inline bool chkmax(T &amp;x, T y) {return x &lt; y ? x = y, 1 : 0;}
-
-const int N = 5e2 + 10, M = 1 &lt;&lt; 6;
-int n, m, k, dp[N][N][M], ans, lim;
-char s[N], t[N];
-bool check(int i, int j, int sta, int f1, int f2) {
-    int cs = 0, ct = 0, flag = 0;
-    while(sta) cs += sta &amp; 3 &amp; 1, ct += (sta &amp; 3 &amp; 2) &gt;&gt; 1, sta &gt;&gt;= 2;
-    if(f1) for(int p = 1; p &lt;= cs &amp;&amp; p &lt; i; ++p) flag |= (s[i] == s[i - p]);
-    if(f1) for(int p = 1; p &lt;= ct &amp;&amp; j - p - f2 + 1 &gt; 0; ++p)
-        flag |= (s[i] == t[j - p - f2 + 1]);
-    if(f2) for(int p = 1; p &lt;= ct &amp;&amp; p &lt; j; ++p) flag |= (t[j] == t[j - p]);
-    if(f2) for(int p = 1; p &lt;= cs &amp;&amp; i - p - f1 + 1 &gt; 0; ++p)
-        flag |= (t[j] == s[i - p - f1 + 1]);
-    return !flag;
-}
-void solve(int i, int j, int f1, int f2) {
-    int now = f1 * 1 + f2 * 2;
-    for(int sta = 0; sta &lt;= lim; ++sta) if(check(i, j, sta, f1, f2))
-        chkmin(dp[i][j][((sta &lt;&lt; 2) + now) &amp; lim], dp[i - f1][j - f2][sta] + 1);
-    for(int sta = lim; ~sta; --sta) for(int p = 1; p &lt;= k; ++p)
-        chkmin(dp[i][j][(sta &lt;&lt; (p * 2)) &amp; lim], dp[i][j][sta] + p);
-}
-
-signed main() {
-    // freopen(&quot;.in&quot;, &quot;r&quot;, stdin);
-    // freopen(&quot;.out&quot;, &quot;w&quot;, stdout);
-    read(n, m, k), read(s + 1), read(t + 1); memset(dp, 0x3f, sizeof dp);
-    dp[0][0][0] = 0, ans = (n + m) * (k + 1), lim = (1 &lt;&lt; (2 * k)) - 1;
-    for(int i = 0; i &lt;= n; ++i)
-        for(int j = 0; j &lt;= m; ++j) {
-            if(i &amp;&amp; j &amp;&amp; s[i] == t[j]) solve(i, j, 1, 1);
-            if(i) solve(i, j, 1, 0);
-            if(j) solve(i, j, 0, 1);
-        }
-    for(int sta = 0; sta &lt;= lim; ++sta) chkmin(ans, dp[n][m][sta]);
-    write(ans);
-    return 0;
-}
-</code></pre>
+        <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Problem: P11202 [JOIG 2024] 名前 / Name</span></span><br><span class="line"><span class="comment">// Contest: Luogu</span></span><br><span class="line"><span class="comment">// URL: https://www.luogu.com.cn/problem/P11202</span></span><br><span class="line"><span class="comment">// Memory Limit: 1 MB</span></span><br><span class="line"><span class="comment">// Time Limit: 1000 ms</span></span><br><span class="line"><span class="comment">// </span></span><br><span class="line"><span class="comment">// Powered by CP Editor (https://cpeditor.org)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">namespace</span> FastIO &#123;</span><br><span class="line">    <span class="function"><span class="type">char</span> <span class="title">gc</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="type">static</span> <span class="type">char</span> buf[<span class="number">1</span> &lt;&lt; <span class="number">24</span>], *is = buf, *it = buf;</span><br><span class="line">        <span class="keyword">if</span> (is == it) is = buf, it = is + <span class="built_in">fread</span>(buf, <span class="number">1</span>, <span class="number">1</span> &lt;&lt; <span class="number">24</span>, stdin);</span><br><span class="line">        <span class="keyword">return</span> is == it ? EOF : *is ++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">char</span> out[<span class="number">1</span> &lt;&lt; <span class="number">24</span>];</span><br><span class="line">    <span class="type">int</span> len;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">flush</span><span class="params">()</span> </span>&#123; <span class="built_in">fwrite</span>(out, <span class="number">1</span>, len, stdout), len = <span class="number">0</span>; &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">pc</span><span class="params">(<span class="type">char</span> x)</span> </span>&#123;<span class="keyword">if</span> (len == <span class="number">1</span> &lt;&lt; <span class="number">24</span>) <span class="built_in">flush</span>(); out[len ++] = x;&#125;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">Flusher</span> &#123;~<span class="built_in">Flusher</span>() &#123;<span class="built_in">flush</span>();&#125; &#125; Fls;</span><br><span class="line">    <span class="comment">// #define gc() getchar()</span></span><br><span class="line">    <span class="comment">// #define pc(X) putchar(X)</span></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">read</span><span class="params">(<span class="type">char</span>&amp; ch)</span> </span>&#123;ch = <span class="built_in">gc</span>();&#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">read</span><span class="params">(<span class="type">char</span> *s)</span> </span>&#123;</span><br><span class="line">        <span class="type">char</span> ch = <span class="built_in">gc</span>();</span><br><span class="line">        <span class="keyword">while</span> (ch &lt; <span class="number">33</span> || ch &gt; <span class="number">126</span>) ch = <span class="built_in">gc</span>();</span><br><span class="line">        <span class="keyword">for</span> (; ch &gt;= <span class="number">33</span> &amp;&amp; ch &lt;= <span class="number">126</span>; ch = <span class="built_in">gc</span>()) *s++ = ch;</span><br><span class="line">        *s = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">read</span><span class="params">(T &amp;x)</span> </span>&#123;</span><br><span class="line">        <span class="type">char</span> c, flag = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> ((c = <span class="built_in">gc</span>()) &lt; <span class="string">&#x27;0&#x27;</span> || c &gt; <span class="string">&#x27;9&#x27;</span>) flag |= c == <span class="string">&#x27;-&#x27;</span>;</span><br><span class="line">        x = c &amp; <span class="number">15</span>;</span><br><span class="line">        <span class="keyword">while</span> ((c = <span class="built_in">gc</span>()) &gt;= <span class="string">&#x27;0&#x27;</span> &amp;&amp; c &lt;= <span class="string">&#x27;9&#x27;</span>)</span><br><span class="line">        x = (x &lt;&lt; <span class="number">3</span>) + (x &lt;&lt; <span class="number">1</span>) + (c &amp; <span class="number">15</span>);</span><br><span class="line">        <span class="keyword">if</span> (flag) x = ~x + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>, <span class="keyword">class</span> ...T1&gt;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">read</span><span class="params">(T &amp;x, T1 &amp;...x1)</span> </span>&#123;<span class="built_in">read</span>(x), <span class="built_in">read</span>(x<span class="number">1.</span>..);&#125;</span><br><span class="line">    <span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line">    <span class="keyword">inline</span> <span class="type">void</span> _put(T x) &#123;<span class="keyword">if</span>(x &gt; <span class="number">9</span>) _put(x / <span class="number">10</span>); <span class="built_in">pc</span>((x % <span class="number">10</span>) | <span class="number">48</span>);&#125;</span><br><span class="line">    <span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">write</span><span class="params">(T x)</span> </span>&#123;<span class="keyword">if</span>(x &lt; <span class="number">0</span>) <span class="built_in">pc</span>(<span class="string">&#x27;-&#x27;</span>), x = ~x + <span class="number">1</span>; _put(x);&#125;</span><br><span class="line">    <span class="keyword">template</span> &lt;&gt; <span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">write</span><span class="params">(<span class="type">char</span> x)</span> </span>&#123;<span class="built_in">pc</span>(x);&#125;</span><br><span class="line">    <span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>, <span class="keyword">class</span> ...T1&gt;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">write</span><span class="params">(T x, T1 ...x1)</span> </span>&#123;<span class="built_in">write</span>(x), <span class="built_in">write</span>(x<span class="number">1.</span>..);&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">using</span> FastIO::read;</span><br><span class="line"><span class="keyword">using</span> FastIO::write;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">bool</span> <span class="title">chkmin</span><span class="params">(T &amp;x, T y)</span> </span>&#123;<span class="keyword">return</span> x &gt; y ? x = y, <span class="number">1</span> : <span class="number">0</span>;&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">bool</span> <span class="title">chkmax</span><span class="params">(T &amp;x, T y)</span> </span>&#123;<span class="keyword">return</span> x &lt; y ? x = y, <span class="number">1</span> : <span class="number">0</span>;&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">5e2</span> + <span class="number">10</span>, M = <span class="number">1</span> &lt;&lt; <span class="number">6</span>;</span><br><span class="line"><span class="type">int</span> n, m, k, dp[N][N][M], ans, lim;</span><br><span class="line"><span class="type">char</span> s[N], t[N];</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">check</span><span class="params">(<span class="type">int</span> i, <span class="type">int</span> j, <span class="type">int</span> sta, <span class="type">int</span> f1, <span class="type">int</span> f2)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> cs = <span class="number">0</span>, ct = <span class="number">0</span>, flag = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(sta) cs += sta &amp; <span class="number">3</span> &amp; <span class="number">1</span>, ct += (sta &amp; <span class="number">3</span> &amp; <span class="number">2</span>) &gt;&gt; <span class="number">1</span>, sta &gt;&gt;= <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(f1) <span class="keyword">for</span>(<span class="type">int</span> p = <span class="number">1</span>; p &lt;= cs &amp;&amp; p &lt; i; ++p) flag |= (s[i] == s[i - p]);</span><br><span class="line">    <span class="keyword">if</span>(f1) <span class="keyword">for</span>(<span class="type">int</span> p = <span class="number">1</span>; p &lt;= ct &amp;&amp; j - p - f2 + <span class="number">1</span> &gt; <span class="number">0</span>; ++p)</span><br><span class="line">        flag |= (s[i] == t[j - p - f2 + <span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">if</span>(f2) <span class="keyword">for</span>(<span class="type">int</span> p = <span class="number">1</span>; p &lt;= ct &amp;&amp; p &lt; j; ++p) flag |= (t[j] == t[j - p]);</span><br><span class="line">    <span class="keyword">if</span>(f2) <span class="keyword">for</span>(<span class="type">int</span> p = <span class="number">1</span>; p &lt;= cs &amp;&amp; i - p - f1 + <span class="number">1</span> &gt; <span class="number">0</span>; ++p)</span><br><span class="line">        flag |= (t[j] == s[i - p - f1 + <span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">return</span> !flag;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">(<span class="type">int</span> i, <span class="type">int</span> j, <span class="type">int</span> f1, <span class="type">int</span> f2)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> now = f1 * <span class="number">1</span> + f2 * <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> sta = <span class="number">0</span>; sta &lt;= lim; ++sta) <span class="keyword">if</span>(<span class="built_in">check</span>(i, j, sta, f1, f2))</span><br><span class="line">        <span class="built_in">chkmin</span>(dp[i][j][((sta &lt;&lt; <span class="number">2</span>) + now) &amp; lim], dp[i - f1][j - f2][sta] + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> sta = lim; ~sta; --sta) <span class="keyword">for</span>(<span class="type">int</span> p = <span class="number">1</span>; p &lt;= k; ++p)</span><br><span class="line">        <span class="built_in">chkmin</span>(dp[i][j][(sta &lt;&lt; (p * <span class="number">2</span>)) &amp; lim], dp[i][j][sta] + p);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// freopen(&quot;.in&quot;, &quot;r&quot;, stdin);</span></span><br><span class="line">    <span class="comment">// freopen(&quot;.out&quot;, &quot;w&quot;, stdout);</span></span><br><span class="line">    <span class="built_in">read</span>(n, m, k), <span class="built_in">read</span>(s + <span class="number">1</span>), <span class="built_in">read</span>(t + <span class="number">1</span>); <span class="built_in">memset</span>(dp, <span class="number">0x3f</span>, <span class="keyword">sizeof</span> dp);</span><br><span class="line">    dp[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>] = <span class="number">0</span>, ans = (n + m) * (k + <span class="number">1</span>), lim = (<span class="number">1</span> &lt;&lt; (<span class="number">2</span> * k)) - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt;= m; ++j) &#123;</span><br><span class="line">            <span class="keyword">if</span>(i &amp;&amp; j &amp;&amp; s[i] == t[j]) <span class="built_in">solve</span>(i, j, <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">if</span>(i) <span class="built_in">solve</span>(i, j, <span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">            <span class="keyword">if</span>(j) <span class="built_in">solve</span>(i, j, <span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> sta = <span class="number">0</span>; sta &lt;= lim; ++sta) <span class="built_in">chkmin</span>(ans, dp[n][m][sta]);</span><br><span class="line">    <span class="built_in">write</span>(ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 </div>
@@ -510,13 +422,13 @@ signed main() {
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">203k</span>
+    <span title="站点总字数">226k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">6:09</span>
+    <span title="站点阅读时长">6:52</span>
   </span>
 </div>
 <div class="busuanzi-count">

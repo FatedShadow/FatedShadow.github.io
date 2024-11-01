@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.ico">
@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-flash.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"fatedshadow.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"fold":{"enable":false,"height":1000},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"fatedshadow.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"fold":{"enable":false,"height":1000},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="前言没看过如何搭建的建议这边走：link注意，本博客基于 next 的 Gemini 样式进行美化。（Gemini，在主题的配置文件搜索 scheme，即可选择样式）">
 <meta property="og:type" content="article">
@@ -319,14 +319,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>7.2k</span>
+      <span>7.5k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>13 分钟</span>
+      <span>14 分钟</span>
     </span>
 </div>
 
@@ -365,13 +365,7 @@
         Code
     </div>
     <div class='spoiler-content'>
-        <pre><code class="cpp">symbols_count_time:
-  symbols: true                # 文章字数统计
-  time: true                   # 文章阅读时长
-  total_symbols: true          # 站点总字数统计
-  total_time: true             # 站点总阅读时长
-  exclude_codeblock: false     # 排除代码字数统计
-</code></pre>
+        <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">symbols_count_time:</span><br><span class="line">  symbols: <span class="literal">true</span>                # 文章字数统计</span><br><span class="line">  time: <span class="literal">true</span>                   # 文章阅读时长</span><br><span class="line">  total_symbols: <span class="literal">true</span>          # 站点总字数统计</span><br><span class="line">  total_time: <span class="literal">true</span>             # 站点总阅读时长</span><br><span class="line">  exclude_codeblock: <span class="literal">false</span>     # 排除代码字数统计</span><br></pre></td></tr></table></figure>
 
     </div>
 </div>
@@ -381,30 +375,14 @@
         Code
     </div>
     <div class='spoiler-content'>
-        <pre><code class="cpp">## Post wordcount display settings
-## Dependencies: https://github.com/theme-next/hexo-symbols-count-time
-symbols_count_time:
-  separated_meta: true     # 是否另起一行（true的话不和发表时间等同一行）
-  item_text_post: true     # 首页文章统计数量前是否显示文字描述（本文字数、阅读时长）
-  item_text_total: false   # 页面底部统计数量前是否显示文字描述（站点总字数、站点阅读时长）
-  awl: 2                   # Average Word Length
-  wpm: 275                 # Words Per Minute（每分钟阅读词数）
-  suffix: mins.
-</code></pre>
+        <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">## Post wordcount display settings</span><br><span class="line">## Dependencies: https:<span class="comment">//github.com/theme-next/hexo-symbols-count-time</span></span><br><span class="line">symbols_count_time:</span><br><span class="line">  separated_meta: <span class="literal">true</span>     # 是否另起一行（<span class="literal">true</span>的话不和发表时间等同一行）</span><br><span class="line">  item_text_post: <span class="literal">true</span>     # 首页文章统计数量前是否显示文字描述（本文字数、阅读时长）</span><br><span class="line">  item_text_total: <span class="literal">false</span>   # 页面底部统计数量前是否显示文字描述（站点总字数、站点阅读时长）</span><br><span class="line">  awl: <span class="number">2</span>                   # Average Word Length</span><br><span class="line">  wpm: <span class="number">275</span>                 # Words Per Minute（每分钟阅读词数）</span><br><span class="line">  suffix: mins.</span><br></pre></td></tr></table></figure>
 
     </div>
 </div>
 
 <h3 id="头像"><a href="#头像" class="headerlink" title="头像"></a>头像</h3><p>找到主题的配置文件中的这样一段话并修改为下文所示：</p>
-<pre><code class="cpp">## Sidebar Avatar
-avatar:
-  # Replace the default image and set the url here.
-  url: /images/avatar.png # 本地图片地址
-  # If true, the avatar will be displayed in circle.
-  rounded: true # 是否圆形
-  # If true, the avatar will be rotated with the cursor.
-  rotated: true # 鼠标放在头像上是否旋转
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">## Sidebar Avatar</span><br><span class="line">avatar:</span><br><span class="line">  # Replace the <span class="keyword">default</span> image <span class="keyword">and</span> set the url here.</span><br><span class="line">  url: /images/avatar.png # 本地图片地址</span><br><span class="line">  # If <span class="literal">true</span>, the avatar will be displayed in circle.</span><br><span class="line">  rounded: <span class="literal">true</span> # 是否圆形</span><br><span class="line">  # If <span class="literal">true</span>, the avatar will be rotated with the cursor.</span><br><span class="line">  rotated: <span class="literal">true</span> # 鼠标放在头像上是否旋转</span><br></pre></td></tr></table></figure>
+
 <p>这表示在你的 \theme\next\source\images 文件夹里，你需要存放一个 名为 avatar.png 的图片来作为你的头像（当然要把原来的删掉）。</p>
 <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>首先打开主题下的配置文件，搜索 <code>costom_file_path</code>，将 <code>style</code> 前的 “#” 号去掉（取消注释），表示启用这两个个文件。<br>接着找到 <code>\Blog\source</code>，新建文件夹 <code>_data</code>，再在其中新建文件 <code>styles.styl</code>。<br>粘贴以下内容：<br>在主题的配置文件中搜素 $social$，修改即可。  </p>
 <div class='spoiler collapsed'>
@@ -412,29 +390,7 @@ avatar:
         Code
     </div>
     <div class='spoiler-content'>
-        <pre><code class="cpp">body {
-    background-image: url(/images/background.png);
-    background-repeat: no-repeat;
-    background-attachment: fixed; //是否滚动，fixed 固定
-    background-size: 100% 100%;
-    opacity: 0.9; //透明度，0 完全透明。1 为 完全不透明
-}
-.sidebar {
-  opacity: 0.9; //透明度
-}
-.header-inner {     
-    background: rgba(255,255,255,0.9); //透明度
-}
-.popup {
-    opacity: 0.9;//透明度
-}
-.main-inner {
-    background-color: rgba(255, 255, 255, 0); //背景的一个连接板块，直接隐藏便好，显示了比较难看
-}
-.code-hidden {
-    display: none;
-  }
-</code></pre>
+        <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">    background-image: <span class="built_in">url</span>(/images/background.png);</span><br><span class="line">    background-repeat: no-repeat;</span><br><span class="line">    background-attachment: fixed; <span class="comment">//是否滚动，fixed 固定</span></span><br><span class="line">    background-size: <span class="number">100</span>% <span class="number">100</span>%;</span><br><span class="line">    opacity: <span class="number">0.9</span>; <span class="comment">//透明度，0 完全透明。1 为 完全不透明</span></span><br><span class="line">&#125;</span><br><span class="line">.sidebar &#123;</span><br><span class="line">  opacity: <span class="number">0.9</span>; <span class="comment">//透明度</span></span><br><span class="line">&#125;</span><br><span class="line">.header-inner &#123;     </span><br><span class="line">    background: <span class="built_in">rgba</span>(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0.9</span>); <span class="comment">//透明度</span></span><br><span class="line">&#125;</span><br><span class="line">.popup &#123;</span><br><span class="line">    opacity: <span class="number">0.9</span>;<span class="comment">//透明度</span></span><br><span class="line">&#125;</span><br><span class="line">.main-inner &#123;</span><br><span class="line">    background-color: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0</span>); <span class="comment">//背景的一个连接板块，直接隐藏便好，显示了比较难看</span></span><br><span class="line">&#125;</span><br><span class="line">.code-hidden &#123;</span><br><span class="line">    display: none;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 </div>
@@ -444,9 +400,7 @@ avatar:
         Code
     </div>
     <div class='spoiler-content'>
-        <pre><code class="cpp">$border-radius-inner     = 20px 20px 20px 20px;
-$border-radius           = 20px;
-</code></pre>
+        <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$border-radius-inner     = <span class="number">20</span>px <span class="number">20</span>px <span class="number">20</span>px <span class="number">20</span>px;</span><br><span class="line">$border-radius           = <span class="number">20</span>px;</span><br></pre></td></tr></table></figure>
 
     </div>
 </div>
@@ -457,89 +411,41 @@ $border-radius           = 20px;
         Code
     </div>
     <div class='spoiler-content'>
-        <pre><code class="cpp">social:
-  GitHub: https://github.com/luumod || fab fa-github
-  E-Mail: mailto:1173012900@qq.com || fa fa-envelope
-  #以下可以直接取消注释，然后在后面添加图标
-  #Weibo: https://weibo.com/yourname || fab fa-weibo
-  #Google: https://plus.google.com/yourname || fab fa-google
-  #Twitter: https://twitter.com/yourname || fab fa-twitter
-  #FB Page: https://www.facebook.com/yourname || fab fa-facebook
-  #StackOverflow: https://stackoverflow.com/yourname || fab fa-stack-overflow
-  #YouTube: https://youtube.com/yourname || fab fa-youtube
-  #Instagram: https://instagram.com/yourname || fab fa-instagram
-  #Skype: skype:yourname?call|chat || fab fa-skype
-</code></pre>
+        <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">social:</span><br><span class="line">  GitHub: https:<span class="comment">//github.com/luumod || fab fa-github</span></span><br><span class="line">  E-Mail: mailto:<span class="number">1173012900</span>@qq.com || fa fa-envelope</span><br><span class="line">  #以下可以直接取消注释，然后在后面添加图标</span><br><span class="line">  #Weibo: https:<span class="comment">//weibo.com/yourname || fab fa-weibo</span></span><br><span class="line">  #Google: https:<span class="comment">//plus.google.com/yourname || fab fa-google</span></span><br><span class="line">  #Twitter: https:<span class="comment">//twitter.com/yourname || fab fa-twitter</span></span><br><span class="line">  #FB Page: https:<span class="comment">//www.facebook.com/yourname || fab fa-facebook</span></span><br><span class="line">  #StackOverflow: https:<span class="comment">//stackoverflow.com/yourname || fab fa-stack-overflow</span></span><br><span class="line">  #YouTube: https:<span class="comment">//youtube.com/yourname || fab fa-youtube</span></span><br><span class="line">  #Instagram: https:<span class="comment">//instagram.com/yourname || fab fa-instagram</span></span><br><span class="line">  #Skype: skype:yourname?call|chat || fab fa-skype</span><br></pre></td></tr></table></figure>
 
     </div>
 </div>
 
 <h3 id="添加-RSS-订阅"><a href="#添加-RSS-订阅" class="headerlink" title="添加 RSS 订阅"></a>添加 RSS 订阅</h3><p>下载插件：</p>
-<pre><code class="cpp">npm install hexo-generator-feed --save
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure>
+
 <p>然后在主题的配置文件最后添加如下一句话。</p>
-<pre><code class="cpp">## feed
-## Dependencies: https://github.com/hexojs/hexo-generator-feed
-feed:
-  type: atom
-  path: atom.xml
-  limit: 20
-  hub:
-  content:
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#<span class="meta"># feed</span></span><br><span class="line">## Dependencies: https:<span class="comment">//github.com/hexojs/hexo-generator-feed</span></span><br><span class="line">feed:</span><br><span class="line">  type: atom</span><br><span class="line">  path: atom.xml</span><br><span class="line">  limit: <span class="number">20</span></span><br><span class="line">  hub:</span><br><span class="line">  content:</span><br></pre></td></tr></table></figure>
+
 <h3 id="侧边栏添加友链"><a href="#侧边栏添加友链" class="headerlink" title="侧边栏添加友链"></a>侧边栏添加友链</h3><p>打开主题的配置文件。<br>只需要在 “links:” 下添加网站地址即可。</p>
 <div class='spoiler collapsed'>
     <div class='spoiler-title'>
         Code
     </div>
     <div class='spoiler-content'>
-        <pre><code class="cpp">## Blog rolls
-links_settings:
-  icon: fa fa-link
-  title: Links
-  # Available values: block | inline
-  layout: block
-
-links:
-  #Title: http://yoursite.com
-</code></pre>
+        <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">## Blog rolls</span><br><span class="line">links_settings:</span><br><span class="line">  icon: fa fa-link</span><br><span class="line">  title: Links</span><br><span class="line">  # Available values: block | <span class="keyword">inline</span></span><br><span class="line">  layout: block</span><br><span class="line"></span><br><span class="line">links:</span><br><span class="line">  #Title: http:<span class="comment">//yoursite.com</span></span><br></pre></td></tr></table></figure>
 
     </div>
 </div>
 
 <h3 id="隐藏-powered-by"><a href="#隐藏-powered-by" class="headerlink" title="隐藏 powered by"></a>隐藏 powered by</h3><p>我们发现博客内的 <code>powered by</code> 非常碍眼，于是想去掉它。<br>两种方法：<br>打开主题的配置文件，搜索 <code>powered</code>，设置为 <code>false</code> 即可。</p>
-<pre><code class="cpp">## Powered by Hexo &amp; NexT
-powered: false
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">## Powered by Hexo &amp; NexT</span><br><span class="line">powered: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
 <p>另一种方法：找到 <code>\themes\next\layout\_partials</code> 下的 <code>footer.njk</code>，定位第 82 行，将此行删除，或者加上 <code>&lt;!-- --&gt;</code> 变成这样：</p>
-<pre><code class="cpp">&lt;!-- &#123;&#123;- __('footer.powered', next_url('https://hexo.io', 'Hexo') + ' & ' + next_url(next_site, 'NexT.' + theme.scheme)) &#125;&#125; --&gt;
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- &#123;&#123;- __(<span class="string">&#x27;footer.powered&#x27;</span>, <span class="built_in">next_url</span>(<span class="string">&#x27;https://hexo.io&#x27;</span>, <span class="string">&#x27;Hexo&#x27;</span>) + <span class="string">&#x27; &amp; &#x27;</span> + <span class="built_in">next_url</span>(next_site, <span class="string">&#x27;NexT.&#x27;</span> + theme.scheme)) &#125;&#125; --&gt;</span><br></pre></td></tr></table></figure>
+
 <h3 id="网站运行时长"><a href="#网站运行时长" class="headerlink" title="网站运行时长"></a>网站运行时长</h3><p>还是打开 <code>\themes\next\layout\_partials</code>，粘贴以下内容：  </p>
 <div class='spoiler collapsed'>
     <div class='spoiler-title'>
         Code
     </div>
     <div class='spoiler-content'>
-        <pre><code class="cpp">&lt;!-- 网站运行时间的设置 --&gt;
-&lt;span id=&quot;timeDate&quot;&gt;载入天数...&lt;/span&gt;
-&lt;span id=&quot;times&quot;&gt;载入时分秒...&lt;/span&gt;
-&lt;script&gt;
-    var now = new Date();
-    function createtime() {
-        var grt= new Date(&quot;03/01/2023 10:00:00&quot;); //此处修改你的建站时间或者网站上线时间
-        now.setTime(now.getTime()+250);
-        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
-        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
-        if(String(hnum).length ==1 ){hnum = &quot;0&quot; + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
-        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = &quot;0&quot; + mnum;}
-        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = &quot;0&quot; + snum;}
-        document.getElementById(&quot;timeDate&quot;).innerHTML = &quot;本站已安全运行 &quot;+dnum+&quot; 天 &quot;;
-        document.getElementById(&quot;times&quot;).innerHTML = hnum + &quot; 小时 &quot; + mnum + &quot; 分 &quot; + snum + &quot; 秒.&quot;;
-    }
-setInterval(&quot;createtime()&quot;,250);
-&lt;/script&gt;
-</code></pre>
+        <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 网站运行时间的设置 --&gt;</span><br><span class="line">&lt;span id=<span class="string">&quot;timeDate&quot;</span>&gt;载入天数...&lt;/span&gt;</span><br><span class="line">&lt;span id=<span class="string">&quot;times&quot;</span>&gt;载入时分秒...&lt;/span&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var now = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">    <span class="function">function <span class="title">createtime</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        var grt= <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">&quot;03/01/2023 10:00:00&quot;</span>); <span class="comment">//此处修改你的建站时间或者网站上线时间</span></span><br><span class="line">        now.<span class="built_in">setTime</span>(now.<span class="built_in">getTime</span>()<span class="number">+250</span>);</span><br><span class="line">        days = (now - grt ) / <span class="number">1000</span> / <span class="number">60</span> / <span class="number">60</span> / <span class="number">24</span>; dnum = Math.<span class="built_in">floor</span>(days);</span><br><span class="line">        hours = (now - grt ) / <span class="number">1000</span> / <span class="number">60</span> / <span class="number">60</span> - (<span class="number">24</span> * dnum); hnum = Math.<span class="built_in">floor</span>(hours);</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">String</span>(hnum).length ==<span class="number">1</span> )&#123;hnum = <span class="string">&quot;0&quot;</span> + hnum;&#125; minutes = (now - grt ) / <span class="number">1000</span> /<span class="number">60</span> - (<span class="number">24</span> * <span class="number">60</span> * dnum) - (<span class="number">60</span> * hnum);</span><br><span class="line">        mnum = Math.<span class="built_in">floor</span>(minutes); <span class="keyword">if</span>(<span class="built_in">String</span>(mnum).length ==<span class="number">1</span> )&#123;mnum = <span class="string">&quot;0&quot;</span> + mnum;&#125;</span><br><span class="line">        seconds = (now - grt ) / <span class="number">1000</span> - (<span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * dnum) - (<span class="number">60</span> * <span class="number">60</span> * hnum) - (<span class="number">60</span> * mnum);</span><br><span class="line">        snum = Math.<span class="built_in">round</span>(seconds); <span class="keyword">if</span>(<span class="built_in">String</span>(snum).length ==<span class="number">1</span> )&#123;snum = <span class="string">&quot;0&quot;</span> + snum;&#125;</span><br><span class="line">        document.<span class="built_in">getElementById</span>(<span class="string">&quot;timeDate&quot;</span>).innerHTML = <span class="string">&quot;本站已安全运行 &quot;</span>+dnum+<span class="string">&quot; 天 &quot;</span>;</span><br><span class="line">        document.<span class="built_in">getElementById</span>(<span class="string">&quot;times&quot;</span>).innerHTML = hnum + <span class="string">&quot; 小时 &quot;</span> + mnum + <span class="string">&quot; 分 &quot;</span> + snum + <span class="string">&quot; 秒.&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="built_in">setInterval</span>(<span class="string">&quot;createtime()&quot;</span>,<span class="number">250</span>);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
     </div>
 </div>
@@ -550,109 +456,66 @@ setInterval(&quot;createtime()&quot;,250);
         Code
     </div>
     <div class='spoiler-content'>
-        <pre><code class="cpp">cd themes/next
-git clone https://github.com/theme-next/theme-next-pace source/lib/pace
-</code></pre>
+        <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd themes/next</span><br><span class="line">git clone https:<span class="comment">//github.com/theme-next/theme-next-pace source/lib/pace</span></span><br></pre></td></tr></table></figure>
 
     </div>
 </div>
 <p>再打开主题配置文件，然后搜索 <code>pace</code> 修改为 <code>true</code> 即可。</p>
-<pre><code class="cpp">pace:
-  enable: true
-  # All available colors:
-  # black | blue | green | orange | pink | purple | red | silver | white | yellow
-  color: red
-  # All available themes:
-  # big-counter | bounce | barber-shop | center-atom | center-circle | center-radar | center-simple
-  # corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal
-  theme: material
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">pace:</span><br><span class="line">  enable: <span class="literal">true</span></span><br><span class="line">  # All available colors:</span><br><span class="line">  <span class="meta"># black | blue | green | orange | pink | purple | red | silver | white | yellow</span></span><br><span class="line">  color: red</span><br><span class="line">  # All available themes:</span><br><span class="line">  <span class="meta"># big-counter | bounce | barber-shop | center-atom | center-circle | center-radar | center-simple</span></span><br><span class="line">  <span class="meta"># corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal</span></span><br><span class="line">  theme: material</span><br></pre></td></tr></table></figure>
+
 <p>选择 theme 的主题和颜色，依据个人喜好（我的就是上面的配置）。</p>
 <h3 id="右上角-Github-图标"><a href="#右上角-Github-图标" class="headerlink" title="右上角 Github 图标"></a>右上角 Github 图标</h3><p>在主题配置文件中搜索：<code>github_banner</code>。<br>修改为这样：</p>
-<pre><code class="cpp">## Follow me on GitHub` banner in the top-right corner.
-github_banner:
-  enable: true
-  permalink: https://github.com/yourname
-  title: Follow me on GitHub
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">## Follow me on GitHub` banner in the top-right corner.</span><br><span class="line">github_banner:</span><br><span class="line">  enable: <span class="literal">true</span></span><br><span class="line">  permalink: https:<span class="comment">//github.com/yourname</span></span><br><span class="line">  title: Follow me on GitHub</span><br></pre></td></tr></table></figure>
+
 <p>把名字改一下即可。</p>
 <h3 id="文末版权申明"><a href="#文末版权申明" class="headerlink" title="文末版权申明"></a>文末版权申明</h3><p>主题配置文件中搜索并修改：</p>
-<pre><code class="cpp">creative_commons:
-  license: by-nc-sa
-  sidebar: true
-  post: true
-  language: zh-CN
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">creative_commons:</span><br><span class="line">  license: by-nc-sa</span><br><span class="line">  sidebar: <span class="literal">true</span></span><br><span class="line">  post: <span class="literal">true</span></span><br><span class="line">  language: zh-CN</span><br></pre></td></tr></table></figure>
+
 <h3 id="文章中插入图片优化"><a href="#文章中插入图片优化" class="headerlink" title="文章中插入图片优化"></a>文章中插入图片优化</h3><p>通常地，在 .md 文件中插入图片的语法为 <code>![]()</code>。<br>一般来说有三种图片路径：相对路径，绝对路径和网络路径。<br>网络路径就是直接引用网上的图片，这种方式十分的方便，但是也存在一定的问题：  </p>
 <blockquote>
 <p>图片失效导致无法加载；<br>打开网页后要再请求加载图片<br>原网站限制，如微信公众号的图片会变得不可见等。</p>
 </blockquote>
 <p>这种方式算是有利有弊。<br>绝对路径是图片在计算机中的绝对位置，相对路径是相对于当前文件的路径。<br>由于博客需部署在网站上，部署后会生成新的文件目录，所以我们选择使用相对路径的方式。<br>在根目录下的配置文件修改：</p>
-<pre><code class="cpp">post_asset_folder: true
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
 <p>那么在 <code>\source</code> 文件夹里，每篇文章会成相同名字的文件夹，也就是文章资源文件夹，我们可以将图片存在里面。<br>但是这样还不够，引用相当麻烦。<br>下载插件：</p>
-<pre><code class="cpp">
-npm install hexo-renderer-marked
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">npm install hexo-renderer-marked</span><br></pre></td></tr></table></figure>
+
 <p>之后在根目录下的配置文件修改：</p>
-<pre><code class="cpp">post_asset_folder: true
-marked:
-  prependRoot: true
-  postAsset: true
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: <span class="literal">true</span></span><br><span class="line">marked:</span><br><span class="line">  prependRoot: <span class="literal">true</span></span><br><span class="line">  postAsset: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
 <p>接下来，假如文章资源文件夹（即同名文件夹）里存放着 <code>image.png</code>，那么我们使用 <code>![](image.png)</code> 就可以插入了。</p>
 <h3 id="浏览进度"><a href="#浏览进度" class="headerlink" title="浏览进度"></a>浏览进度</h3><p>打开主题的配置文件，搜索 <code>scrollpercent</code>，修改：</p>
-<pre><code class="cpp">back2top:
-  # 返回顶部
-  enable: true
-  # Back to top in sidebar.(侧边栏显示)
-  sidebar: true
-  # Scroll percent label in b2t button.(打开浏览进度显示)
-  scrollpercent: true
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">back2top:</span><br><span class="line">  # 返回顶部</span><br><span class="line">  enable: <span class="literal">true</span></span><br><span class="line">  # Back to top in sidebar.(侧边栏显示)</span><br><span class="line">  sidebar: <span class="literal">true</span></span><br><span class="line">  # Scroll percent label in b2t button.(打开浏览进度显示)</span><br><span class="line">  scrollpercent: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="文章优先级置顶设置"><a href="#文章优先级置顶设置" class="headerlink" title="文章优先级置顶设置"></a>文章优先级置顶设置</h3><p>先卸载一个插件，再安装一个（否则后者不会生效）：</p>
-<pre><code class="cpp">npm uninstall hexo-generator-index --save
-npm install hexo-generator-index-pin-top --save
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-index-pin-top --save</span><br></pre></td></tr></table></figure>
+
 <p>这样，你就可以在文章的设置区（即 titile 下面那一块）加入 <code>top: true</code> 来使之置顶。<br>如果想要优先级排序，则可以使用 <code>top: 1</code> 来修改优先级（优先级越低越靠后）。</p>
 <h3 id="添加代码块一键复制按钮"><a href="#添加代码块一键复制按钮" class="headerlink" title="添加代码块一键复制按钮"></a>添加代码块一键复制按钮</h3><p>修改主题下的配置文件，搜索 <code>copy_button</code>，改为 <code>enable: true</code>。</p>
 <h3 id="修改标签的“-”图标"><a href="#修改标签的“-”图标" class="headerlink" title="修改标签的“#”图标"></a>修改标签的“#”图标</h3><p>打开 <code>themes/next/layout/_macro/post.njk</code>，搜索：</p>
-<pre><code class="cpp">rel=&quot;tag&quot;&gt;&#123;&#123; tag_indicate &#125;&#125; &#123;&#123; tag.name &#125;&#125;&lt;/a&gt;
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rel=<span class="string">&quot;tag&quot;</span>&gt;&#123;&#123; tag_indicate &#125;&#125; &#123;&#123; tag.name &#125;&#125;&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+
 <p>改为：</p>
-<pre><code class="cpp">rel=&quot;tag&quot;&gt;&lt;i class=&quot;fa fa-tag&quot;&gt; &#123;&#123; tag.name &#125;&#125;&lt;/i&gt;
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rel=<span class="string">&quot;tag&quot;</span>&gt;&lt;i <span class="keyword">class</span>=<span class="string">&quot;fa fa-tag&quot;</span>&gt; &#123;&#123; tag.name &#125;&#125;&lt;/i&gt;</span><br></pre></td></tr></table></figure>
+
 <h3 id="修改文章目录自动编号"><a href="#修改文章目录自动编号" class="headerlink" title="修改文章目录自动编号"></a>修改文章目录自动编号</h3><p>发现文章目录又自动编号的问题，不是很能忍。<br>修改主题的配置文件，搜搜 <code>toc</code>，修改为 <code>enable: false</code>。</p>
 <h3 id="添加-mathjax-渲染（可渲染-markdown-与-LaTeX）"><a href="#添加-mathjax-渲染（可渲染-markdown-与-LaTeX）" class="headerlink" title="添加 mathjax 渲染（可渲染 markdown 与 LaTeX）"></a>添加 mathjax 渲染（可渲染 markdown 与 LaTeX）</h3><p>安装插件：</p>
-<pre><code class="cpp">npm install hexo-math --save
-</code></pre>
-<p>打开主题的配置文件，搜索 <code>math</code>，可以看到有 <code>math</code> 和 <code>mathjax</code> 两个选项。</p>
-<pre><code class="cpp">math:
-  every_page: false
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-math --save</span><br></pre></td></tr></table></figure>
 
-  mathjax:
-    enable: false
-    tags: none
-</code></pre>
+<p>打开主题的配置文件，搜索 <code>math</code>，可以看到有 <code>math</code> 和 <code>mathjax</code> 两个选项。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">math:</span><br><span class="line">  every_page: <span class="literal">false</span></span><br><span class="line"></span><br><span class="line">  mathjax:</span><br><span class="line">    enable: <span class="literal">false</span></span><br><span class="line">    tags: none</span><br></pre></td></tr></table></figure>
+
 <p>如果打开上面那个，则全部文章都开启，只是会比较卡。<br>打开下面那个，不会全部开启，对于想开的文章则需要在文章设置区（即标题下面）添加 <code>mathjax: true</code>，接着就可以用了。</p>
 <h3 id="添加文章折叠"><a href="#添加文章折叠" class="headerlink" title="添加文章折叠"></a>添加文章折叠</h3><p>下载插件：</p>
-<pre><code class="cpp">npm install hexo-sliding-spoiler --save
-</code></pre>
-<p>同时更改设置，打开 <code>node_modules\hexo-sliding-spoiler\assets</code>，修改：</p>
-<pre><code class="cpp"> .spoiler.collapsed .spoiler-title:before &#123;
-     content: &quot;Show: &quot;;
- &#125;
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-sliding-spoiler --save</span><br></pre></td></tr></table></figure>
 
- .spoiler.expanded .spoiler-title:before &#123;
-     content: &quot;Hide: &quot;;
- &#125;
-</code></pre>
+<p>同时更改设置，打开 <code>node_modules\hexo-sliding-spoiler\assets</code>，修改：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.spoiler.collapsed .spoiler-title:before &#123;</span><br><span class="line">    content: <span class="string">&quot;Show: &quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.spoiler.expanded .spoiler-title:before &#123;</span><br><span class="line">    content: <span class="string">&quot;Hide: &quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>修改其中的 content 即可更改前面的字。<br>使用：</p>
-<pre><code class="cpp">
-&#123;% spoiler "Test" %&#125;
-Hello world!
-&#123;% endspoiler %&#125;
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;% spoiler <span class="string">&quot;Test&quot;</span> %&#125;</span><br><span class="line">Hello world!</span><br><span class="line">&#123;% endspoiler %&#125;</span><br></pre></td></tr></table></figure>
+
 <p>效果：</p>
 <div class='spoiler collapsed'>
     <div class='spoiler-title'>
@@ -665,21 +528,11 @@ Hello world!
 </div>
 
 <h3 id="添加加密"><a href="#添加加密" class="headerlink" title="添加加密"></a>添加加密</h3><p>下载：</p>
-<pre><code class="cpp">npm install --save hexo-blog-encrypt
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-blog-encrypt</span><br></pre></td></tr></table></figure>
+
 <p>使用方法如下：</p>
-<pre><code class="cpp">---
-title: Hello World!
-date: ???
-tags: ???
-categories: ???
-top: 1
-mathjax: true
-abstract: &#39;???&#39;（没解密前显示的内容）
-password: ******（密码）
-message: QwQ（密码提示）
----
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hello World!</span><br><span class="line">date: ???</span><br><span class="line">tags: ???</span><br><span class="line">categories: ???</span><br><span class="line">top: <span class="number">1</span></span><br><span class="line">mathjax: <span class="literal">true</span></span><br><span class="line">abstract: <span class="string">&#x27;???&#x27;</span>（没解密前显示的内容）</span><br><span class="line">password: ******（密码）</span><br><span class="line">message: QwQ（密码提示）</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
 <p>如此使用就完了。</p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>只更新了这么一点，希望能帮上你。</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
@@ -753,13 +606,13 @@ message: QwQ（密码提示）
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">203k</span>
+    <span title="站点总字数">226k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">6:09</span>
+    <span title="站点阅读时长">6:52</span>
   </span>
 </div>
 <div class="busuanzi-count">

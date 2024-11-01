@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.ico">
@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-flash.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"fatedshadow.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"fold":{"enable":false,"height":1000},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"fatedshadow.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"fold":{"enable":false,"height":1000},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="前言没有人比你更懂莫反。">
 <meta property="og:type" content="article">
@@ -321,14 +321,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>14k</span>
+      <span>15k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>25 分钟</span>
+      <span>28 分钟</span>
     </span>
 </div>
 
@@ -370,13 +370,7 @@
         Code
     </div>
     <div class='spoiler-content'>
-        <pre><code class="cpp">while(n--) {
-    read(x), ans = 0;
-    for(int l = 1, r; l &lt;= x; l = r + 1)
-        r = x / (x / l), ans += (x / l) * (r - l + 1);
-    write(ans, &#39;\n&#39;);
-}
-</code></pre>
+        <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(n--) &#123;</span><br><span class="line">    <span class="built_in">read</span>(x), ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> l = <span class="number">1</span>, r; l &lt;= x; l = r + <span class="number">1</span>)</span><br><span class="line">        r = x / (x / l), ans += (x / l) * (r - l + <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">write</span>(ans, <span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 </div>
@@ -387,61 +381,7 @@
         Code
     </div>
     <div class='spoiler-content'>
-        <pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
-##define int long long
-using namespace std;
-const int N = 2e6 + 10, MAXN = 2e6;
-int n, x, ans;
-int prim[N], cnt, phi[N];
-bool st[N];
-
-template&lt;class T&gt;
- inline void read(T &amp;x) {
-    T res = 0, f = 1; char c = getchar();
-    while(! isdigit(c)) {
-        if(c == &#39;-&#39;) f = -1;
-        c = getchar();
-    }
-    while(isdigit(c)) res = (res &lt;&lt; 1) + (res &lt;&lt; 3) + c - 48, c = getchar();
-    x = res * f; return ;
-}
-template&lt;class T, class ...T1&gt;
-inline void read(T &amp;x, T1 &amp;...x1) { read(x), read(x1...); return ; }
-template&lt;class T&gt;    
-inline void write(T x) {
-    if(x &lt; 0) x = -x, putchar(&#39;-&#39;);
-    if(x &gt; 9) write(x / 10);
-    putchar(x % 10 + 48); return ;
-}
-template&lt;&gt;
-inline void write(char x) { putchar(x); return ; }
-template&lt;class T, class ...T1&gt;
-inline void write(T x, T1 ...x1) { write(x),write(x1...); return ; }
-
-void init() {
-    phi[1] = 1;
-    for(int i = 2; i &lt;= MAXN; ++i) {
-        if(!st[i]) phi[i] = i - 1, prim[++cnt] = i;
-        for(int j = 1; j &lt;= cnt &amp;&amp; prim[j] &lt;= MAXN / i; ++j) {
-            st[i * prim[j]] = true, phi[i * prim[j]] = phi[i] * prim[j];
-            if(i % prim[j] == 0) break;
-            phi[i * prim[j]] = phi[i] * phi[prim[j]];
-        }
-    }
-    for(int i = 1; i &lt;= MAXN; ++i) phi[i] += phi[i - 1];
-}
-
-signed main()
-{
-   // freopen(&quot;.in&quot;, &quot;r&quot;, stdin);
-   // freopen(&quot;.out&quot;, &quot;w&quot;, stdout);
-    read(n); init();
-    for(int l = 1, r; l &lt;= n; l = r + 1)
-        r = n / (n / l), ans += (n / l) * (n / l - 1) / 2 * (phi[r] - phi[l - 1]);
-    write(ans);
-    return 0;
-}
-</code></pre>
+        <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line">#<span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">2e6</span> + <span class="number">10</span>, MAXN = <span class="number">2e6</span>;</span><br><span class="line"><span class="type">int</span> n, x, ans;</span><br><span class="line"><span class="type">int</span> prim[N], cnt, phi[N];</span><br><span class="line"><span class="type">bool</span> st[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</span></span><br><span class="line"><span class="function"> <span class="keyword">inline</span> <span class="type">void</span> <span class="title">read</span><span class="params">(T &amp;x)</span> </span>&#123;</span><br><span class="line">    T res = <span class="number">0</span>, f = <span class="number">1</span>; <span class="type">char</span> c = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span>(! <span class="built_in">isdigit</span>(c)) &#123;</span><br><span class="line">        <span class="keyword">if</span>(c == <span class="string">&#x27;-&#x27;</span>) f = <span class="number">-1</span>;</span><br><span class="line">        c = <span class="built_in">getchar</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">isdigit</span>(c)) res = (res &lt;&lt; <span class="number">1</span>) + (res &lt;&lt; <span class="number">3</span>) + c - <span class="number">48</span>, c = <span class="built_in">getchar</span>();</span><br><span class="line">    x = res * f; <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> ...T1&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">read</span><span class="params">(T &amp;x, T1 &amp;...x1)</span> </span>&#123; <span class="built_in">read</span>(x), <span class="built_in">read</span>(x<span class="number">1.</span>..); <span class="keyword">return</span> ; &#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;    </span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">write</span><span class="params">(T x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x &lt; <span class="number">0</span>) x = -x, <span class="built_in">putchar</span>(<span class="string">&#x27;-&#x27;</span>);</span><br><span class="line">    <span class="keyword">if</span>(x &gt; <span class="number">9</span>) <span class="built_in">write</span>(x / <span class="number">10</span>);</span><br><span class="line">    <span class="built_in">putchar</span>(x % <span class="number">10</span> + <span class="number">48</span>); <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">write</span><span class="params">(<span class="type">char</span> x)</span> </span>&#123; <span class="built_in">putchar</span>(x); <span class="keyword">return</span> ; &#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> ...T1&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">write</span><span class="params">(T x, T1 ...x1)</span> </span>&#123; <span class="built_in">write</span>(x),<span class="built_in">write</span>(x<span class="number">1.</span>..); <span class="keyword">return</span> ; &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    phi[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= MAXN; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span>(!st[i]) phi[i] = i - <span class="number">1</span>, prim[++cnt] = i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; prim[j] &lt;= MAXN / i; ++j) &#123;</span><br><span class="line">            st[i * prim[j]] = <span class="literal">true</span>, phi[i * prim[j]] = phi[i] * prim[j];</span><br><span class="line">            <span class="keyword">if</span>(i % prim[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">            phi[i * prim[j]] = phi[i] * phi[prim[j]];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= MAXN; ++i) phi[i] += phi[i - <span class="number">1</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="comment">// freopen(&quot;.in&quot;, &quot;r&quot;, stdin);</span></span><br><span class="line">   <span class="comment">// freopen(&quot;.out&quot;, &quot;w&quot;, stdout);</span></span><br><span class="line">    <span class="built_in">read</span>(n); <span class="built_in">init</span>();</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> l = <span class="number">1</span>, r; l &lt;= n; l = r + <span class="number">1</span>)</span><br><span class="line">        r = n / (n / l), ans += (n / l) * (n / l - <span class="number">1</span>) / <span class="number">2</span> * (phi[r] - phi[l - <span class="number">1</span>]);</span><br><span class="line">    <span class="built_in">write</span>(ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 </div>
@@ -454,68 +394,7 @@ signed main()
         Code
     </div>
     <div class='spoiler-content'>
-        <pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
-##define int long long
-using namespace std;
-int n, m, ans;
-
-template&lt;class T&gt;
- inline void read(T &amp;x) {
-    T res = 0, f = 1; char c = getchar();
-    while(! isdigit(c)) {
-        if(c == &#39;-&#39;) f = -1;
-        c = getchar();
-    }
-    while(isdigit(c)) res = (res &lt;&lt; 1) + (res &lt;&lt; 3) + c - 48, c = getchar();
-    x = res * f; return ;
-}
-template&lt;class T, class ...T1&gt;
-inline void read(T &amp;x, T1 &amp;...x1) { read(x), read(x1...); return ; }
-template&lt;class T&gt;    
-inline void write(T x) {
-    if(x &lt; 0) x = -x, putchar(&#39;-&#39;);
-    if(x &gt; 9) write(x / 10);
-    putchar(x % 10 + 48); return ;
-}
-template&lt;&gt;
-inline void write(char x) { putchar(x); return ; }
-template&lt;class T, class ...T1&gt;
-inline void write(T x, T1 ...x1) { write(x),write(x1...); return ; }
-
-int qp(int a, int b) {
-    int res = 1;
-    while(b) {
-        if(b &amp; 1) res *= a;
-        b &gt;&gt;= 1, a *= a;
-    }
-    return res;
-}
-int mu(int x) {
-    int res = 1;
-    for(int i = 2; i &lt;= x / i; ++i) {
-        if(x % i == 0) {
-            res *= -1, x /= i;
-            if(x % i == 0) return 0;
-        }
-    }
-    if(x &gt; 1) res *= -1;
-    return res;
-}
-
-signed main()
-{
-   // freopen(&quot;.in&quot;, &quot;r&quot;, stdin);
-   // freopen(&quot;.out&quot;, &quot;w&quot;, stdout);
-    read(n, m);
-    for(int d = 1; d &lt;= m / d; ++ d)
-        if(m % d == 0) {
-            ans += mu(d) * qp(m / d, n);
-            if(d != m / d) ans += mu(m / d) * qp(d, n);
-    }
-    write(ans);
-    return 0;
-}
-</code></pre>
+        <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line">#<span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n, m, ans;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</span></span><br><span class="line"><span class="function"> <span class="keyword">inline</span> <span class="type">void</span> <span class="title">read</span><span class="params">(T &amp;x)</span> </span>&#123;</span><br><span class="line">    T res = <span class="number">0</span>, f = <span class="number">1</span>; <span class="type">char</span> c = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span>(! <span class="built_in">isdigit</span>(c)) &#123;</span><br><span class="line">        <span class="keyword">if</span>(c == <span class="string">&#x27;-&#x27;</span>) f = <span class="number">-1</span>;</span><br><span class="line">        c = <span class="built_in">getchar</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">isdigit</span>(c)) res = (res &lt;&lt; <span class="number">1</span>) + (res &lt;&lt; <span class="number">3</span>) + c - <span class="number">48</span>, c = <span class="built_in">getchar</span>();</span><br><span class="line">    x = res * f; <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> ...T1&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">read</span><span class="params">(T &amp;x, T1 &amp;...x1)</span> </span>&#123; <span class="built_in">read</span>(x), <span class="built_in">read</span>(x<span class="number">1.</span>..); <span class="keyword">return</span> ; &#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;    </span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">write</span><span class="params">(T x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x &lt; <span class="number">0</span>) x = -x, <span class="built_in">putchar</span>(<span class="string">&#x27;-&#x27;</span>);</span><br><span class="line">    <span class="keyword">if</span>(x &gt; <span class="number">9</span>) <span class="built_in">write</span>(x / <span class="number">10</span>);</span><br><span class="line">    <span class="built_in">putchar</span>(x % <span class="number">10</span> + <span class="number">48</span>); <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">write</span><span class="params">(<span class="type">char</span> x)</span> </span>&#123; <span class="built_in">putchar</span>(x); <span class="keyword">return</span> ; &#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> ...T1&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">write</span><span class="params">(T x, T1 ...x1)</span> </span>&#123; <span class="built_in">write</span>(x),<span class="built_in">write</span>(x<span class="number">1.</span>..); <span class="keyword">return</span> ; &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">qp</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> res = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(b) &#123;</span><br><span class="line">        <span class="keyword">if</span>(b &amp; <span class="number">1</span>) res *= a;</span><br><span class="line">        b &gt;&gt;= <span class="number">1</span>, a *= a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">mu</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> res = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= x / i; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span>(x % i == <span class="number">0</span>) &#123;</span><br><span class="line">            res *= <span class="number">-1</span>, x /= i;</span><br><span class="line">            <span class="keyword">if</span>(x % i == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(x &gt; <span class="number">1</span>) res *= <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="comment">// freopen(&quot;.in&quot;, &quot;r&quot;, stdin);</span></span><br><span class="line">   <span class="comment">// freopen(&quot;.out&quot;, &quot;w&quot;, stdout);</span></span><br><span class="line">    <span class="built_in">read</span>(n, m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> d = <span class="number">1</span>; d &lt;= m / d; ++ d)</span><br><span class="line">        <span class="keyword">if</span>(m % d == <span class="number">0</span>) &#123;</span><br><span class="line">            ans += <span class="built_in">mu</span>(d) * <span class="built_in">qp</span>(m / d, n);</span><br><span class="line">            <span class="keyword">if</span>(d != m / d) ans += <span class="built_in">mu</span>(m / d) * <span class="built_in">qp</span>(d, n);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">write</span>(ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 </div>
@@ -527,88 +406,7 @@ signed main()
         Code
     </div>
     <div class='spoiler-content'>
-        <pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
-##define put putchar
-##define LL long long 
-using namespace std;
-const int N = 1e7 + 10, MAXN = 1e7;
-const LL mod = 20101009;
-LL n, m;
-int prim[N], cnt, mu[N];
-LL sum[N];
-bool st[N];
-
-template&lt;class T&gt;
- inline void read(T &amp;x) {
-    T res = 0, f = 1; char c = getchar();
-    while(! isdigit(c)) {
-        if(c == &#39;-&#39;) f = -1;
-        c = getchar();
-    }
-    while(isdigit(c)) res = (res &lt;&lt; 1) + (res &lt;&lt; 3) + c - 48, c = getchar();
-    x = res * f; return ;
-}
-template&lt;class T, class ...T1&gt;
-inline void read(T &amp;x, T1 &amp;...x1) { read(x), read(x1...); return ; }
-template&lt;class T&gt;    
-inline void write(T x) {
-    if(x &lt; 0) x = -x, putchar(&#39;-&#39;);
-    if(x &gt; 9) write(x / 10);
-    putchar(x % 10 + 48); return ;
-}
-template&lt;&gt;
-inline void write(char x) { putchar(x); return ; }
-template&lt;class T, class ...T1&gt;
-inline void write(T x, T1 ...x1) { write(x),write(x1...); return ; }
-
-LL qp(LL a, LL b) {
-    a %= mod, b %= mod - 1; LL res = 1ll;
-    while(b) {
-        if(b &amp; 1ll) res = res * a % mod;
-        a = a * a % mod, b &gt;&gt;= 1;
-    }
-    return res;
-}
-void init() {
-    mu[1] = 1;
-    for(int i = 2; i &lt;= MAXN; ++ i) {
-        if(! st[i]) prim[++ cnt] = i, mu[i] = -1;
-        for(int j = 1; j &lt;= cnt &amp;&amp; prim[j] &lt;= MAXN / i; ++ j) {
-            st[prim[j] * i] = true;
-            if(i % prim[j] == 0) break;
-            mu[prim[j] * i] = -mu[i];
-        }
-    }    
-    for(int i = 1; i &lt;= MAXN; ++ i)
-        sum[i] = sum[i - 1] + 1ll * i * i % mod * (mu[i] + mod) % mod, sum[i] %= mod;
-    return ;
-}
-LL f(LL x) {return x * (x + 1ll) / 2 % mod;}
-LL deal(LL n, LL m) {
-    LL res = 0;
-    for(LL l = 1, r; l &lt;= n; l = r + 1)
-        r = min(n / (n / l), m / (m / l)),
-        res = (res + (sum[r] - sum[l - 1] + mod) % mod * f(n / l) % mod * f(m / l) % mod) % mod;
-    return res;
-}
-LL get_ans(LL n, LL m) {
-    if(n &gt; m) swap(n, m);
-    LL res = 0;
-    for(LL l = 1, r; l &lt;= n; l = r + 1)
-        r = min(n / (n / l), m / (m / l)),
-        res = (res + ((f(r) - f(l - 1) + mod)) % mod * deal(n / l, m / l) % mod) % mod;
-    return res;
-}
-
-signed main()
-{
-   // freopen(&quot;.in&quot;, &quot;r&quot;, stdin);
-   // freopen(&quot;.out&quot;, &quot;w&quot;, stdout);
-    init(); read(n, m);
-    write(get_ans(n, m));
-    return 0;
-}
-</code></pre>
+        <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line">#<span class="meta">#<span class="keyword">define</span> put putchar</span></span><br><span class="line">#<span class="meta">#<span class="keyword">define</span> LL long long </span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e7</span> + <span class="number">10</span>, MAXN = <span class="number">1e7</span>;</span><br><span class="line"><span class="type">const</span> LL mod = <span class="number">20101009</span>;</span><br><span class="line">LL n, m;</span><br><span class="line"><span class="type">int</span> prim[N], cnt, mu[N];</span><br><span class="line">LL sum[N];</span><br><span class="line"><span class="type">bool</span> st[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</span></span><br><span class="line"><span class="function"> <span class="keyword">inline</span> <span class="type">void</span> <span class="title">read</span><span class="params">(T &amp;x)</span> </span>&#123;</span><br><span class="line">    T res = <span class="number">0</span>, f = <span class="number">1</span>; <span class="type">char</span> c = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span>(! <span class="built_in">isdigit</span>(c)) &#123;</span><br><span class="line">        <span class="keyword">if</span>(c == <span class="string">&#x27;-&#x27;</span>) f = <span class="number">-1</span>;</span><br><span class="line">        c = <span class="built_in">getchar</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">isdigit</span>(c)) res = (res &lt;&lt; <span class="number">1</span>) + (res &lt;&lt; <span class="number">3</span>) + c - <span class="number">48</span>, c = <span class="built_in">getchar</span>();</span><br><span class="line">    x = res * f; <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> ...T1&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">read</span><span class="params">(T &amp;x, T1 &amp;...x1)</span> </span>&#123; <span class="built_in">read</span>(x), <span class="built_in">read</span>(x<span class="number">1.</span>..); <span class="keyword">return</span> ; &#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;    </span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">write</span><span class="params">(T x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x &lt; <span class="number">0</span>) x = -x, <span class="built_in">putchar</span>(<span class="string">&#x27;-&#x27;</span>);</span><br><span class="line">    <span class="keyword">if</span>(x &gt; <span class="number">9</span>) <span class="built_in">write</span>(x / <span class="number">10</span>);</span><br><span class="line">    <span class="built_in">putchar</span>(x % <span class="number">10</span> + <span class="number">48</span>); <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">write</span><span class="params">(<span class="type">char</span> x)</span> </span>&#123; <span class="built_in">putchar</span>(x); <span class="keyword">return</span> ; &#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> ...T1&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">write</span><span class="params">(T x, T1 ...x1)</span> </span>&#123; <span class="built_in">write</span>(x),<span class="built_in">write</span>(x<span class="number">1.</span>..); <span class="keyword">return</span> ; &#125;</span><br><span class="line"></span><br><span class="line"><span class="function">LL <span class="title">qp</span><span class="params">(LL a, LL b)</span> </span>&#123;</span><br><span class="line">    a %= mod, b %= mod - <span class="number">1</span>; LL res = <span class="number">1ll</span>;</span><br><span class="line">    <span class="keyword">while</span>(b) &#123;</span><br><span class="line">        <span class="keyword">if</span>(b &amp; <span class="number">1ll</span>) res = res * a % mod;</span><br><span class="line">        a = a * a % mod, b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    mu[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= MAXN; ++ i) &#123;</span><br><span class="line">        <span class="keyword">if</span>(! st[i]) prim[++ cnt] = i, mu[i] = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; prim[j] &lt;= MAXN / i; ++ j) &#123;</span><br><span class="line">            st[prim[j] * i] = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">if</span>(i % prim[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">            mu[prim[j] * i] = -mu[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;    </span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= MAXN; ++ i)</span><br><span class="line">        sum[i] = sum[i - <span class="number">1</span>] + <span class="number">1ll</span> * i * i % mod * (mu[i] + mod) % mod, sum[i] %= mod;</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">LL <span class="title">f</span><span class="params">(LL x)</span> </span>&#123;<span class="keyword">return</span> x * (x + <span class="number">1ll</span>) / <span class="number">2</span> % mod;&#125;</span><br><span class="line"><span class="function">LL <span class="title">deal</span><span class="params">(LL n, LL m)</span> </span>&#123;</span><br><span class="line">    LL res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(LL l = <span class="number">1</span>, r; l &lt;= n; l = r + <span class="number">1</span>)</span><br><span class="line">        r = <span class="built_in">min</span>(n / (n / l), m / (m / l)),</span><br><span class="line">        res = (res + (sum[r] - sum[l - <span class="number">1</span>] + mod) % mod * <span class="built_in">f</span>(n / l) % mod * <span class="built_in">f</span>(m / l) % mod) % mod;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">LL <span class="title">get_ans</span><span class="params">(LL n, LL m)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n &gt; m) <span class="built_in">swap</span>(n, m);</span><br><span class="line">    LL res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(LL l = <span class="number">1</span>, r; l &lt;= n; l = r + <span class="number">1</span>)</span><br><span class="line">        r = <span class="built_in">min</span>(n / (n / l), m / (m / l)),</span><br><span class="line">        res = (res + ((<span class="built_in">f</span>(r) - <span class="built_in">f</span>(l - <span class="number">1</span>) + mod)) % mod * <span class="built_in">deal</span>(n / l, m / l) % mod) % mod;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="comment">// freopen(&quot;.in&quot;, &quot;r&quot;, stdin);</span></span><br><span class="line">   <span class="comment">// freopen(&quot;.out&quot;, &quot;w&quot;, stdout);</span></span><br><span class="line">    <span class="built_in">init</span>(); <span class="built_in">read</span>(n, m);</span><br><span class="line">    <span class="built_in">write</span>(<span class="built_in">get_ans</span>(n, m));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 </div>
@@ -619,104 +417,7 @@ signed main()
         Code
     </div>
     <div class='spoiler-content'>
-        <pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
-##define put putchar
-##define LL long long
-using namespace std;
-const int N = 1e5 + 10, mx = 1e5;
-const LL mod = 1ll &lt;&lt; 31;
-int Q, prim[N], cnt = 0, mu[N];
-bool st[N];
-LL t[N], d[N], ans[N];
-struct Node {
-    int n, m, a, id;
-    void read(int i) { scanf(&quot;%d%d%d&quot;, &amp;n, &amp;m, &amp;a), id = i;}
-    bool operator &lt; (const Node &amp;t) const {return a &lt; t.a;}
-} q[N];
-struct Node2 {
-    LL s; int id;
-    bool operator &lt; (const Node2 &amp;t) const {return s &lt; t.s;}
-} sum[N];
-
-template&lt;class T&gt;
- inline void read(T &amp;x) {
-    T res = 0, f = 1; char c = getchar();
-    while(! isdigit(c)) {
-        if(c == &#39;-&#39;) f = -1;
-        c = getchar();
-    }
-    while(isdigit(c)) res = (res &lt;&lt; 1) + (res &lt;&lt; 3) + c - 48, c = getchar();
-    x = res * f; return ;
-}
-template&lt;class T, class ...T1&gt;
-inline void read(T &amp;x, T1 &amp;...x1) { read(x), read(x1...); return ; }
-template&lt;class T&gt;    
-inline void write(T x) {
-    if(x &lt; 0) x = -x, putchar(&#39;-&#39;);
-    if(x &gt; 9) write(x / 10);
-    putchar(x % 10 + 48); return ;
-}
-template&lt;&gt;
-inline void write(char x) { putchar(x); return ; }
-template&lt;class T, class ...T1&gt;
-inline void write(T x, T1 ...x1) { write(x),write(x1...); return ; }
-
-void init() {
-    mu[1] = 1;
-    for(int i = 2; i &lt;= mx; ++ i) {
-        if(! st[i]) prim[++ cnt] = i, mu[i] = -1;
-        for(int j = 1; j &lt;= cnt &amp;&amp; prim[j] &lt;= mx / i; ++ j) {
-            st[prim[j] * i] = true;
-            if(i % prim[j] == 0) break;
-            mu[prim[j] * i] = -mu[i];
-        }
-    }
-    for(int i = 1; i &lt;= mx; ++ i) for(int j = i; j &lt;= mx; j += i) d[j] += 1ll * i;
-    for(int i = 1; i &lt;= mx; ++ i) sum[i].s = d[i], sum[i].id = i;
-    sort(sum + 1, sum + mx + 1);
-    return ;
-}
-int lowbit(int x) { return (-x) &amp; x;}
-void add(int x,LL y) {
-    for(; x &lt;= mx; x += lowbit(x)) t[x] += y;
-    return ;
-}
-
-LL query(int x) {
-    LL res = 0;
-    for(; x; x -= lowbit(x)) res += t[x];
-    return res;
-}
-void upd(int x) {
-    for(int i = 1; i &lt;= mx / x; ++ i) add(i * x, mu[i] * d[x]);
-    return ;
-}
-LL get_ans(int n, int m) {
-    LL res = 0;
-    if(n &gt; m) swap(n, m);
-    for(int l = 1, r; l &lt;= n; l = r + 1)
-        r = min(n / (n / l), m / (m / l)),
-        res += 1ll * (n / l) * (m / l) * (query(r) - query(l - 1)),
-        res = (res + mod) % mod;
-    return res;
-}
-
-signed main()
-{
-   // freopen(&quot;.in&quot;, &quot;r&quot;, stdin);
-   // freopen(&quot;.out&quot;, &quot;w&quot;, stdout);
-    init(); read(Q);
-       for(int i = 1; i &lt;= Q; ++ i) q[i].read(i);
-       sort(q + 1, q + Q + 1);
-       int now = 0;
-       for(int i = 1; i &lt;= Q; ++ i) {
-           while(sum[now + 1].s &lt;= q[i].a &amp;&amp; now &lt; mx) ++ now, upd(sum[now].id);
-           ans[q[i].id] = get_ans(q[i].n, q[i].m);
-       }
-       for(int i = 1; i &lt;= Q; ++ i) write(ans[i], &#39;\n&#39;);
-    return 0;
-}
-</code></pre>
+        <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line">#<span class="meta">#<span class="keyword">define</span> put putchar</span></span><br><span class="line">#<span class="meta">#<span class="keyword">define</span> LL long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e5</span> + <span class="number">10</span>, mx = <span class="number">1e5</span>;</span><br><span class="line"><span class="type">const</span> LL mod = <span class="number">1ll</span> &lt;&lt; <span class="number">31</span>;</span><br><span class="line"><span class="type">int</span> Q, prim[N], cnt = <span class="number">0</span>, mu[N];</span><br><span class="line"><span class="type">bool</span> st[N];</span><br><span class="line">LL t[N], d[N], ans[N];</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Node</span> &#123;</span><br><span class="line">    <span class="type">int</span> n, m, a, id;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">read</span><span class="params">(<span class="type">int</span> i)</span> </span>&#123; <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;n, &amp;m, &amp;a), id = i;&#125;</span><br><span class="line">    <span class="type">bool</span> <span class="keyword">operator</span> &lt; (<span class="type">const</span> Node &amp;t) <span class="type">const</span> &#123;<span class="keyword">return</span> a &lt; t.a;&#125;</span><br><span class="line">&#125; q[N];</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Node2</span> &#123;</span><br><span class="line">    LL s; <span class="type">int</span> id;</span><br><span class="line">    <span class="type">bool</span> <span class="keyword">operator</span> &lt; (<span class="type">const</span> Node2 &amp;t) <span class="type">const</span> &#123;<span class="keyword">return</span> s &lt; t.s;&#125;</span><br><span class="line">&#125; sum[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</span></span><br><span class="line"><span class="function"> <span class="keyword">inline</span> <span class="type">void</span> <span class="title">read</span><span class="params">(T &amp;x)</span> </span>&#123;</span><br><span class="line">    T res = <span class="number">0</span>, f = <span class="number">1</span>; <span class="type">char</span> c = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span>(! <span class="built_in">isdigit</span>(c)) &#123;</span><br><span class="line">        <span class="keyword">if</span>(c == <span class="string">&#x27;-&#x27;</span>) f = <span class="number">-1</span>;</span><br><span class="line">        c = <span class="built_in">getchar</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">isdigit</span>(c)) res = (res &lt;&lt; <span class="number">1</span>) + (res &lt;&lt; <span class="number">3</span>) + c - <span class="number">48</span>, c = <span class="built_in">getchar</span>();</span><br><span class="line">    x = res * f; <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> ...T1&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">read</span><span class="params">(T &amp;x, T1 &amp;...x1)</span> </span>&#123; <span class="built_in">read</span>(x), <span class="built_in">read</span>(x<span class="number">1.</span>..); <span class="keyword">return</span> ; &#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;    </span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">write</span><span class="params">(T x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x &lt; <span class="number">0</span>) x = -x, <span class="built_in">putchar</span>(<span class="string">&#x27;-&#x27;</span>);</span><br><span class="line">    <span class="keyword">if</span>(x &gt; <span class="number">9</span>) <span class="built_in">write</span>(x / <span class="number">10</span>);</span><br><span class="line">    <span class="built_in">putchar</span>(x % <span class="number">10</span> + <span class="number">48</span>); <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">write</span><span class="params">(<span class="type">char</span> x)</span> </span>&#123; <span class="built_in">putchar</span>(x); <span class="keyword">return</span> ; &#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> ...T1&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">write</span><span class="params">(T x, T1 ...x1)</span> </span>&#123; <span class="built_in">write</span>(x),<span class="built_in">write</span>(x<span class="number">1.</span>..); <span class="keyword">return</span> ; &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    mu[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= mx; ++ i) &#123;</span><br><span class="line">        <span class="keyword">if</span>(! st[i]) prim[++ cnt] = i, mu[i] = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; prim[j] &lt;= mx / i; ++ j) &#123;</span><br><span class="line">            st[prim[j] * i] = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">if</span>(i % prim[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">            mu[prim[j] * i] = -mu[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= mx; ++ i) <span class="keyword">for</span>(<span class="type">int</span> j = i; j &lt;= mx; j += i) d[j] += <span class="number">1ll</span> * i;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= mx; ++ i) sum[i].s = d[i], sum[i].id = i;</span><br><span class="line">    <span class="built_in">sort</span>(sum + <span class="number">1</span>, sum + mx + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">lowbit</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123; <span class="keyword">return</span> (-x) &amp; x;&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> x,LL y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(; x &lt;= mx; x += <span class="built_in">lowbit</span>(x)) t[x] += y;</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">LL <span class="title">query</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    LL res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(; x; x -= <span class="built_in">lowbit</span>(x)) res += t[x];</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">upd</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= mx / x; ++ i) <span class="built_in">add</span>(i * x, mu[i] * d[x]);</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">LL <span class="title">get_ans</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> m)</span> </span>&#123;</span><br><span class="line">    LL res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(n &gt; m) <span class="built_in">swap</span>(n, m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> l = <span class="number">1</span>, r; l &lt;= n; l = r + <span class="number">1</span>)</span><br><span class="line">        r = <span class="built_in">min</span>(n / (n / l), m / (m / l)),</span><br><span class="line">        res += <span class="number">1ll</span> * (n / l) * (m / l) * (<span class="built_in">query</span>(r) - <span class="built_in">query</span>(l - <span class="number">1</span>)),</span><br><span class="line">        res = (res + mod) % mod;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="comment">// freopen(&quot;.in&quot;, &quot;r&quot;, stdin);</span></span><br><span class="line">   <span class="comment">// freopen(&quot;.out&quot;, &quot;w&quot;, stdout);</span></span><br><span class="line">    <span class="built_in">init</span>(); <span class="built_in">read</span>(Q);</span><br><span class="line">       <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= Q; ++ i) q[i].<span class="built_in">read</span>(i);</span><br><span class="line">       <span class="built_in">sort</span>(q + <span class="number">1</span>, q + Q + <span class="number">1</span>);</span><br><span class="line">       <span class="type">int</span> now = <span class="number">0</span>;</span><br><span class="line">       <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= Q; ++ i) &#123;</span><br><span class="line">           <span class="keyword">while</span>(sum[now + <span class="number">1</span>].s &lt;= q[i].a &amp;&amp; now &lt; mx) ++ now, <span class="built_in">upd</span>(sum[now].id);</span><br><span class="line">           ans[q[i].id] = <span class="built_in">get_ans</span>(q[i].n, q[i].m);</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= Q; ++ i) <span class="built_in">write</span>(ans[i], <span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 </div>
@@ -727,86 +428,7 @@ signed main()
         Code
     </div>
     <div class='spoiler-content'>
-        <pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
-##define LL long long
-using namespace std;
-const int N = 1e6 + 10, MAXN = 1e6;
-const LL mod = 1e9 + 7;
-int T, n, m, ans;
-int mu[N], f[N], g[N];
-int prim[N], cnt, sum[N];
-bool st[N + 10];
-
-template&lt;class T&gt;
- inline void read(T &amp;x) {
-    T res = 0, f = 1; char c = getchar();
-    while(! isdigit(c)) {
-        if(c == &#39;-&#39;) f = -1;
-        c = getchar();
-    }
-    while(isdigit(c)) res = (res &lt;&lt; 1) + (res &lt;&lt; 3) + c - 48, c = getchar();
-    x = res * f; return ;
-}
-template&lt;class T, class ...T1&gt;
-inline void read(T &amp;x, T1 &amp;...x1) { read(x), read(x1...); return ; }
-template&lt;class T&gt;    
-inline void write(T x) {
-    if(x &lt; 0) x = -x, putchar(&#39;-&#39;);
-    if(x &gt; 9) write(x / 10);
-    putchar(x % 10 + 48); return ;
-}
-template&lt;&gt;
-inline void write(char x) { putchar(x); return ; }
-template&lt;class T, class ...T1&gt;
-inline void write(T x, T1 ...x1) { write(x),write(x1...); return ; }
-
-int fp(int a, int b) {
-    int res = 1;
-    while(b) {
-        if(b &amp; 1) res = 1ll * res * a % mod;
-        b &gt;&gt;= 1, a = 1ll * a * a % mod;
-    }
-    return res;
-}
-
-void deal()
-{
-    mu[1] = 1, f[1] = 1, g[1] = 1, sum[0] = sum[1] = 1;
-    for(int i = 2; i &lt;= MAXN; ++i) {
-        sum[i] = 1, f[i] = (f[i - 1] + f[i - 2]) % mod, g[i] = fp(f[i],mod - 2);
-        if(! st[i]) mu[i] = -1, prim[++ cnt] = i;
-        for(int j = 1; j &lt;= cnt &amp;&amp; prim[j] &lt;= MAXN / i; ++j) {
-            st[i * prim[j]] = 1;
-            if(i % prim[j]) mu[i * prim[j]] = -mu[i];
-            else break;
-        }
-    }
-    for(int i = 1;i &lt;= MAXN;++ i)
-        if(mu[i])
-            for(int j = i;j &lt;= MAXN; j += i)
-                sum[j] = 1ll * sum[j] * (mu[i] == 1 ? f[j / i] : g[j / i]) % mod;
-    for(int i = 2;i &lt;= N;++ i) sum[i] = 1ll * sum[i] * sum[i - 1] % mod;
-}
-
-int main()
-{
-    read(T); deal();
-    while(T --) {
-        read(n, m);
-        if(n &gt; m) swap(n,m);
-        ans = 1;
-        for(int l = 1, r, res; l &lt;= n; l = r + 1)
-        {
-            r = min(n / (n / l), m / (m / l));
-            res = 1ll * sum[r] * fp(sum[l - 1], mod - 2) % mod;
-            ans = 1ll * ans * fp(res,1ll * (n / l) * (m / l) % (mod - 1)) % mod;
-        }
-        write((ans + mod) % mod, &#39;\n&#39;);
-    }
-    
-    return 0;
-}
-</code></pre>
+        <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line">#<span class="meta">#<span class="keyword">define</span> LL long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e6</span> + <span class="number">10</span>, MAXN = <span class="number">1e6</span>;</span><br><span class="line"><span class="type">const</span> LL mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"><span class="type">int</span> T, n, m, ans;</span><br><span class="line"><span class="type">int</span> mu[N], f[N], g[N];</span><br><span class="line"><span class="type">int</span> prim[N], cnt, sum[N];</span><br><span class="line"><span class="type">bool</span> st[N + <span class="number">10</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</span></span><br><span class="line"><span class="function"> <span class="keyword">inline</span> <span class="type">void</span> <span class="title">read</span><span class="params">(T &amp;x)</span> </span>&#123;</span><br><span class="line">    T res = <span class="number">0</span>, f = <span class="number">1</span>; <span class="type">char</span> c = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span>(! <span class="built_in">isdigit</span>(c)) &#123;</span><br><span class="line">        <span class="keyword">if</span>(c == <span class="string">&#x27;-&#x27;</span>) f = <span class="number">-1</span>;</span><br><span class="line">        c = <span class="built_in">getchar</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">isdigit</span>(c)) res = (res &lt;&lt; <span class="number">1</span>) + (res &lt;&lt; <span class="number">3</span>) + c - <span class="number">48</span>, c = <span class="built_in">getchar</span>();</span><br><span class="line">    x = res * f; <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> ...T1&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">read</span><span class="params">(T &amp;x, T1 &amp;...x1)</span> </span>&#123; <span class="built_in">read</span>(x), <span class="built_in">read</span>(x<span class="number">1.</span>..); <span class="keyword">return</span> ; &#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;    </span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">write</span><span class="params">(T x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x &lt; <span class="number">0</span>) x = -x, <span class="built_in">putchar</span>(<span class="string">&#x27;-&#x27;</span>);</span><br><span class="line">    <span class="keyword">if</span>(x &gt; <span class="number">9</span>) <span class="built_in">write</span>(x / <span class="number">10</span>);</span><br><span class="line">    <span class="built_in">putchar</span>(x % <span class="number">10</span> + <span class="number">48</span>); <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">write</span><span class="params">(<span class="type">char</span> x)</span> </span>&#123; <span class="built_in">putchar</span>(x); <span class="keyword">return</span> ; &#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> ...T1&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">void</span> <span class="title">write</span><span class="params">(T x, T1 ...x1)</span> </span>&#123; <span class="built_in">write</span>(x),<span class="built_in">write</span>(x<span class="number">1.</span>..); <span class="keyword">return</span> ; &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fp</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> res = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(b) &#123;</span><br><span class="line">        <span class="keyword">if</span>(b &amp; <span class="number">1</span>) res = <span class="number">1ll</span> * res * a % mod;</span><br><span class="line">        b &gt;&gt;= <span class="number">1</span>, a = <span class="number">1ll</span> * a * a % mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">deal</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    mu[<span class="number">1</span>] = <span class="number">1</span>, f[<span class="number">1</span>] = <span class="number">1</span>, g[<span class="number">1</span>] = <span class="number">1</span>, sum[<span class="number">0</span>] = sum[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i &lt;= MAXN; ++i) &#123;</span><br><span class="line">        sum[i] = <span class="number">1</span>, f[i] = (f[i - <span class="number">1</span>] + f[i - <span class="number">2</span>]) % mod, g[i] = <span class="built_in">fp</span>(f[i],mod - <span class="number">2</span>);</span><br><span class="line">        <span class="keyword">if</span>(! st[i]) mu[i] = <span class="number">-1</span>, prim[++ cnt] = i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; prim[j] &lt;= MAXN / i; ++j) &#123;</span><br><span class="line">            st[i * prim[j]] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(i % prim[j]) mu[i * prim[j]] = -mu[i];</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= MAXN;++ i)</span><br><span class="line">        <span class="keyword">if</span>(mu[i])</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = i;j &lt;= MAXN; j += i)</span><br><span class="line">                sum[j] = <span class="number">1ll</span> * sum[j] * (mu[i] == <span class="number">1</span> ? f[j / i] : g[j / i]) % mod;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>;i &lt;= N;++ i) sum[i] = <span class="number">1ll</span> * sum[i] * sum[i - <span class="number">1</span>] % mod;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">read</span>(T); <span class="built_in">deal</span>();</span><br><span class="line">    <span class="keyword">while</span>(T --) &#123;</span><br><span class="line">        <span class="built_in">read</span>(n, m);</span><br><span class="line">        <span class="keyword">if</span>(n &gt; m) <span class="built_in">swap</span>(n,m);</span><br><span class="line">        ans = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> l = <span class="number">1</span>, r, res; l &lt;= n; l = r + <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            r = <span class="built_in">min</span>(n / (n / l), m / (m / l));</span><br><span class="line">            res = <span class="number">1ll</span> * sum[r] * <span class="built_in">fp</span>(sum[l - <span class="number">1</span>], mod - <span class="number">2</span>) % mod;</span><br><span class="line">            ans = <span class="number">1ll</span> * ans * <span class="built_in">fp</span>(res,<span class="number">1ll</span> * (n / l) * (m / l) % (mod - <span class="number">1</span>)) % mod;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">write</span>((ans + mod) % mod, <span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 </div>
@@ -885,13 +507,13 @@ int main()
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">203k</span>
+    <span title="站点总字数">226k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">6:09</span>
+    <span title="站点阅读时长">6:52</span>
   </span>
 </div>
 <div class="busuanzi-count">
