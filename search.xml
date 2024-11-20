@@ -1230,7 +1230,7 @@ Git Bash 窗口就会弹出以下信息：  <div class='spoiler collapsed'>
     </div>
 </div>
 
-<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>实际上本题时间瓶颈在于 st 表，使用二分与使用双指针并无太明显的差距，不过能写更优就是了。如有问题，欢迎指正。</p>
+<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>实际上本题时间瓶颈在于 st 表，使用二分与使用双指针并无太明显的差距，不过能写更优就是了（实际上还是慢的一批）。如有问题，欢迎指正。</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
         <category>OI</category>
