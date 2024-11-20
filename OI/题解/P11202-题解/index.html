@@ -21,15 +21,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"fatedshadow.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"fold":{"enable":false,"height":1000},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="前言看了下题解区，全是 bfs 写法，所以专门搓了一篇 dp 来补一下。">
+    <meta name="description" content="前言看了下题解区，全是 bfs 写法，所以专门搓了一篇 dp 来补一下。传送门">
 <meta property="og:type" content="article">
 <meta property="og:title" content="P11202 题解">
 <meta property="og:url" content="http://fatedshadow.github.io/OI/%E9%A2%98%E8%A7%A3/P11202-%E9%A2%98%E8%A7%A3/index.html">
 <meta property="og:site_name" content="FatedShadow&#39;s Blog">
-<meta property="og:description" content="前言看了下题解区，全是 bfs 写法，所以专门搓了一篇 dp 来补一下。">
+<meta property="og:description" content="前言看了下题解区，全是 bfs 写法，所以专门搓了一篇 dp 来补一下。传送门">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-10-30T03:19:55.000Z">
-<meta property="article:modified_time" content="2024-11-01T02:55:55.147Z">
+<meta property="article:modified_time" content="2024-11-20T07:45:11.540Z">
 <meta property="article:author" content="FatedShadow">
 <meta property="article:tag" content="OI">
 <meta property="article:tag" content="题解">
@@ -159,7 +159,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -290,7 +290,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-11-01 10:55:55" itemprop="dateModified" datetime="2024-11-01T10:55:55+08:00">2024-11-01</time>
+      <time title="修改时间：2024-11-20 15:45:11" itemprop="dateModified" datetime="2024-11-20T15:45:11+08:00">2024-11-20</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -337,7 +337,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>看了下题解区，全是 bfs 写法，所以专门搓了一篇 dp 来补一下。</p>
+    <div class="post-body" itemprop="articleBody"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>看了下题解区，全是 bfs 写法，所以专门搓了一篇 dp 来补一下。<br><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P11202">传送门</a></p>
 <span id="more"></span>
 
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>发现去掉 $k$ 的限制（即 $k&#x3D;0$ 的时候），就是类似公共子序列的做法，但是有 $k$ 的限制，这部分不太好处理。容易想到直接压进去前 k 位字母分别填了什么，这样是正确的，但是复杂度不允许，时空间 $O(52^k\times nm)$ 易爆炸。<br>现在考虑哪些状态可以优化掉。由于 $k$ 比较小，我们发现：如果需要向序列中补一些既不属于 $s$ 又不属于 $t$ 的字母（不如成为集合外的字母），那么我们并不用考虑集合外的字母之间的间隔问题（$k$ 很小，全集比较大），也就是说：需要补一些集合外的字母的情况，只会在只考虑集合中的字母之间间隔过小时出现。<br>那么这 $k$ 维可以由 52 个状态优化成 4 个状态：这一位的字母是 选择的字符串 $S$ 中的字母 &#x2F; 选择字符串 $T$ 中的字母 &#x2F; 两者当前位相同的字母（即两个串都选择） &#x2F; 补的集合外的字母。我们可以由这些状态推出前 $k$ 个字母中两个串各有几个，从而得出哪些字母不能选。<br>为了方便，可以直接使用 4 进制的状压，直接进行滚动即可。<br>最后再处理一下往当前结尾的状态里面塞集合外的字母的最小值即可，时空复杂 $O(4^k\times nm)$。</p>
@@ -425,13 +425,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">228k</span>
+    <span title="站点总字数">231k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">6:54</span>
+    <span title="站点阅读时长">7:01</span>
   </span>
 </div>
 <div class="busuanzi-count">
