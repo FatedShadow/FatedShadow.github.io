@@ -21,29 +21,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"fatedshadow.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"fold":{"enable":false,"height":1000},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="foreword题目传送门，同时，到博客使用更好。">
+    <meta name="description" content="一封无关紧要的信。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="P8801 [蓝桥杯 2022 国 B] 最大数字  题解">
-<meta property="og:url" content="http://fatedshadow.github.io/OI/%E9%A2%98%E8%A7%A3/P8801-%E9%A2%98%E8%A7%A3/index.html">
+<meta property="og:title" content="一封信">
+<meta property="og:url" content="http://fatedshadow.github.io/%E9%9D%92%E6%98%A5%E7%BA%AA%E8%A1%8C/%E4%B8%80%E5%B0%81%E4%BF%A1/index.html">
 <meta property="og:site_name" content="FatedShadow&#39;s Blog">
-<meta property="og:description" content="foreword题目传送门，同时，到博客使用更好。">
+<meta property="og:description" content="一封无关紧要的信。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-01-01T13:36:07.000Z">
-<meta property="article:modified_time" content="2024-10-30T07:21:00.556Z">
+<meta property="article:published_time" content="2024-11-28T07:04:26.000Z">
+<meta property="article:modified_time" content="2024-11-28T07:11:17.932Z">
 <meta property="article:author" content="FatedShadow">
-<meta property="article:tag" content="OI">
-<meta property="article:tag" content="题解">
+<meta property="article:tag" content="青春纪行">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://fatedshadow.github.io/OI/%E9%A2%98%E8%A7%A3/P8801-%E9%A2%98%E8%A7%A3/">
+<link rel="canonical" href="http://fatedshadow.github.io/%E9%9D%92%E6%98%A5%E7%BA%AA%E8%A1%8C/%E4%B8%80%E5%B0%81%E4%BF%A1/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://fatedshadow.github.io/OI/%E9%A2%98%E8%A7%A3/P8801-%E9%A2%98%E8%A7%A3/","path":"OI/题解/P8801-题解/","title":"P8801 [蓝桥杯 2022 国 B] 最大数字  题解"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://fatedshadow.github.io/%E9%9D%92%E6%98%A5%E7%BA%AA%E8%A1%8C/%E4%B8%80%E5%B0%81%E4%BF%A1/","path":"青春纪行/一封信/","title":"一封信"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>P8801 [蓝桥杯 2022 国 B] 最大数字  题解 | FatedShadow's Blog</title>
+<title>一封信 | FatedShadow's Blog</title>
   
 
 
@@ -131,7 +130,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -144,7 +143,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#foreword"><span class="nav-text">foreword</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Afterword"><span class="nav-text">Afterword</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -254,7 +252,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://fatedshadow.github.io/OI/%E9%A2%98%E8%A7%A3/P8801-%E9%A2%98%E8%A7%A3/">
+    <link itemprop="mainEntityOfPage" href="http://fatedshadow.github.io/%E9%9D%92%E6%98%A5%E7%BA%AA%E8%A1%8C/%E4%B8%80%E5%B0%81%E4%BF%A1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -267,12 +265,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="P8801 [蓝桥杯 2022 国 B] 最大数字  题解 | FatedShadow's Blog">
+      <meta itemprop="name" content="一封信 | FatedShadow's Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          P8801 [蓝桥杯 2022 国 B] 最大数字  题解
+          一封信
         </h1>
 
         <div class="post-meta-container">
@@ -282,15 +280,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2023-01-01 21:36:07" itemprop="dateCreated datePublished" datetime="2023-01-01T21:36:07+08:00">2023-01-01</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-10-30 15:21:00" itemprop="dateModified" datetime="2024-10-30T15:21:00+08:00">2024-10-30</time>
+      <time title="创建时间：2024-11-28 15:04:26 / 修改时间：15:11:17" itemprop="dateCreated datePublished" datetime="2024-11-28T15:04:26+08:00">2024-11-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -298,11 +290,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/OI/" itemprop="url" rel="index"><span itemprop="name">OI</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/OI/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+          <a href="/categories/%E9%9D%92%E6%98%A5%E7%BA%AA%E8%A1%8C/" itemprop="url" rel="index"><span itemprop="name">青春纪行</span></a>
         </span>
     </span>
 
@@ -320,14 +308,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2k</span>
+      <span>1.5k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>4 分钟</span>
+      <span>3 分钟</span>
     </span>
 </div>
 
@@ -337,32 +325,18 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="foreword"><a href="#foreword" class="headerlink" title="foreword"></a>foreword</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P8801">题目传送门</a>，同时，<a href="https://fatedshadow.github.io/OI/%E9%A2%98%E8%A7%A3/P8801-%E9%A2%98%E8%A7%A3/#more">到博客使用更好</a>。</p>
-<span id="more"></span>
-
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>对于这道 数位 dp 偏简单例题——<br>（怎么看出来的？<del>标签</del>，处理数较大，处理部分按数位进行，是数位 dp 罢。）<br>楼下大佬用递归搜索 dp 或贪心暴力切题，本人秉着应有尽有的原则，为社区着想 <del>（蹭估值）</del> 地交了一篇递推写法的 dp。</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>先将输入的数字按位处理好后，应该建立状态转移方程。<br>因为本题数据太水了（bushi，<del>蒟蒻懒得想</del>，故构造了一个三维数组 $dp_{i,k,p}$，其中：</p>
-<ul>
-<li>$i$ 表示已经推到了第 $i$ 位（从低位向高位）。</li>
-<li>$k$ 表示还剩下 $j$ 次 操作 $1$ 的次数。</li>
-<li>$p$ 则表示还剩下 $k$ 次操作 $2$ 的次数。</li>
-</ul>
-<p>那么依照背包问题的处理方式，假设将当前位数字 $x$ 变换为 $y$，需操作 $1$ 共 $a$ 次，操作 $2$ 共 $b$ 次，那么：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dp[i][k][p] = <span class="built_in">max</span>(dp[i][k][p],dp[i - <span class="number">1</span>][k - a][p] + sum);</span><br><span class="line">dp[i][k][p] = <span class="built_in">max</span>(dp[i][k][p],dp[i - <span class="number">1</span>][k][p - b] + sum);</span><br></pre></td></tr></table></figure>
-
-<p>(此时请注意 $j - a$ 与 $k - b$ 是否大于等于 $0$，其中 $sum$ 表示 <code>pow(10,i - 1) * y</code>。)<br>然后在将 $y$ 枚举：<code>for（y : x ~ 9)</code>。（为什么不从 $x + 1$ 开始呢，因为即使预处理过了，但随着低位的递推，那么 $x$ 位也应该有所更替，<del>蒟蒻就在这里写挂了</del>。）<br>通过动态规划递推得到的数组，按照其定义，只用输出 $dp_{[\text{数的长度}][\text{操作 }1\text{ 次数}][\text{操作 }2\text{ 次数}]}$ 即可。<br>依照贪心思想，那如果执行操作 $2$，则 $y$ 会递减，那只有将 $y$ 变化为 $9$ 才是当前最优解，否则当前的答案不是最优解，可以直接舍去。<br>（代码中未给出优化，想要再调时间的 dalao 可以自己去试一试）。</p>
-<div class='spoiler collapsed'>
-    <div class='spoiler-title'>
-        Code
+    <div class="post-body" itemprop="articleBody"><div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="80f1585e767dfd6d260869f173b30c5a5fa58a5b56b2ead956d8eb59944853bb">b0508e0d0e8aab735c52ceb7e332630f8f2cd44d33d0152c318a41a15733997d745b4765826b19277fcf2be754a8539b8ae3775577767e3a5df62777e9eb34a2050ce95f2c3bbb4e0d134b299b6c9800a26f517ff7a5338a4d0f379aced3e0141230bab2d8e8318a5d7a843a9af5d0513e1791d49364882a841c68887c8df9cee053d51b8d953b95ad79ec268cdc923ddd57f18b8704716f02bfff39ecbf57e8c961bf20e235b1c60b0d0fd608445a66f12d46b919c14b456bf74c544cfe0f2c2e19772668e6a69884d8e41662c2e64f0e5b784b4997c2d559386ceab58356a651a7d829ce1b851aa178fbd3c729711494f862128ce7a4d4c029c92267b338da775037a7641453cb7ec75cd0deb85d4830467a4b30e1dcab4a59be48b48fe0a1fb3982e79b3087dafcd42e57db084365bd6951c29a172c29d0e771552151f6dca99456fa23678c4800571e604bf635198241dc5ee25d6feea11575c3b1e00b8179910f6248aedcab9c688a631eaf904ef5c5fa444a5a3149c010b4673b19e477eb6899d8cc7f32041da6312c208a7451788f41e1eace5950fc0228140e3b74ce23005ac818b9e7fe5eb33fbb08264525f35c5fac2d0e8c1ad692b64a3732e3873bf3eddfddd456d7e4203430bac5b70e5da12f3f0bdcafbb1def3c39187b750d736ac4135c0c41fa24b1ebe2db0d50db9855f8d36c650978607d1078e8d2a52b86775ed41d0ba15882535f014e4f721934dfb462c10870b3ad22b73499f29f4f971acc61c02bc3e7652950ac2b77a56b143c435cf2e2ad7ff47b8cc50d737d1c6cb4576f2f47eb4f48a2f6409478b808d2d785380894e3ecac2f4f1fd2773f5d0a4221eeeadf27fca48b6ec43f24ed85a6fe0a03cdf564943d77d9fa11c83d79a3ff1db60a66b7d3fd9ac7c41cf093a70779ecd764432e6e64913ef9072be4767afc477cb226c84bd41fe8961f78c71d1239734feab717550e159963b088ebf748b490e5461614612f2856484303f86a8a97ae1feb1db96d616cab74ad57eee36aab215eae202f93f5185e74db097fe4459d189b9c5de0f3b501fcd89c921c6d1ab6983978bdb780722b4374ffc6fdf7b2579e9cf6efec578e3da2cf7b2ae25b4fb8d06600a8e64127bfe0886660ae6097c5b7125bb03694a26005f4f83a1d819982d13ecfdcdfff46a57683149ce3c8fe6dab599517e26da281c3724a7dc92c7867b230c66b6f09810a0f8ad9f0ec14a204465f04e81180f38f7f307c1e0226a6ba1d40b0fb91f2f3631e5dab6134eed55a96d9bab5bd686531eec5d852edd2ab790f43c3f63b6b2db3b54bca1b73ffdabd3e0cc655adb3d4f25a90cb53daa80d3adb82959f630f93b8521230ae34ceb5f9552915f25c6d132289ec11feb63ff28c56aab6e137be247b624706f45797cd2cfa3a2a214e0e4fb67e4aa2647de7f8846a980b39f5b777c116cc6dae2e6a7ce2d54cfa359b26cc973a0c6d4fca89e1f0b37bb40d44584c262a684eddb41674907f0db309b88b261c4e9b2d1013cd8bef5844832732d92f704f351a7a5d1fdee54ed03ae83ac8d33a3bfc40721b070bf6a7930b6551635321d2ab401d4a37c7b65959cb25cc607e1866687dc69c8bf1ba13476d6dccdb41633bb245e97206a9cabe8356f69a83775260ea8cb6784b077c8e8c3f3e69aff794207e285bf76700f6948e1c5e992d9ecc0cea464b378296071090f7109e7e50504dc62188807e61e12e2070e20cdbdf45f1e4cdcfe14216299cc05d2ff5a945504bde5fc43dadbd9d65830c3cc8f72754bec75689e687f1db377c97f00d6a3c86fc0379a07fd58d65dd45741e320c00d2b3e4a76272b4285c6612d5ec2cc657c8fb69ead8a49ae5d45404ff559bc69cb7dcf4976b0079cb551ef4b92dfc080edea750e43ac65a8f358d4fd10a9589108b4eb4ab4ef20fa7dd1da1a60128927ffa2125e9143e63a60c9d245d98df492ad1e5ab98ca607ba56a09705e1ad7be3ba9bf1bbc85c70461a414a8e4b52ee40d42148a06e2cefa9e478a9a03b3c30e0f36b1a2c1f27e089cd84019638a9a01f23b1e0d34af66348f37d9eeed0c27213f3cdc88f7dd8ae01269ccd582c330a896570b4210c8cd6fe3414034c1bbc94317cf5e9b8d7a787ea13716ea8409acacd49eda5d422e58daf22cd5f03860dd1ea3a46eda5622009a59277f41c0704851075a83d269cb75332f2bc445b723a047e08a9828211f8af8d751b6bfd64bf144f2fcd16d6c86e6cfe2ba08d06e73b7159e918a85a270e34f89b5329f513ed52582a541e2f538ab4d43c1b752e3f46a4dfa7dcb399e764bf20184d302c50bfd4c79debc0936a756491fce192bf78fd5b3e6e4b1898caef2f32e9ce0791c67eab9443382c045f5956ee741c4f1569de2848a15ade6719f73eacfe26afee9998016d3732471c17f3c54767d6e85bc2dee2ba426ea4be58413adae035476244afd79b763c83e1c12b19d9b400f3cd1694100bd388d79df0c2f872abb1225c4027fcb00425e9f5e9422dc0f93ab643665ca7992658866b5c13c67fc2279c65a81cc00f2acd019d564eac7d8e642155a36b477aec3d88f33c9b353fedeb338bf2b6ed81ecbfc305be12c7e1a47e06b881d803812cae4b1b57306c8c2f45336982c8f789dc2154635aadb6db19022ebec4cfc62217621fbc728b5b001e7bb6e884947f7bdeb839a1c87a736649caa97ab0473ff542b8301672a83ddd95d4e14d1cf8054229f6334ce3b62f4e2f9ffa53c53389c9f1723db61c603383fd29c06678b48617dd9549d0ee7cd8423f7d0c96256fffc029430b46fa793129ce5906fb9d156765eea6490ce3c3eeaa88fe51b2b97a64cd45972481f03066c3c92b246870b2c48d9994d22f022914679386e828dc4c96319f88a02eb18d7887afc981e45363e656956e4b6f8a8146f918375f92401feacf9d489c56196d5d82e9ec42462774a1154d79a713d8993c5a9230220c40234c4129b2bc2d64cc6099b2c7fec532dcc8bb395d4a78bda770f6b8d02629f3ffd8400519731314f3c906cb25611c7e4ebb3e2e4ba474416fd33cbe0b68182b0f82a9b3723ae13299592ca51e57cb3fa0844fa2f86650475f523c4347244b64672a19249e2d5327a6321b7cb63c55f745ced28fbed8c166a257a1bf2e953e144f95273f227f5bb19b7d9b70ad365983bb2e3b13e3a95d9b6e5da5aec1739317119e886d05c8535783182e486f8bf1de09da48fb22d7b3f69c7d086f96b711cfc36fae40f7cc7931c50e85da4a926fa38661539af826af02a63e41e3b728a60163514f2b710dfeb5d047a7d95c3d4d204a3424584af6c1c9847b2428bdcce736edc53c5203fba44bf737077fff4839ce7759c5b1beae4f84e0e9df3e2a421b91745bbd3ebcebb62a2aa4fcae9d17ef22e8e26746867c05e165fdb5f3ceed541d8cf91495819ed59155de879a17c9401a254ff90caf313a665dbd7502b1ad7740e80bda241ea9be7c4a9d1bf2795b1e66c0b1cdc5acc95c07625fd65bf5e5a95eac97615b8d5eb292f97481bdf4a93455c3dd468f6b57b4b36c203aff897d4a3c419572023c63d4b14741a6e1b6dac2a76f3f2d1d16a8704fd5d0ec11a3eb0b67f60da160951b63ff630a2b7d28a0edbcd4b624ea03d5ff15ea4e5e70748eb81c8171c763db05f518f4a92fcf7c509820b2c71ed7d7a4c19021b6208e67f883a534d9e1cc33ae76f6978b492e4a4c22ccf7d6b731b109ac970fa0b4afd318eb9bd47652456d78b399a954af8a064e2091e341567bb70b0f4cb01d74f8c798aea6725f6992e803e2e26c41ed7a7bd93dbc2068f96c8053cc90c65ec0c79f5da146e51a27a563cfcf0353c5781250d72a4827f51586fb2f06a18cf32178061fdd74955540460ab0a86be8314855531b8a4c41a5990a166ade6c8f2b02bf61151960df20df00a46890fa04f479beef701cd875093074b39765e6d50295c3f67940b3363a3e14f98114093b7f8fb7d74e1411e02b416b354fe99d1d3bd719213a95b9cc521c00dbf586a3c481243795a83d710182fcbd842f68b568c4b61d9e3c38af0d7860a85905095f56b088f9f0c45e2059de3477b3a23601fdb136223aa5f4b9542aeca76dd959c453ec1db97e825ed5ef53d76bb81d2db749e4e196a8e7de822fb03ce64740caeda99a4830da40ecdef509a3778cc4097b66b85add67a215230e3600ec81c3e754a4e1a9a9235106331646568e5446eaf959bab0efe1af3786c53ca0b9deed3d17b5b6e21935f6de6d8c310a771de63c0fb65341d4c11af4d826d46d5e9d87d55b7331ae5c74f60947a3fda47f941de998cf2f39ee5180a9ffa7245e89664f210082d0af5e93df1ab0336b841c9ea82bbf1500be82f2c607bce2a5fc17ca72b62a8839eff2c3ccbeee89827b95b51c4202a041e13f915a4a491189a7f1a3786e97ee90aeb63e36d451e34ef9569f5c8d52ebfd5241400f4bae604b84109d564fa99c836b7a204bed7c78979e2aa63dece774e522be1679f25d2e92d117fc2f8cffc1cd546911e421732f05968eb1482f51bbf57ec5c8fe1d0f8fb8c5496e0a628c79a226bef14b5d62af1dd4afe08af5b5d80205dc5d8c08802e3de6551616aaa754f7439fe37eefe6ecaaeaf74d07955aa37dfedaa8e3500eb5748aca3b54364656d212833b617abbe72c09f743f7d9f98b711060c1f046a1b57d3458d459c2c9f77d647112c5b06bba832ce6d5f907714afdf484d6959d480ddc547523d47b023f3a401ffbd50f2f27a5025208a2ddac52a58543836648d1cb866f9f4c310b3e570bf91a4c3f8343cd3a7ab714b43b9dea8a3a9676de0c7574e14071db99ddd8158cc8e8e8a8c55bd0d7aabc588a1385cd5c1afca3817ec6cdf48e49029c766ac453caf4b07d270661dfc9d682dd750f936df70b3d772e7c14c76ff72e219995782cf53efb0af62ef9890ec77c4006221f674f216003e7297b12ba3d87b374d777544bc682d09e2612ef6c4ec4b5e6aab7e83722afa2c12c1464fc9e882696b4d5b1e646a6e82de098712be1ba937c95797b941ca417e98549fe7df3423b72b702318985d07e12072ae0852fcfbb281a7f337257e3b12979554446f5649df73dcc3b6698feca3b712e68a06c254760bcf767a9dd605b8f3abdecf30db0235cd3ae8b944b09fab311fc4dc8edea16399f43d253dca49066066429879dbd9db3658a7dbff0728eafd4796a59346938e64fe45db9561bce263e795342c33b36546a5070323e900da52f87af7eee0f4755e993fec17328cf6ca883d9e03af0e2088f8f5aebe193628d2772b7bf84ef346ac4a4130a53a78a5d1790ce6e8b8f4c576d257a25dda2be59a2506f1a63ef82be3067d19ffd00c718bae55a9eb62ada9fab631bdcb43c8d339fe2065a4917e205749a93447b5aa7b1a77b9adbb782132aa58dda9b23e561878b6ef8b12c0af479e606f377810fd1f6341609b3f0c81b93e8c79db8e9b173f6fe2920b1e88be0638b9ef73f928ecc167a20ad79dfd9fe10ab51db0cb6805e5b5537d2d8e8354250fbc1a12c4988be9f37fa7caa94b45791d99a2a98d8fdb90e1ee279eb774b16648addc394ffcf2b2765b882e358cff8da5dec41ab46ecde7c83396c4d9573380fb31148fa437241f442b3896c427be88cf9ac36043f2078fe7e29c15a78d2a2aac5ada4493f5a4116dfbfb4ce6d3166de826c981e9d954df0c9f0c5d01d74d03feb6f1d43fa33e3ed0dda4a6c4aff46264b62a1aa45a6e2fca590777996450272f6b2e0a0420a8418c75da5d938a592ae433c60015aed7692ab2f161c57444344e71505dc98c0b8ea099281a9664c5bd0584e4927ba2c86a1a53559e6ca74b3b94bf8cd971135f909924a0886cbbc002603911826e35011cadb815feaa3e8ee2fe6c91c5af4c85758ee0ce9ab36f97ad0b8959c9f393e3fd7cacdc9b9cf9d92f950892f6d2f1d4f1f2c972377eff93cb3f165a3794700471c9dc90ddb612be4717c56b33c18d8618bc27f31c72b83f5875e4867b376b734af668a3a6ee8334a09e72d86fd9ac2d8b677055bf8b67a7b00ef41a9491f882220cf0f81ce5876e0af818198caa549b59d58114346533e89a45a481b76d174554bfa6af7714b0ce08bf2d21731f3daff383b0a4775974144b309ab100c4526f11ea3d3c2c2ff467f66396d11b26d6823cfd32ac9f3f755bf899a6a6d21a848577a0dd0eba71361b62b8dbfcc269d99bf738117c9c51d01256b5cde5428e802b5fc3fecb50cc1b15b6484b6d877f2b33b7aa16861e00f39595dcd4179f93c3b05d55e1158b6080d6b4a33d8c2156e08a282cb4d48325003fc0c2fbabf3c7feacd3db1c155cced93896bbac7973f50fe80d9cf29c4688198cb6fc828853ba228d05ede0c30ae59a895f530521093e36f14e7b97cfcc42566140873333206c3474b50dff54d050773abb6b5def15f126c94183f0d10793cd98ef3706d68259654854849476cb11d27e0917e2f9417b05cbc60cbe53bcf7dc07f63994564f09c0dd382a3f34e4b251693ba0d2952132d0123ed0b1f3f4b3aea3533df245f69675a2b459e16c09e8f4097aa33f0f7ed7ee96fec5659c1d76fb6911162aac048d8ee3990af8c1f9eb19eafc28484afd7ab23e0a7d6b9c3fc13911e78a78a4f998d9e28858c49a9cb2f59d64dc8053a266674309773d7665cde331b763df9f8423e77591a747f7e34dcc0bb41dac096bf441b8e038de83617cb5ea9da534e65766fa08bb77327c6a02880e99e378102cb50c79b258f55711d2cc9893da785827bbbdefd5332b079c5a0197b0fa79d24baaa04f90bf4f9bc3f722f6050cde42fe2d1dc11e1296c22be7df6b5a4f9f6f186de41351b782893e62008fa2f33dc6389e57c560d89492d517827a3c04401cd9c667ccc60927b52399d9c7eb53537822da3463f626ec53daabdfed7c00ca5e3d</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">我将密码设为她的生日。当什么时候连我自己都打不开这篇文章时，它也便没有存在的必要了。</span>
+      </label>
     </div>
-    <div class='spoiler-content'>
-        <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">30</span>,M = <span class="number">110</span>;</span><br><span class="line"><span class="type">long</span> <span class="type">long</span> dp[N][M][M],ans[N][<span class="number">2</span>],num;<span class="comment">//十年 OI 一场空，不开 long long ___</span></span><br><span class="line"><span class="type">int</span> n,m,q[N],len = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">long</span> <span class="type">long</span> <span class="title">turn</span><span class="params">(<span class="type">long</span> <span class="type">long</span> a,<span class="type">long</span> <span class="type">long</span> b)</span><span class="comment">//比较方便的快速幂</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> s = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(b &amp; <span class="number">1</span>) s *= a;</span><br><span class="line">        a *= a;</span><br><span class="line">        b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">deal</span><span class="params">()</span><span class="comment">//预处理一部分数组，最开始都是原数字的一部分</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(dp,<span class="number">0</span>,<span class="keyword">sizeof</span> dp);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= len;++ i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> sum = q[i] * <span class="built_in">turn</span>(<span class="number">10</span>,i - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> k = <span class="number">0</span>;k &lt;= n;++ k)</span><br><span class="line">            dp[i][k][<span class="number">0</span>] = dp[i - <span class="number">1</span>][k][<span class="number">0</span>] + sum;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> p = <span class="number">0</span>;p &lt;= m;++ p)</span><br><span class="line">            dp[i][<span class="number">0</span>][p] = dp[i - <span class="number">1</span>][<span class="number">0</span>][p] + sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">(<span class="type">long</span> <span class="type">long</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(q,<span class="number">0</span>,<span class="keyword">sizeof</span> q);</span><br><span class="line">    <span class="keyword">while</span>(x) q[++ len] = x % <span class="number">10</span>,x /= <span class="number">10</span>;<span class="comment">//将整个数处理为数位</span></span><br><span class="line">    <span class="built_in">deal</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= len;++ i)<span class="comment">//用背包的方式处理数组，思想同上</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = q[i];j &lt;= <span class="number">9</span>;++ j)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> a = j - q[i],b = q[i] + <span class="number">10</span> - j;</span><br><span class="line">            <span class="type">long</span> <span class="type">long</span> sum = j * <span class="built_in">turn</span>(<span class="number">10</span>,i - <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> k = <span class="number">0</span>;k &lt;= n;++ k)</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> p = <span class="number">0</span>;p &lt;= m;++ p)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(k &gt;= a) dp[i][k][p] = <span class="built_in">max</span>(dp[i][k][p],dp[i - <span class="number">1</span>][k - a][p] + sum);</span><br><span class="line">                <span class="keyword">if</span>(p &gt;= b) dp[i][k][p] = <span class="built_in">max</span>(dp[i][k][p],dp[i - <span class="number">1</span>][k][p - b] + sum);<span class="comment">//记得判断是否够用</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lld%d%d&quot;</span>,&amp;num,&amp;n,&amp;m);</span><br><span class="line">    <span class="built_in">solve</span>(num);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld&quot;</span>,dp[len][n][m]);<span class="comment">//输出即可</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-    </div>
+  </div>
 </div>
-
-<h2 id="Afterword"><a href="#Afterword" class="headerlink" title="Afterword"></a>Afterword</h2><p>第一次写 tj，如有 bug 或 hack，请联系本蒟蒻，一定改正。<br><del>（没有也可以点个赞或关注啊）。</del></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
     </div>
 
     
@@ -379,7 +353,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://fatedshadow.github.io/OI/%E9%A2%98%E8%A7%A3/P8801-%E9%A2%98%E8%A7%A3/" title="P8801 [蓝桥杯 2022 国 B] 最大数字  题解">http://fatedshadow.github.io/OI/题解/P8801-题解/</a>
+      <a href="http://fatedshadow.github.io/%E9%9D%92%E6%98%A5%E7%BA%AA%E8%A1%8C/%E4%B8%80%E5%B0%81%E4%BF%A1/" title="一封信">http://fatedshadow.github.io/青春纪行/一封信/</a>
   </li>
   <li class="post-copyright-license">
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -388,19 +362,18 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/OI/" rel="tag"><i class="fa fa-tag"> OI</i>
-              <a href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag"><i class="fa fa-tag"> 题解</i>
+              <a href="/tags/%E9%9D%92%E6%98%A5%E7%BA%AA%E8%A1%8C/" rel="tag"><i class="fa fa-tag"> 青春纪行</i>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
+                <a href="/OI/%E9%A2%98%E8%A7%A3/P10403-%E9%A2%98%E8%A7%A3/" rel="prev" title="P10403 题解">
+                  <i class="fa fa-angle-left"></i> P10403 题解
+                </a>
             </div>
             <div class="post-nav-item">
-                <a href="/OI/%E9%A2%98%E8%A7%A3/ARC138A-%E9%A2%98%E8%A7%A3/" rel="next" title="ARC138A Larger Score 题解">
-                  ARC138A Larger Score 题解 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -512,7 +485,7 @@ setInterval("createtime()",250);
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
