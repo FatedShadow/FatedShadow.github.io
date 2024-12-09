@@ -522,7 +522,13 @@ Git Bash 窗口就会弹出以下信息：  <div class='spoiler collapsed'>
 <h3 id="P3313-SDOI2014-旅行"><a href="#P3313-SDOI2014-旅行" class="headerlink" title="P3313 [SDOI2014] 旅行"></a>P3313 [SDOI2014] 旅行</h3><p>树剖 and 动态开点。不知道为什么是个紫的。</p>
 <h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>乱打了一些板子，就当是康复训练了。</p>
 <h3 id="2024-11-27"><a href="#2024-11-27" class="headerlink" title="2024.11.27"></a>2024.11.27</h3><p>实际上今天没有写题，但是考试考了 $330pts$，奖励自己一天。</p>
-<h3 id="2024-11-28"><a href="#2024-11-28" class="headerlink" title="2024.11.28"></a>2024.11.28</h3><h3 id="P4551-最长异或路径"><a href="#P4551-最长异或路径" class="headerlink" title="P4551 最长异或路径"></a>P4551 最长异或路径</h3><p>水题。树上差分 and Trie 树秒了。</p>
+<h2 id="2024-11-28"><a href="#2024-11-28" class="headerlink" title="2024.11.28"></a>2024.11.28</h2><h3 id="P4551-最长异或路径"><a href="#P4551-最长异或路径" class="headerlink" title="P4551 最长异或路径"></a>P4551 最长异或路径</h3><p>水题。树上差分 and Trie 树秒了。</p>
+<h3 id="2024-12-9"><a href="#2024-12-9" class="headerlink" title="2024.12.9"></a>2024.12.9</h3><p>中途一直学 whk，现在回来补 OI。  </p>
+<h4 id="P1533-可怜的狗狗"><a href="#P1533-可怜的狗狗" class="headerlink" title="P1533 可怜的狗狗"></a>P1533 可怜的狗狗</h4><p>整体二分板子。打了一下发现不难理解。</p>
+<h3 id="P3527-POI2011-MET-Meteors"><a href="#P3527-POI2011-MET-Meteors" class="headerlink" title="P3527 [POI2011] MET-Meteors"></a>P3527 [POI2011] MET-Meteors</h3><p>整体二分典中典。二分时间可得。比较恶心的是这个阴间题目有几个数据点会爆 long long，有人说边加边特判，我听不懂直接 __int128。<br>10 min 后打脸了。luogu 上时限给的 2s，所以过了。ybtoj 上给的 1 s，所以被卡常了。被迫用 long long 写了个特判才过。</p>
+<h3 id="P3242-HNOI2015-接水果"><a href="#P3242-HNOI2015-接水果" class="headerlink" title="P3242 [HNOI2015] 接水果"></a>P3242 [HNOI2015] 接水果</h3><p>写了将近半天（中午耽误太久了）。<br>首先考虑将路径的包含问题转化为 dfn 序的大小问题（即每个点记录 $L_u$ 和 $R_u$ 表示子树内 dfn 序的区间），然后根据路径一个端点是否是另一个端点的祖先分讨，可以得到两个偏序关系，即二维平面上的一个矩阵。<br>可以使用树套树，但是直接扫描线会更好。套个整体二分解决事情。<br>调了这么久主要是注意二维区间的两个维度不能轻易交换，发现矩阵的两个维度的区间不相交，故钦定 dfn 序小的为第一维（大的同理），然后做扫描线。<br>代码不长，注意一些细节：空间和离散化问题。</p>
+<h3 id="P3332-ZJOI2013-K大数查询"><a href="#P3332-ZJOI2013-K大数查询" class="headerlink" title="P3332 [ZJOI2013] K大数查询"></a>P3332 [ZJOI2013] K大数查询</h3><p>比较板的题。整体二分随便艹一下就能过。由于不会区间加的树状数组，所以被迫写线段树。<br>调了 30min 的整体二分发现是线段树写锅了（雾。</p>
+<h3 id="P1527-国家集训队-矩阵乘法"><a href="#P1527-国家集训队-矩阵乘法" class="headerlink" title="P1527 [国家集训队] 矩阵乘法"></a>P1527 [国家集训队] 矩阵乘法</h3><p>整体二分板子。但是套二维树状数组。</p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>留下回忆之处，触着碰着，都是带刺的花。</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
@@ -634,6 +640,7 @@ Git Bash 窗口就会弹出以下信息：  <div class='spoiler collapsed'>
 <h2 id="2024-12-6"><a href="#2024-12-6" class="headerlink" title="2024.12.6"></a>2024.12.6</h2><h3 id="16-00"><a href="#16-00" class="headerlink" title="16:00"></a>16:00</h3><p>CCF 疑似有点太准时了。<br>最后成绩是 $100+100+52+48&#x3D;300pts$，坐标 SC，喜提 $rk12$。<br>T3 一个链的性质突然写挂了（没有特判），痛失 $4pts$。<br>T4 倒是多骗了 $16pts$，可喜可贺。<br>出了成绩就向 one hui 报告，然后理所当然的翘掉了接下来的两节语文连堂。</p>
 <h3 id="然后"><a href="#然后" class="headerlink" title="然后"></a>然后</h3><p>总之就是回来学竞赛。<br>然后得知打算在北京梦熊基地培训，放内假回去收拾东西，耍。</p>
 <h2 id="2024-12-7"><a href="#2024-12-7" class="headerlink" title="2024.12.7"></a>2024.12.7</h2><p>早上 9:00 从 DC 出发，坐动车去成都，换地铁到机场，飞往北京，坐地铁，换乘网约车，到校。<br>安顿下来写这篇日志的时候已是 17:48。<br>总感觉又又又被诈骗了。<br>晚饭吃日料，跟老师们吃，大人谈事情，我就 ™ 吃吃吃吃吃吃。爽！<br>晚上会机房改 NOIP T3，然而 1h 了还是没有任何进展。太紧张太慌了，周围全是佬在敲键盘。<br>$\textcolor{white}{除了某个非人的玩意还在那里打了很久的原神和星铁。}$</p>
+<h2 id="2024-12-8"><a href="#2024-12-8" class="headerlink" title="2024.12.8"></a>2024.12.8</h2><p>过生。<br>凌晨庆祝到 1:00 睡觉（伏笔）。想了下明早的考试，感觉没啥想的就直接睡，一堆人给我发生日祝福。<br>醒来，陌生的天花板。一看时间：9:47（伏笔回收）。<br>好好好，直接迟到。到了教室一看题才发现暴力一个不会，这就是省选和我的差距吗？坐牢。<br>然后发现周围的人全 nm 把 T1 切掉了。摆大栏，早上直接细节爆零，顺从了，我是真菜逼。</p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>你不会真的觉得有些空格是排版问题吧？不会吧不会吧？</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
@@ -671,7 +678,7 @@ Git Bash 窗口就会弹出以下信息：  <div class='spoiler collapsed'>
     <div class="hbe hbe-input hbe-input-default">
       <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
       <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">我将密码设为她的生日。当什么时候连我自己都打不开这篇文章时，它也便没有存在的必要了。</span>
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">我将密码设为她的生日。当什么时候连我自己都打不开这篇文章时，它也便没有存在的必要了。（格式：“month.day”）</span>
       </label>
     </div>
   </div>
@@ -694,7 +701,7 @@ Git Bash 窗口就会弹出以下信息：  <div class='spoiler collapsed'>
     <div class="hbe hbe-input hbe-input-default">
       <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
       <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">我将密码设为她的生日。当什么时候连我自己都打不开这篇文章时，它也便没有存在的必要了。</span>
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">我将密码设为她的生日。当什么时候连我自己都打不开这篇文章时，它也便没有存在的必要了。（格式：“month.day”）</span>
       </label>
     </div>
   </div>
