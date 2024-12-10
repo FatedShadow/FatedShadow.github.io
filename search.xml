@@ -523,12 +523,20 @@ Git Bash 窗口就会弹出以下信息：  <div class='spoiler collapsed'>
 <h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>乱打了一些板子，就当是康复训练了。</p>
 <h3 id="2024-11-27"><a href="#2024-11-27" class="headerlink" title="2024.11.27"></a>2024.11.27</h3><p>实际上今天没有写题，但是考试考了 $330pts$，奖励自己一天。</p>
 <h2 id="2024-11-28"><a href="#2024-11-28" class="headerlink" title="2024.11.28"></a>2024.11.28</h2><h3 id="P4551-最长异或路径"><a href="#P4551-最长异或路径" class="headerlink" title="P4551 最长异或路径"></a>P4551 最长异或路径</h3><p>水题。树上差分 and Trie 树秒了。</p>
-<h3 id="2024-12-9"><a href="#2024-12-9" class="headerlink" title="2024.12.9"></a>2024.12.9</h3><p>中途一直学 whk，现在回来补 OI。  </p>
-<h4 id="P1533-可怜的狗狗"><a href="#P1533-可怜的狗狗" class="headerlink" title="P1533 可怜的狗狗"></a>P1533 可怜的狗狗</h4><p>整体二分板子。打了一下发现不难理解。</p>
+<h2 id="2024-12-9"><a href="#2024-12-9" class="headerlink" title="2024.12.9"></a>2024.12.9</h2><p>中途一直学 whk，现在回来补 OI。  </p>
+<h3 id="P1533-可怜的狗狗"><a href="#P1533-可怜的狗狗" class="headerlink" title="P1533 可怜的狗狗"></a>P1533 可怜的狗狗</h3><p>整体二分板子。打了一下发现不难理解。</p>
 <h3 id="P3527-POI2011-MET-Meteors"><a href="#P3527-POI2011-MET-Meteors" class="headerlink" title="P3527 [POI2011] MET-Meteors"></a>P3527 [POI2011] MET-Meteors</h3><p>整体二分典中典。二分时间可得。比较恶心的是这个阴间题目有几个数据点会爆 long long，有人说边加边特判，我听不懂直接 __int128。<br>10 min 后打脸了。luogu 上时限给的 2s，所以过了。ybtoj 上给的 1 s，所以被卡常了。被迫用 long long 写了个特判才过。</p>
 <h3 id="P3242-HNOI2015-接水果"><a href="#P3242-HNOI2015-接水果" class="headerlink" title="P3242 [HNOI2015] 接水果"></a>P3242 [HNOI2015] 接水果</h3><p>写了将近半天（中午耽误太久了）。<br>首先考虑将路径的包含问题转化为 dfn 序的大小问题（即每个点记录 $L_u$ 和 $R_u$ 表示子树内 dfn 序的区间），然后根据路径一个端点是否是另一个端点的祖先分讨，可以得到两个偏序关系，即二维平面上的一个矩阵。<br>可以使用树套树，但是直接扫描线会更好。套个整体二分解决事情。<br>调了这么久主要是注意二维区间的两个维度不能轻易交换，发现矩阵的两个维度的区间不相交，故钦定 dfn 序小的为第一维（大的同理），然后做扫描线。<br>代码不长，注意一些细节：空间和离散化问题。</p>
 <h3 id="P3332-ZJOI2013-K大数查询"><a href="#P3332-ZJOI2013-K大数查询" class="headerlink" title="P3332 [ZJOI2013] K大数查询"></a>P3332 [ZJOI2013] K大数查询</h3><p>比较板的题。整体二分随便艹一下就能过。由于不会区间加的树状数组，所以被迫写线段树。<br>调了 30min 的整体二分发现是线段树写锅了（雾。</p>
 <h3 id="P1527-国家集训队-矩阵乘法"><a href="#P1527-国家集训队-矩阵乘法" class="headerlink" title="P1527 [国家集训队] 矩阵乘法"></a>P1527 [国家集训队] 矩阵乘法</h3><p>整体二分板子。但是套二维树状数组。</p>
+<h2 id="2024-12-10"><a href="#2024-12-10" class="headerlink" title="2024.12.10"></a>2024.12.10</h2><h3 id="上午的考试"><a href="#上午的考试" class="headerlink" title="上午的考试"></a>上午的考试</h3><p>烤焦了。</p>
+<h3 id="T1"><a href="#T1" class="headerlink" title="T1"></a>T1</h3><p>简述一下：一张 $n$ 点 $m$ 边的图，每个点有点权 $P_u$，初始占领 $s$。你可以占领 $u$ 当且仅当：</p>
+<ul>
+<li>所有已占领的点权和 $\leq P_u$。</li>
+<li>存在一个已被占领的点 $v$ 满足边 $(u,v)$ 存在。<br>你需要对所有点都求出其作为 $s$ 时，在开始需要多少额外兵力才可占领所有点。</li>
+</ul>
+<p>实际上不是很难，想复杂了。<br>考虑每条边的边权设为 $max(P_u,P_v)$，当前连通块的点权和大于该边则可以直接通过，否则就要加额外兵力，那么实际上实在建生成树。<br>建出 kruskal 重构树，对于非叶子节点（点权为 $w_u$），左右两棵子树内部的点要互相到达，左子树内的点权和 $sl$ （sum in left subtree）必须大于该节点的边权限制，否则左子树内部的点的答案需对 $sl-w_u$ 取 $max$，右子树同理。<br>代码很好写。</p>
+<h3 id="T2-T3"><a href="#T2-T3" class="headerlink" title="T2&amp;&amp;T3"></a>T2&amp;&amp;T3</h3><p>T2 省流：维护区间一次函数，用 扫描线+线段树套李超树解决。考场想到了，但那又有什么用呢？<br>T3 省流：什么玩意的五维 dp，不会，点 <a href="https://www.luogu.com.cn/problem/AT_xmascon20_f">这里</a> 跳楼。</p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>留下回忆之处，触着碰着，都是带刺的花。</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
