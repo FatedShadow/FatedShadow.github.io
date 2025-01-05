@@ -563,6 +563,7 @@ Git Bash 窗口就会弹出以下信息：  <div class='spoiler collapsed'>
 <h2 id="2025-1-4"><a href="#2025-1-4" class="headerlink" title="2025.1.4"></a>2025.1.4</h2><p>woc 在复习物理合格考的时候被赶回来学 OI。</p>
 <h3 id="P3690-【模板】动态树（LCT）"><a href="#P3690-【模板】动态树（LCT）" class="headerlink" title="P3690 【模板】动态树（LCT）"></a>P3690 【模板】动态树（LCT）</h3><p>重新写了一遍。现在总算会用了。</p>
 <h3 id="P3203-HNOI2010-弹飞绵羊"><a href="#P3203-HNOI2010-弹飞绵羊" class="headerlink" title="P3203 [HNOI2010] 弹飞绵羊"></a>P3203 [HNOI2010] 弹飞绵羊</h3><p>LCT 裸题。甚至不用换根，所以断边有一种非常巧妙的写法。<br>实际上这种情况的断边就是 splay 上取消联通性。加边直接连轻边即可。</p>
+<h3 id="P1501-国家集训队-Tree-II"><a href="#P1501-国家集训队-Tree-II" class="headerlink" title="P1501 [国家集训队] Tree II"></a>P1501 [国家集训队] Tree II</h3><p>同板子。<br>调了 0.5h，原因是区间加没有乘上 $sz$。<br>我唐完了。</p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>留下回忆之处，触着碰着，都是带刺的花。</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
@@ -716,9 +717,9 @@ Git Bash 窗口就会弹出以下信息：  <div class='spoiler collapsed'>
     <title>OI 之歌</title>
     <url>/%E9%9D%92%E6%98%A5%E7%BA%AA%E8%A1%8C/%E6%A2%A6%E9%87%8C%E6%B5%AE%E8%B5%B7%E7%9A%84%E8%AF%97%E8%A1%8C/OI-%E4%B9%8B%E6%AD%8C/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>翻草稿本的时候突然发现遗落在过去的诗。<br>是以记之。</p>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>OI 之歌</p>
 <span id="more"></span>
 
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>OI 之歌</p>
 <p>斑驳的墙煨着夜的昏黄，<br>窗外的菩提从容更替着衣裳。</p>
 <p>指尖微凉，屏幕微亮，<br>代码间的光标会不会迷失在错落的回廊。<br>陌生的程序熟睡在桌面上，<br>人既生于 OI 何来休憩的奢望。</p>
 <p>幻想着主机烤熟的香，<br>是否键帽也一副孤独而隔离的面相。</p>
