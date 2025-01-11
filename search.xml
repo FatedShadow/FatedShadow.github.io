@@ -570,6 +570,7 @@ Git Bash 窗口就会弹出以下信息：  <div class='spoiler collapsed'>
 <h3 id="P1195-口袋的天空"><a href="#P1195-口袋的天空" class="headerlink" title="P1195 口袋的天空"></a>P1195 口袋的天空</h3><p>我也不知道我为什么写这个黄题。估计是想爆切水题了。</p>
 <h2 id="2025-1-7"><a href="#2025-1-7" class="headerlink" title="2025.1.7"></a>2025.1.7</h2><h3 id="P4219-BJOI2014-大融合"><a href="#P4219-BJOI2014-大融合" class="headerlink" title="P4219 [BJOI2014] 大融合"></a>P4219 [BJOI2014] 大融合</h3><p>LCT 可以考虑维护子树和之类的问题了。<br>比如子树和：具体做法就是每个点维护 $si$ 表示虚儿子的子树和。只需要在 access、link、cut 三个操作的时候同时更改即可（因为其他的操作不会改变儿子的虚实），pushup 的时候记得加上 $si$，其他部分不变。<br>这个题这么做就完了。</p>
 <h2 id="2025-1-10"><a href="#2025-1-10" class="headerlink" title="2025.1.10"></a>2025.1.10</h2><h3 id="P2619-国家集训队-Tree-I"><a href="#P2619-国家集训队-Tree-I" class="headerlink" title="P2619 [国家集训队] Tree I"></a>P2619 [国家集训队] Tree I</h3><p>wqs 二分板子。学了一下发现非常简单。所以要多学。</p>
+<h2 id="2025-1-11"><a href="#2025-1-11" class="headerlink" title="2025.1.11"></a>2025.1.11</h2><h3 id="CF375D-Tree-and-Queries"><a href="#CF375D-Tree-and-Queries" class="headerlink" title="CF375D Tree and Queries"></a>CF375D Tree and Queries</h3><p>树上启发式合并板子。我太喜欢板子了。表白板子。</p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>留下回忆之处，触着碰着，都是带刺的花。</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
@@ -693,7 +694,8 @@ Git Bash 窗口就会弹出以下信息：  <div class='spoiler collapsed'>
 <h2 id="2025-1-2"><a href="#2025-1-2" class="headerlink" title="2025.1.2"></a>2025.1.2</h2><p>星铁翁法罗斯前瞻真好看。《何者》歌太好听了，吹爆。</p>
 <h2 id="2025-1-4"><a href="#2025-1-4" class="headerlink" title="2025.1.4"></a>2025.1.4</h2><p>没忍住，爆了大月卡。</p>
 <h2 id="2025-1-6"><a href="#2025-1-6" class="headerlink" title="2025.1.6"></a>2025.1.6</h2><p>出了星见雅专武。一个版本肝了约等于两个大保底，不望周知。<br>LCT 基础部分学的差不多了，不学了，开始学其他的。</p>
-<h2 id="2025-1-10"><a href="#2025-1-10" class="headerlink" title="2025.1.10"></a>2025.1.10</h2><p>会考昨天考完了。现在被允许全天呆在机房彻底告别 whk 教室（早读都不用）。<br>上午摆。下午学 wqs 二分。   </p>
+<h2 id="2025-1-10"><a href="#2025-1-10" class="headerlink" title="2025.1.10"></a>2025.1.10</h2><p>会考昨天考完了。现在被允许全天呆在机房彻底告别 whk 教室（早读都不用）。<br>上午摆。下午学 wqs 二分，xs，啥也不会。<br>然后看闵可夫斯基和，然后原地爆炸。<br>真的不想再被计算几何支配了，遂弃之。</p>
+<h2 id="2025-1-11"><a href="#2025-1-11" class="headerlink" title="2025.1.11"></a>2025.1.11</h2><p>学了树上启发式合并。比较好写。  </p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>你不会真的觉得有些空格是排版问题吧？不会吧不会吧？</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
