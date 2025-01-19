@@ -573,8 +573,9 @@ Git Bash 窗口就会弹出以下信息：  <div class='spoiler collapsed'>
 <h2 id="2025-1-11"><a href="#2025-1-11" class="headerlink" title="2025.1.11"></a>2025.1.11</h2><h3 id="CF375D-Tree-and-Queries"><a href="#CF375D-Tree-and-Queries" class="headerlink" title="CF375D Tree and Queries"></a>CF375D Tree and Queries</h3><p>树上启发式合并板子。我太喜欢板子了。表白板子。</p>
 <h2 id="2025-1-17"><a href="#2025-1-17" class="headerlink" title="2025.1.17"></a>2025.1.17</h2><h3 id="P3804-【模板】后缀自动机（SAM）"><a href="#P3804-【模板】后缀自动机（SAM）" class="headerlink" title="P3804 【模板】后缀自动机（SAM）"></a>P3804 【模板】后缀自动机（SAM）</h3><p>后缀自动机。理解成 parent tree+Trie(有向图) 即可。</p>
 <h3 id="P8368-LNOI2022-串"><a href="#P8368-LNOI2022-串" class="headerlink" title="P8368 [LNOI2022] 串"></a>P8368 [LNOI2022] 串</h3><p>下届为 $\frac{n}{2}$，考虑更优：<br>逆向思考：对于 S 串，逆向变化为：$[i,j]-&gt;[i-1,,j-2]-&gt;[i-2,j-4]…$。<br>那么对于初始串 $S[i,j]$，下界为 $min(\frac{n}{2},i-j+1)$。<br>观察到有一个性质：对于一个出现了两次及以上的子串 $[i_1,j_1],[i_2,j_2]$，那么我们从 $[i_2,j_2]$ 开始，然后不断变化，当左端点跳到 $i_1$​ 时，我们跳回到 $i_2$​ 即可。<br>一次，我们可以实现两个串之间来回跳，答案为 $r−l+1+(n−r)&#x2F;2$。<br>所以记录每个节点最靠左的右端点和串的个数，取最大值即可。<br>说的很抽象，建议看代码和题解。这里仅用作帮助回忆。</p>
-<h3 id="AT-abc272-f-ABC272F-Two-Strings"><a href="#AT-abc272-f-ABC272F-Two-Strings" class="headerlink" title="AT_abc272_f [ABC272F] Two Strings"></a>AT_abc272_f [ABC272F] Two Strings</h3><p>考虑断环为链。串 $A$ 变为 $AA$，$B$ 同理。<br>然后非常妙的思路是直接将两个拼接在一起。<br>注意应该是这种形式 $AA+极小字符+BB+极大字符$，原因是题目中要求小于等于。<br>然后直接用 SA 数组，求前缀和即可。</p>
-<h3 id="P6139-【模板】广义后缀自动机（广义-SAM）"><a href="#P6139-【模板】广义后缀自动机（广义-SAM）" class="headerlink" title="P6139 【模板】广义后缀自动机（广义 SAM）"></a>P6139 【模板】广义后缀自动机（广义 SAM）</h3><p>加了一点特判，其余部分照旧。<br>在线做法应该只有我写的这一种是对的，其他的正确性伪了。<br>当然也可以考虑一下离线做法。</p>
+<h3 id="AT-abc272-f-ABC272F-Two-Strings"><a href="#AT-abc272-f-ABC272F-Two-Strings" class="headerlink" title="AT_abc272_f [ABC272F] Two Strings"></a>AT_abc272_f [ABC272F] Two Strings</h3><p>考虑断环为链。串 $A$ 变为 $AA$，$B$ 同理。<br>然后非常妙的思路是直接将两个拼接在一起。<br>注意应该是这种形式 $AA+极小字符+BB+极大字符$，原因是题目中要求 $A$ 小于等于 $B$。<br>然后直接用 SA 数组，求前缀和即可。</p>
+<h3 id="P6139-【模板】广义后缀自动机（广义-SAM）"><a href="#P6139-【模板】广义后缀自动机（广义-SAM）" class="headerlink" title="P6139 【模板】广义后缀自动机（广义 SAM）"></a>P6139 【模板】广义后缀自动机（广义 SAM）</h3><p>加了一点特判，其余部分照旧。<br>在线做法应该只有我写的这一种是对的，其他的正确性伪了。<br>当然也可以考虑一下其他离线做法。</p>
+<h3 id="P4770-NOI2018-你的名字"><a href="#P4770-NOI2018-你的名字" class="headerlink" title="P4770 [NOI2018] 你的名字"></a>P4770 [NOI2018] 你的名字</h3><p>PS：（哮喘！）（喘气~）（窒息）（拼命呼吸！）你的名字！<br>我觉得比较神仙。<br>先考虑对于所有询问，$l&#x3D;1,r&#x3D;|S|$ 怎么做。<br>建出 $S$ 的后缀自动机，然后让 $T$ 在上面跑匹配，得出 $T$ 上每个结点能在 $S$ 匹配的最长后缀长度 $lim$，答案为 $max(0ll,len-max(lim, len))$。<br>接下来考虑带 $l, r$ 怎么做。<br>我们发现我们在匹配时，只需要保证匹配到的 $S$ 子串为 $S[l,r]$ 的子串即可，即 $endpos$ 在 $[l+|S’|, r]$ 之间（$S’$ 为匹配到的子串）。<br>那么用线段树合并来维护每个点上的 $endpos$ 集合，在保证区间能匹配的情况下继续走，否则直接跳 parent tree，最后正常统计答案。<br>妙啊。</p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>留下回忆之处，触着碰着，都是带刺的花。</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
@@ -705,6 +706,24 @@ Git Bash 窗口就会弹出以下信息：  <div class='spoiler collapsed'>
 <h4 id="13-54"><a href="#13-54" class="headerlink" title="13:54"></a>13:54</h4><p>T2 写了个神秘 dp。喜提 40 pts，推测是状态数开少了。</p>
 <h4 id="14-17"><a href="#14-17" class="headerlink" title="14:17"></a>14:17</h4><p>口胡相信每个点被反转的次数不会太多，随便写了个暴力竟然能过。<br>不管了，开 T3。</p>
 <h3 id="16-37"><a href="#16-37" class="headerlink" title="16:37"></a>16:37</h3><p>写不来 T3。</p>
+<h2 id="2025-1-13-2025-1-15"><a href="#2025-1-13-2025-1-15" class="headerlink" title="2025.1.13~2025.1.15"></a>2025.1.13~2025.1.15</h2><h3 id="Day0"><a href="#Day0" class="headerlink" title="Day0"></a>Day0</h3><p>nmd 下午在操场上吹了 2h 的西北风，南方人都要被风干了。<br>下午 3:30 过开始排队，6:30 终于试机完。<br>试机打了个 A+B Problem 就跑路了，懒。<br>评测方式跟 NOI 一样，50 次提交机会。<br>晚上 10:30 左右就睡了。优质睡眠。</p>
+<h3 id="Day1"><a href="#Day1" class="headerlink" title="Day1"></a>Day1</h3><h3 id="6-30"><a href="#6-30" class="headerlink" title="6:30"></a>6:30</h3><p>下次绝对不会起这么早。</p>
+<h4 id="8-09"><a href="#8-09" class="headerlink" title="8:09"></a>8:09</h4><p>写完快读，调试完机子。感觉还不错，<br>T1 实际上很 easy，没多想，开始写的 BIT，但是后来意识到自己唐完了开始码线段树。</p>
+<h4 id="9：20"><a href="#9：20" class="headerlink" title="9：20"></a>9：20</h4><p>终于写完了 T1，开始看 T2。<br>被卡常卡红温了。5e5 的部分针对性质 $w&#x3D;1$ 选择用 map，1e5 的部分针对性质 $z\leq 2$ 选择线段树套线段树，5e5 的部分针对性质 $y\leq 2,z\leq 2$ 选择直接写线段树。<br>然后大力写了 2h，只过了 5e5 的线段树。被卡常卡爆（后来后知后觉是没有开 O2）。</p>
+<h4 id="12-00"><a href="#12-00" class="headerlink" title="12:00"></a>12:00</h4><p>终于发现 T2 不可做了，25pts 跑路（但是删了一堆东西都还剩 7KB）。<br>然后写 T3，想了很多中做法，最后直接大力贪心，应该有一些分。</p>
+<h4 id="12-43"><a href="#12-43" class="headerlink" title="12:43"></a>12:43</h4><p>T3 53pts 跑路，那就开始看 T4。<br>反应过来 tmd 要高精度，只写了 10pts 暴力就遗憾离场（没考虑高精度，开始以为还有 30 pts，事实证明我小丑了）。</p>
+<h4 id="之后"><a href="#之后" class="headerlink" title="之后"></a>之后</h4><p>100+25+53+10&#x3D;188pts。<br>下午去清华逛了一圈。比较有意思，但是没什么意思（雾。<br>拿了个不知道是什么的奖品，完全不会用，现在摆在桌子上吃灰。<br>晚上吃地狱拉面，被辣爆（再度低估川外的辣度），打了会游戏。<br>半夜跟她在QQ上聊到 1:00，把话说开了就明白很多了。只是可惜了我的睡眠。</p>
+<h3 id="Day2"><a href="#Day2" class="headerlink" title="Day2"></a>Day2</h3><h4 id="7-10"><a href="#7-10" class="headerlink" title="7:10"></a>7:10</h4><p>非常好起床时间，但是我实际上没有睡多久。<br>没咖啡了，去麦当劳喝，讨厌那的咖啡。不好意思我还是喜欢致死量的黄糖什么的。不加糖不喜欢。</p>
+<h4 id="8-47"><a href="#8-47" class="headerlink" title="8:47"></a>8:47</h4><p>第一次写这种工程题，没什么经验（就是交互大模拟吧，雾）。好在迅速切掉了 T1，每个点调用一次 exp 即可，完全就是模拟。</p>
+<h4 id="8：51"><a href="#8：51" class="headerlink" title="8：51"></a>8：51</h4><p>写完 T2，是个矩阵乘法板子。</p>
+<h4 id="9-03"><a href="#9-03" class="headerlink" title="9:03"></a>9:03</h4><p>要复杂一点了，不过还好轻松写完。</p>
+<h4 id="9-24-10-23"><a href="#9-24-10-23" class="headerlink" title="9:24~10:23"></a>9:24~10:23</h4><p>T4 突然比较复杂，写完 T4 但是被矩阵乘法卡常了，75pts 死活过不去，遂放弃，看 T5。</p>
+<h4 id="11-04"><a href="#11-04" class="headerlink" title="11:04"></a>11:04</h4><p>很复杂，但是两遍过了 T5，开始看 T4。</p>
+<h4 id="11-26"><a href="#11-26" class="headerlink" title="11:26"></a>11:26</h4><p>反应过来 T2 是 1000 过 $O(n^3)$ 的 1s 时限。开始思考什么叫调整循环顺序和局部缓存。<br>改了一下循环顺序过后雀食很快，1.4s 过了 T4 2s 时限。<br>然后不会 T6、T7，摆了 90min。</p>
+<h4 id="之后-1"><a href="#之后-1" class="headerlink" title="之后"></a>之后</h4><p>500 pts（但是 Days 满分 700 要折合成 300，所以实际只有 200 多）。<br>下午听无聊讲座，闭幕式，遗憾守银（什么用没有的奖），同行的杨阳倒是卓越奖（前 20 名）。<br>被教练狠狠打击了。<br>下午回去摆，晚上摆，半夜继续和她聊天。</p>
+<h2 id="2025-1-16"><a href="#2025-1-16" class="headerlink" title="2025.1.16"></a>2025.1.16</h2><p>坐火车回绵阳。火车上继续和她聊天（明天返校吧）。<br>早上吃薯片晕碳，睡；中午吃方便面晕碳，睡。<br>然后就到家了，回家就和我妈闹的非常不愉快，遂睡。</p>
+<h2 id="2025-1-17"><a href="#2025-1-17" class="headerlink" title="2025.1.17"></a>2025.1.17</h2><p>返校听 Fly 和 Rusun 讲课，讲了 SAM，基本理解了，题没怎么动（时间全在理解）。<br>大有收获。</p>
+<h2 id="2025-1-18"><a href="#2025-1-18" class="headerlink" title="2025.1.18"></a>2025.1.18</h2><p>上午写 SAM，写了一些，算是熟悉板子。</p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>你不会真的觉得有些空格是排版问题吧？不会吧不会吧？</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
