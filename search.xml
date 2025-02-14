@@ -585,6 +585,11 @@ Git Bash 窗口就会弹出以下信息：  <div class='spoiler collapsed'>
 <h2 id="2025-2-13"><a href="#2025-2-13" class="headerlink" title="2025.2.13"></a>2025.2.13</h2><h3 id="P7519-省选联考-2021-A-B-卷-滚榜"><a href="#P7519-省选联考-2021-A-B-卷-滚榜" class="headerlink" title="P7519 [省选联考 2021 A&#x2F;B 卷] 滚榜"></a>P7519 [省选联考 2021 A&#x2F;B 卷] 滚榜</h3><p>60pts 的爆搜很好想。实际上加一个爆搜转状压再加一个贡献提前计算就行了。<br>比较好写。</p>
 <h3 id="CF14E-Camels"><a href="#CF14E-Camels" class="headerlink" title="CF14E Camels"></a>CF14E Camels</h3><p>由于不能有相邻相同的，可看作：“峰谷峰谷峰谷峰”的形式。<br>随便做即可，可优化到 $O(nmV^2)$，其中 $V$ 是值域即为 $4$。</p>
 <h2 id="2025-2-14"><a href="#2025-2-14" class="headerlink" title="2025.2.14"></a>2025.2.14</h2><h3 id="P4655-CEOI-2017-Building-Bridges"><a href="#P4655-CEOI-2017-Building-Bridges" class="headerlink" title="P4655 [CEOI 2017] Building Bridges"></a>P4655 [CEOI 2017] Building Bridges</h3><p>李超线段树优化斜率 dp。</p>
+<h3 id="CF372C-Watching-Fireworks-is-Fun"><a href="#CF372C-Watching-Fireworks-is-Fun" class="headerlink" title="CF372C Watching Fireworks is Fun"></a>CF372C Watching Fireworks is Fun</h3><p>两个方向各一次单调队列优化 dp。</p>
+<h3 id="P1792-国家集训队-种树"><a href="#P1792-国家集训队-种树" class="headerlink" title="P1792 [国家集训队] 种树"></a>P1792 [国家集训队] 种树</h3><p>wqs 二分，当然也可以链表维护反悔贪心。</p>
+<h3 id="P6246-IOI-2000-邮局-加强版-加强版"><a href="#P6246-IOI-2000-邮局-加强版-加强版" class="headerlink" title="P6246 [IOI 2000] 邮局 加强版 加强版"></a>P6246 [IOI 2000] 邮局 加强版 加强版</h3><p>普通版随便过。一次加强版用上了决策单调性（即四边形不等式）。<br>二次加强版考虑 wqs 二分，代价与邮局的个数的函数是有凸性的（意会一下，实在不行打表），那么考虑 wqs 二分。<br>于是变成了一维决策单调性，还是满足四边形不等式的。那么直接做即可。</p>
+<h3 id="TJOI2017-可乐（数据加强版）"><a href="#TJOI2017-可乐（数据加强版）" class="headerlink" title="[TJOI2017] 可乐（数据加强版）"></a>[TJOI2017] 可乐（数据加强版）</h3><p>矩阵加速，直接把图的邻接矩阵拿去跑矩阵快速幂即可。</p>
+<h3 id="P3216-HNOI2011-数学作业"><a href="#P3216-HNOI2011-数学作业" class="headerlink" title="P3216 [HNOI2011] 数学作业"></a>P3216 [HNOI2011] 数学作业</h3><p>矩阵加速，脑残点在于要开 unsigned long long 不然会爆炸。</p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>留下回忆之处，触着碰着，都是带刺的花。</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
