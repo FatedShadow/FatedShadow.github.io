@@ -566,7 +566,7 @@ Git Bash 窗口就会弹出以下信息：  <div class='spoiler collapsed'>
 <h2 id="2025-1-5"><a href="#2025-1-5" class="headerlink" title="2025.1.5"></a>2025.1.5</h2><h3 id="P1501-国家集训队-Tree-II"><a href="#P1501-国家集训队-Tree-II" class="headerlink" title="P1501 [国家集训队] Tree II"></a>P1501 [国家集训队] Tree II</h3><p>同板子。<br>调了 0.5h，原因是区间加没有乘上 $sz$。<br>我唐完了。</p>
 <h2 id="2025-1-6"><a href="#2025-1-6" class="headerlink" title="2025.1.6"></a>2025.1.6</h2><h3 id="P2486-SDOI2011-染色"><a href="#P2486-SDOI2011-染色" class="headerlink" title="P2486 [SDOI2011] 染色"></a>P2486 [SDOI2011] 染色</h3><p>可以用树剖，而且这样直接暴力思路就行。<br>但是合并区间很麻烦，不如写 LCT。<br>考虑转边权。两端点颜色不同，为 1；否则为 0。<br>答案即为路径边权和再加 1。<br>注意结点需维护 splay 子树内最左和最右的颜色；warning：区间取反时需要把这个也取反（没取反调了 10min）。<br>然后轻松过。</p>
 <h3 id="LCT-学习链接"><a href="#LCT-学习链接" class="headerlink" title="LCT 学习链接"></a>LCT 学习链接</h3><p><a href="https://www.cnblogs.com/flashhu/p/9498517.html">有点好用</a>。</p>
-<h3 id="P7219-JOISC2020-星座-3"><a href="#P7219-JOISC2020-星座-3" class="headerlink" title="P7219 [JOISC2020] 星座 3"></a>P7219 [JOISC2020] 星座 3</h3><p>考虑建笛卡尔树，发现这样比较复杂，所以不建了（雾）。<br>考虑反悔贪心，也比较麻烦，所以不考虑（大雾）。<br>如果从下往上考虑，可以直接贪心：当前的星星与下面的一坨星星冲突，那么要么舍弃当前，要么舍弃下面那一坨，则有贪心：直接舍弃权值较小的那一方。看起来很扯淡，但是是对的。感性理解吧。<br>实际上是一个笛卡尔树合并的过程。由于大区间必然覆盖掉子树内所有小区间，所以这样是对的。<br>非常妙。从下往上，用并查集和树状数组来维护冲突的价值和。</p>
+<h3 id="P7219-JOISC2020-星座-3"><a href="#P7219-JOISC2020-星座-3" class="headerlink" title="P7219 [JOISC2020] 星座 3"></a>P7219 [JOISC2020] 星座 3</h3><p>考虑建笛卡尔树，发现这样比较复杂，所以不建了（雾）。<br>考虑反悔贪心，也比较麻烦，所以不考虑（大雾）。<br>如果从下往上考虑，可以直接贪心：当前的星星与下面的一坨星星冲突，那么要么舍弃当前，要么舍弃下面那一坨，则有贪心：直接舍弃权值较小的那一方。看起来很扯淡，但是是对的。感性理解吧。<br>实际上是一个笛卡尔树合并的过程。由于大区间必然覆盖掉子树内所有小区间，所以这样是对的。<br>非常妙。从下往上，用并查集和树状数组来维护冲突的价值和。<br>（本质上是反悔贪心，雾）。</p>
 <h3 id="P1195-口袋的天空"><a href="#P1195-口袋的天空" class="headerlink" title="P1195 口袋的天空"></a>P1195 口袋的天空</h3><p>我也不知道我为什么写这个黄题。估计是想爆切水题了。</p>
 <h2 id="2025-1-7"><a href="#2025-1-7" class="headerlink" title="2025.1.7"></a>2025.1.7</h2><h3 id="P4219-BJOI2014-大融合"><a href="#P4219-BJOI2014-大融合" class="headerlink" title="P4219 [BJOI2014] 大融合"></a>P4219 [BJOI2014] 大融合</h3><p>LCT 可以考虑维护子树和之类的问题了。<br>比如子树和：具体做法就是每个点维护 $si$ 表示虚儿子的子树和。只需要在 access、link、cut 三个操作的时候同时更改即可（因为其他的操作不会改变儿子的虚实），pushup 的时候记得加上 $si$，其他部分不变。<br>这个题这么做就完了。</p>
 <h2 id="2025-1-10"><a href="#2025-1-10" class="headerlink" title="2025.1.10"></a>2025.1.10</h2><h3 id="P2619-国家集训队-Tree-I"><a href="#P2619-国家集训队-Tree-I" class="headerlink" title="P2619 [国家集训队] Tree I"></a>P2619 [国家集训队] Tree I</h3><p>wqs 二分板子。学了一下发现非常简单。所以要多学。</p>
@@ -590,6 +590,24 @@ Git Bash 窗口就会弹出以下信息：  <div class='spoiler collapsed'>
 <h3 id="P6246-IOI-2000-邮局-加强版-加强版"><a href="#P6246-IOI-2000-邮局-加强版-加强版" class="headerlink" title="P6246 [IOI 2000] 邮局 加强版 加强版"></a>P6246 [IOI 2000] 邮局 加强版 加强版</h3><p>普通版随便过。一次加强版用上了决策单调性（即四边形不等式）。<br>二次加强版考虑 wqs 二分，代价与邮局的个数的函数是有凸性的（意会一下，实在不行打表），那么考虑 wqs 二分。<br>于是变成了一维决策单调性，还是满足四边形不等式的。那么直接做即可。</p>
 <h3 id="TJOI2017-可乐（数据加强版）"><a href="#TJOI2017-可乐（数据加强版）" class="headerlink" title="[TJOI2017] 可乐（数据加强版）"></a>[TJOI2017] 可乐（数据加强版）</h3><p>矩阵加速，直接把图的邻接矩阵拿去跑矩阵快速幂即可。</p>
 <h3 id="P3216-HNOI2011-数学作业"><a href="#P3216-HNOI2011-数学作业" class="headerlink" title="P3216 [HNOI2011] 数学作业"></a>P3216 [HNOI2011] 数学作业</h3><p>矩阵加速，脑残点在于要开 unsigned long long 不然会爆炸。</p>
+<h2 id="2025-2-15"><a href="#2025-2-15" class="headerlink" title="2025.2.15"></a>2025.2.15</h2><h3 id="P3502-POI-2010-CHO-Hamsters"><a href="#P3502-POI-2010-CHO-Hamsters" class="headerlink" title="P3502 [POI 2010] CHO-Hamsters"></a>P3502 [POI 2010] CHO-Hamsters</h3><p>kmp 加矩阵加速，注意字符串之间不会包含。</p>
+<h3 id="CF165E-Compatible-Numbers"><a href="#CF165E-Compatible-Numbers" class="headerlink" title="CF165E Compatible Numbers"></a>CF165E Compatible Numbers</h3><p>高维前缀和。做完了发现以前写过…无效学习+1。</p>
+<h3 id="CF449D-Jzzhu-and-Numbers"><a href="#CF449D-Jzzhu-and-Numbers" class="headerlink" title="CF449D Jzzhu and Numbers"></a>CF449D Jzzhu and Numbers</h3><p>高维容斥。钦定一下就比较好做。</p>
+<h3 id="AT-arc137-d-ARC137D-Prefix-XORs"><a href="#AT-arc137-d-ARC137D-Prefix-XORs" class="headerlink" title="AT_arc137_d [ARC137D] Prefix XORs"></a>AT_arc137_d [ARC137D] Prefix XORs</h3><p>考虑把这个转化为一个二维上的 dp，发现前面对后面项的贡献次数有组合意义下的化简式子。<br>由于是异或，所以贡献要对 $2$ 取模，用卢卡斯，发现 $(n-i+k-1)&amp;(k-1)&#x3D;k-1$，即 $(n-i)&amp;(k-1)&#x3D;0$，用高维前缀和做即可。</p>
+<h3 id="P4644-USACO05DEC-Cleaning-Shifts-S"><a href="#P4644-USACO05DEC-Cleaning-Shifts-S" class="headerlink" title="P4644 [USACO05DEC] Cleaning Shifts S"></a>P4644 [USACO05DEC] Cleaning Shifts S</h3><p>若至题。写来凑数。</p>
+<h3 id="P3565-POI-2014-HOT-Hotels"><a href="#P3565-POI-2014-HOT-Hotels" class="headerlink" title="P3565 [POI 2014] HOT-Hotels"></a>P3565 [POI 2014] HOT-Hotels</h3><p>可以写一个 $O(n^2)$ 暴力，然后你发现空间 $n^2$ 被卡爆。<br>写长剖就过了。</p>
+<h3 id="P5904-POI-2014-HOT-Hotels-加强版"><a href="#P5904-POI-2014-HOT-Hotels-加强版" class="headerlink" title="P5904 [POI 2014] HOT-Hotels 加强版"></a>P5904 [POI 2014] HOT-Hotels 加强版</h3><p>跟上题一模一样，空间开大点就过了。</p>
+<h2 id="2025-2-16"><a href="#2025-2-16" class="headerlink" title="2025.2.16"></a>2025.2.16</h2><h3 id="CF739E-Gosha-is-hunting"><a href="#CF739E-Gosha-is-hunting" class="headerlink" title="CF739E Gosha is hunting"></a>CF739E Gosha is hunting</h3><p>很有意思的费用流。可能被卡精度。当然也可以使用 wqs 二分。</p>
+<h3 id="P3426-POI-2005-SZA-Template"><a href="#P3426-POI-2005-SZA-Template" class="headerlink" title="P3426 [POI 2005] SZA-Template"></a>P3426 [POI 2005] SZA-Template</h3><p>好玩的 kmp+dp。</p>
+<h3 id="P5829-【模板】失配树"><a href="#P5829-【模板】失配树" class="headerlink" title="P5829 【模板】失配树"></a>P5829 【模板】失配树</h3><p>失配树板子。</p>
+<h3 id="P3193-HNOI2008-GT考试"><a href="#P3193-HNOI2008-GT考试" class="headerlink" title="P3193 [HNOI2008] GT考试"></a>P3193 [HNOI2008] GT考试</h3><p>失配指针套矩阵快速幂。</p>
+<h2 id="2025-2-17"><a href="#2025-2-17" class="headerlink" title="2025.2.17"></a>2025.2.17</h2><h3 id="P5496-【模板】回文自动机（PAM）"><a href="#P5496-【模板】回文自动机（PAM）" class="headerlink" title="P5496 【模板】回文自动机（PAM）"></a>P5496 【模板】回文自动机（PAM）</h3><p>回文自动机板子。</p>
+<h2 id="2025-2-19"><a href="#2025-2-19" class="headerlink" title="2025.2.19"></a>2025.2.19</h2><h3 id="CF1083F-The-Fair-Nut-and-Amusing-Xor"><a href="#CF1083F-The-Fair-Nut-and-Amusing-Xor" class="headerlink" title="CF1083F The Fair Nut and Amusing Xor"></a>CF1083F The Fair Nut and Amusing Xor</h3><p>写了一天。唐完了。</p>
+<h3 id="P3806-【模板】点分治-1"><a href="#P3806-【模板】点分治-1" class="headerlink" title="P3806 【模板】点分治 1"></a>P3806 【模板】点分治 1</h3><p>复习板子。</p>
+<h3 id="P2396-yyy-loves-Maths-VII"><a href="#P2396-yyy-loves-Maths-VII" class="headerlink" title="P2396 yyy loves Maths VII"></a>P2396 yyy loves Maths VII</h3><p>简答状压。记得用 lowbit 优化枚举过程防止超时。</p>
+<h2 id="2025-2-20"><a href="#2025-2-20" class="headerlink" title="2025.2.20"></a>2025.2.20</h2><p>全在复习。再不复习就似了。</p>
+<h3 id="P2150-NOI2015-寿司晚宴"><a href="#P2150-NOI2015-寿司晚宴" class="headerlink" title="P2150 [NOI2015] 寿司晚宴"></a>P2150 [NOI2015] 寿司晚宴</h3><p>对素数状压。注意每个比 $22$ 大的素数最多有一个，那么可以按照这个大素数进行分组 dp。<br>注意合并的细节。</p>
+<h2 id="2025-2-23"><a href="#2025-2-23" class="headerlink" title="2025.2.23"></a>2025.2.23</h2><h3 id="P2617-Dynamic-Rankings"><a href="#P2617-Dynamic-Rankings" class="headerlink" title="P2617 Dynamic Rankings"></a>P2617 Dynamic Rankings</h3><p>整体二分。</p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>留下回忆之处，触着碰着，都是带刺的花。</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
@@ -741,6 +759,8 @@ Git Bash 窗口就会弹出以下信息：  <div class='spoiler collapsed'>
 <h2 id="2025-1-19"><a href="#2025-1-19" class="headerlink" title="2025.1.19"></a>2025.1.19</h2><p>完毕了 SAM 部分，开始攻克图论。下午讲了讲容斥，讲到一半 Fly 走了，遂摆。<br>进度好慢啊。</p>
 <h2 id="2025-1-23"><a href="#2025-1-23" class="headerlink" title="2025.1.23"></a>2025.1.23</h2><p>这几天发烧，效率极其低下。刚写完 Fly 的题单<del>（直接跳过大部分难题）</del>，现在在磕网络流。<br>磕嗨了，发烧都不觉得难受。</p>
 <h2 id="2025-2-13"><a href="#2025-2-13" class="headerlink" title="2025.2.13"></a>2025.2.13</h2><p>过完年回来复健。感觉不好。2 周时间准备省选不如一周原神肝满大地图？（什么原批比喻法）。<br>难受的要死。</p>
+<h2 id="2025-2-17"><a href="#2025-2-17" class="headerlink" title="2025.2.17"></a>2025.2.17</h2><p>摆了一天。</p>
+<h2 id="2025-2-19"><a href="#2025-2-19" class="headerlink" title="2025.2.19"></a>2025.2.19</h2><p>昨天考试爆炸，边划水边改 T1，结果是浪费了 1 天。<br>开始复习板子，大力提高代码能力与代码熟练度。</p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>你不会真的觉得有些空格是排版问题吧？不会吧不会吧？</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
