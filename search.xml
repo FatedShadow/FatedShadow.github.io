@@ -608,6 +608,8 @@ Git Bash 窗口就会弹出以下信息：  <div class='spoiler collapsed'>
 <h2 id="2025-2-20"><a href="#2025-2-20" class="headerlink" title="2025.2.20"></a>2025.2.20</h2><p>全在复习。再不复习就似了。</p>
 <h3 id="P2150-NOI2015-寿司晚宴"><a href="#P2150-NOI2015-寿司晚宴" class="headerlink" title="P2150 [NOI2015] 寿司晚宴"></a>P2150 [NOI2015] 寿司晚宴</h3><p>对素数状压。注意每个比 $22$ 大的素数最多有一个，那么可以按照这个大素数进行分组 dp。<br>注意合并的细节。</p>
 <h2 id="2025-2-23"><a href="#2025-2-23" class="headerlink" title="2025.2.23"></a>2025.2.23</h2><h3 id="P2617-Dynamic-Rankings"><a href="#P2617-Dynamic-Rankings" class="headerlink" title="P2617 Dynamic Rankings"></a>P2617 Dynamic Rankings</h3><p>整体二分。</p>
+<h2 id="2025-2-25"><a href="#2025-2-25" class="headerlink" title="2025.2.25"></a>2025.2.25</h2><h3 id="P5631-最小mex生成树"><a href="#P5631-最小mex生成树" class="headerlink" title="P5631 最小mex生成树"></a>P5631 最小mex生成树</h3><p>考虑一个权值如若不在生成树的边权集合中出现，那么可以作为 mex。<br>于是线段树分治，从小到大枚举权值判断即可。</p>
+<h2 id="2025-2-26"><a href="#2025-2-26" class="headerlink" title="2025.2.26"></a>2025.2.26</h2><h3 id="P8365-LNOI2022-吃"><a href="#P8365-LNOI2022-吃" class="headerlink" title="P8365 [LNOI2022] 吃"></a>P8365 [LNOI2022] 吃</h3><p>很容易想到一个 $\frac{b}{a-1}$ 的贪心，只是是假的。真正该比较的应该是 $\frac{sum+b}{a}$，但这个是可能变化的。<br>然后瞪一下样例，发现除了 $a&#x3D;1$ 的情况必定选择加，至多会有一次加操作。<br>很好证，当然我直接猜结论了。然后直接找到最大的那一次直接做即可。</p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>留下回忆之处，触着碰着，都是带刺的花。</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
