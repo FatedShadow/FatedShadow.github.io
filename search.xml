@@ -610,6 +610,8 @@ Git Bash 窗口就会弹出以下信息：  <div class='spoiler collapsed'>
 <h2 id="2025-2-23"><a href="#2025-2-23" class="headerlink" title="2025.2.23"></a>2025.2.23</h2><h3 id="P2617-Dynamic-Rankings"><a href="#P2617-Dynamic-Rankings" class="headerlink" title="P2617 Dynamic Rankings"></a>P2617 Dynamic Rankings</h3><p>整体二分。</p>
 <h2 id="2025-2-25"><a href="#2025-2-25" class="headerlink" title="2025.2.25"></a>2025.2.25</h2><h3 id="P5631-最小mex生成树"><a href="#P5631-最小mex生成树" class="headerlink" title="P5631 最小mex生成树"></a>P5631 最小mex生成树</h3><p>考虑一个权值如若不在生成树的边权集合中出现，那么可以作为 mex。<br>于是线段树分治，从小到大枚举权值判断即可。</p>
 <h2 id="2025-2-26"><a href="#2025-2-26" class="headerlink" title="2025.2.26"></a>2025.2.26</h2><h3 id="P8365-LNOI2022-吃"><a href="#P8365-LNOI2022-吃" class="headerlink" title="P8365 [LNOI2022] 吃"></a>P8365 [LNOI2022] 吃</h3><p>很容易想到一个 $\frac{b}{a-1}$ 的贪心，只是是假的。真正该比较的应该是 $\frac{sum+b}{a}$，但这个是可能变化的。<br>然后瞪一下样例，发现除了 $a&#x3D;1$ 的情况必定选择加，至多会有一次加操作。<br>很好证，当然我直接猜结论了。然后直接找到最大的那一次直接做即可。</p>
+<h2 id="2025-2-27"><a href="#2025-2-27" class="headerlink" title="2025.2.27"></a>2025.2.27</h2><h3 id="P8360-SNOI2022-军队"><a href="#P8360-SNOI2022-军队" class="headerlink" title="P8360 [SNOI2022] 军队"></a>P8360 [SNOI2022] 军队</h3><p>“扫码了，卡nm一天！”<br>逆天分块硬控我一天，实力不够导致的。并查集只会乱写了。</p>
+<h2 id="2025-2-28"><a href="#2025-2-28" class="headerlink" title="2025.2.28"></a>2025.2.28</h2><h3 id="P9166-省选联考-2023-火车站"><a href="#P9166-省选联考-2023-火车站" class="headerlink" title="P9166 [省选联考 2023] 火车站"></a>P9166 [省选联考 2023] 火车站</h3><p>2022 联合省选 D1t1。酒店里写了 1h 唐麻了。</p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>留下回忆之处，触着碰着，都是带刺的花。</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
@@ -763,6 +765,10 @@ Git Bash 窗口就会弹出以下信息：  <div class='spoiler collapsed'>
 <h2 id="2025-2-13"><a href="#2025-2-13" class="headerlink" title="2025.2.13"></a>2025.2.13</h2><p>过完年回来复健。感觉不好。2 周时间准备省选不如一周原神肝满大地图？（什么原批比喻法）。<br>难受的要死。</p>
 <h2 id="2025-2-17"><a href="#2025-2-17" class="headerlink" title="2025.2.17"></a>2025.2.17</h2><p>摆了一天。</p>
 <h2 id="2025-2-19"><a href="#2025-2-19" class="headerlink" title="2025.2.19"></a>2025.2.19</h2><p>昨天考试爆炸，边划水边改 T1，结果是浪费了 1 天。<br>开始复习板子，大力提高代码能力与代码熟练度。</p>
+<h2 id="2025-2-28-Day-0"><a href="#2025-2-28-Day-0" class="headerlink" title="2025.2.28 Day 0"></a>2025.2.28 Day 0</h2><p>来成都了。晚上直接看了会板子，大摆特摆。</p>
+<h2 id="2025-2-29-Day-？"><a href="#2025-2-29-Day-？" class="headerlink" title="2025.2.29 Day ？"></a>2025.2.29 Day ？</h2><p>不存在的日子增加了。</p>
+<h2 id="2025-3-1-Day-1"><a href="#2025-3-1-Day-1" class="headerlink" title="2025.3.1 Day 1"></a>2025.3.1 Day 1</h2><p>7:00 起来喝咖啡。hhhhh，hsngbyd oier。<br>然后考试。<br>10:16 过 T1，唐麻了。<br>然后坚持 12:00 一直在乱写 T2。本来用线段树合并+树套树的，后来发现假到爆。可能不如暴力了。<br>12:40 写了 T3 8pts 跑路，菜到扣。<br>预估：100+20+8&#x3D;128 pts。<br>中午吃饭，偶遇 ATZdhjeb，一起吃吃吃，比较友好了。<br>下午就去面基，爽！！！<br>代价是晚上回来精神状态极差，板子都打不来了，22:00 入睡但是 22:15&#x2F;22:40 分别醒了一次，好在睡眠质量不错。</p>
+<h2 id="2025-3-2-Day-2"><a href="#2025-3-2-Day-2" class="headerlink" title="2025.3.2 Day 2"></a>2025.3.2 Day 2</h2><p>跟教练睡一个房间的，6:20 被呼噜声吵醒，睡回笼觉。<br>7:00 起来发现睡得勉强、还行。<br>然后考试。<br>9:30 暴力没有问题，10:40 写出 T1。<br>然后拼 T2&#x2F;3 暴力，12+8 先拿到手。<br>此时已是 11:40（T3 暴力写太久了，唉），给 T1 写对拍去。<br>然后发现 T2 还有 12pts 非常好拿，遂写。<br>完工了 12:40 了，突然发现 T1 的数据非常不好造，柠檬的，data 还写挂了一次。<br>拍半天发现没有任何意义，遂摆。<br>预估：100+24+8&#x3D;132pts。<br>总结：两天的暴力，只有大众分。<br>下午返程，省队希望渺茫，估计明天回归常规学习了，再见 oi。</p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>你不会真的觉得有些空格是排版问题吧？不会吧不会吧？</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
