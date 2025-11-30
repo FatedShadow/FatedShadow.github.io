@@ -6,7 +6,7 @@
   <link href="http://fatedshadow.github.io/atom.xml" rel="self"/>
   
   <link href="http://fatedshadow.github.io/"/>
-  <updated>2025-11-29T23:13:37.124Z</updated>
+  <updated>2025-11-30T05:45:12.139Z</updated>
   <id>http://fatedshadow.github.io/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>病中碎笔</title>
+    <link href="http://fatedshadow.github.io/%E5%B0%8F%E8%AF%B4%E9%A6%86/%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E4%B8%96%E7%95%8C/%E7%97%85%E4%B8%AD%E7%A2%8E%E7%AC%94/"/>
+    <id>http://fatedshadow.github.io/%E5%B0%8F%E8%AF%B4%E9%A6%86/%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E4%B8%96%E7%95%8C/%E7%97%85%E4%B8%AD%E7%A2%8E%E7%AC%94/</id>
+    <published>2025-11-30T04:06:16.000Z</published>
+    <updated>2025-11-30T05:45:12.139Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;呓语&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="小说馆" scheme="http://fatedshadow.github.io/categories/%E5%B0%8F%E8%AF%B4%E9%A6%86/"/>
+    
+    <category term="不一样的世界" scheme="http://fatedshadow.github.io/categories/%E5%B0%8F%E8%AF%B4%E9%A6%86/%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E4%B8%96%E7%95%8C/"/>
+    
+    
+    <category term="小说馆" scheme="http://fatedshadow.github.io/tags/%E5%B0%8F%E8%AF%B4%E9%A6%86/"/>
+    
+    <category term="另类文学" scheme="http://fatedshadow.github.io/tags/%E5%8F%A6%E7%B1%BB%E6%96%87%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我们的星空</title>
+    <link href="http://fatedshadow.github.io/%E5%B0%8F%E8%AF%B4%E9%A6%86/%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E4%B8%96%E7%95%8C/%E6%88%91%E4%BB%AC%E7%9A%84%E6%98%9F%E7%A9%BA/"/>
+    <id>http://fatedshadow.github.io/%E5%B0%8F%E8%AF%B4%E9%A6%86/%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E4%B8%96%E7%95%8C/%E6%88%91%E4%BB%AC%E7%9A%84%E6%98%9F%E7%A9%BA/</id>
+    <published>2025-11-30T03:58:16.000Z</published>
+    <updated>2025-11-30T04:06:49.890Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;留下回忆之处，触着碰着，都是带刺的花&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="小说馆" scheme="http://fatedshadow.github.io/categories/%E5%B0%8F%E8%AF%B4%E9%A6%86/"/>
+    
+    <category term="不一样的世界" scheme="http://fatedshadow.github.io/categories/%E5%B0%8F%E8%AF%B4%E9%A6%86/%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E4%B8%96%E7%95%8C/"/>
+    
+    
+    <category term="小说馆" scheme="http://fatedshadow.github.io/tags/%E5%B0%8F%E8%AF%B4%E9%A6%86/"/>
+    
+    <category term="小感" scheme="http://fatedshadow.github.io/tags/%E5%B0%8F%E6%84%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>因你而在的故事</title>
@@ -401,56 +447,6 @@
     
     
     <category term="博客" scheme="http://fatedshadow.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2-SAT</title>
-    <link href="http://fatedshadow.github.io/OI/%E5%9B%BE%E8%AE%BA/2-SAT/"/>
-    <id>http://fatedshadow.github.io/OI/%E5%9B%BE%E8%AE%BA/2-SAT/</id>
-    <published>2024-02-26T08:45:49.000Z</published>
-    <updated>2024-10-15T05:02:39.527Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;其实是一种常用的建图方式。部分内容参考一本通。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="OI" scheme="http://fatedshadow.github.io/categories/OI/"/>
-    
-    <category term="图论" scheme="http://fatedshadow.github.io/categories/OI/%E5%9B%BE%E8%AE%BA/"/>
-    
-    
-    <category term="OI" scheme="http://fatedshadow.github.io/tags/OI/"/>
-    
-    <category term="图论" scheme="http://fatedshadow.github.io/tags/%E5%9B%BE%E8%AE%BA/"/>
-    
-    <category term="算法讲解" scheme="http://fatedshadow.github.io/tags/%E7%AE%97%E6%B3%95%E8%AE%B2%E8%A7%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>点分治</title>
-    <link href="http://fatedshadow.github.io/OI/%E5%9B%BE%E8%AE%BA/%E7%82%B9%E5%88%86%E6%B2%BB/"/>
-    <id>http://fatedshadow.github.io/OI/%E5%9B%BE%E8%AE%BA/%E7%82%B9%E5%88%86%E6%B2%BB/</id>
-    <published>2024-02-25T08:05:08.000Z</published>
-    <updated>2024-10-15T05:08:13.802Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;虽然但是现在才学点分治有点晚了。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="OI" scheme="http://fatedshadow.github.io/categories/OI/"/>
-    
-    <category term="图论" scheme="http://fatedshadow.github.io/categories/OI/%E5%9B%BE%E8%AE%BA/"/>
-    
-    
-    <category term="OI" scheme="http://fatedshadow.github.io/tags/OI/"/>
-    
-    <category term="图论" scheme="http://fatedshadow.github.io/tags/%E5%9B%BE%E8%AE%BA/"/>
-    
-    <category term="算法讲解" scheme="http://fatedshadow.github.io/tags/%E7%AE%97%E6%B3%95%E8%AE%B2%E8%A7%A3/"/>
     
   </entry>
   
