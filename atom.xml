@@ -6,7 +6,7 @@
   <link href="http://fatedshadow.github.io/atom.xml" rel="self"/>
   
   <link href="http://fatedshadow.github.io/"/>
-  <updated>2025-12-07T07:56:48.477Z</updated>
+  <updated>2026-08-03T10:07:58.826Z</updated>
   <id>http://fatedshadow.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>夜间疯言疯语</title>
+    <link href="http://fatedshadow.github.io/%E9%9D%92%E6%98%A5%E7%BA%AA%E8%A1%8C/%E5%A4%9C%E9%97%B4%E7%96%AF%E8%A8%80%E7%96%AF%E8%AF%AD/"/>
+    <id>http://fatedshadow.github.io/%E9%9D%92%E6%98%A5%E7%BA%AA%E8%A1%8C/%E5%A4%9C%E9%97%B4%E7%96%AF%E8%A8%80%E7%96%AF%E8%AF%AD/</id>
+    <published>2026-06-12T18:16:43.000Z</published>
+    <updated>2026-08-03T10:07:58.826Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;矛盾，与矛盾。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="青春纪行" scheme="http://fatedshadow.github.io/categories/%E9%9D%92%E6%98%A5%E7%BA%AA%E8%A1%8C/"/>
+    
+    
+    <category term="青春纪行" scheme="http://fatedshadow.github.io/tags/%E9%9D%92%E6%98%A5%E7%BA%AA%E8%A1%8C/"/>
+    
+  </entry>
   
   <entry>
     <title>病中碎笔</title>
@@ -44,7 +63,7 @@
     <link href="http://fatedshadow.github.io/%E5%B0%8F%E8%AF%B4%E9%A6%86/%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E4%B8%96%E7%95%8C/%E6%88%91%E4%BB%AC%E7%9A%84%E6%98%9F%E7%A9%BA/"/>
     <id>http://fatedshadow.github.io/%E5%B0%8F%E8%AF%B4%E9%A6%86/%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E4%B8%96%E7%95%8C/%E6%88%91%E4%BB%AC%E7%9A%84%E6%98%9F%E7%A9%BA/</id>
     <published>2025-11-30T03:58:16.000Z</published>
-    <updated>2025-11-30T04:06:49.890Z</updated>
+    <updated>2026-08-04T10:04:03.635Z</updated>
     
     
     <summary type="html">&lt;p&gt;留下回忆之处，触着碰着，都是带刺的花&lt;/p&gt;</summary>
@@ -147,7 +166,7 @@
     <link href="http://fatedshadow.github.io/%E9%9D%92%E6%98%A5%E7%BA%AA%E8%A1%8C/%E6%88%91%E6%9B%BE%E7%BB%8F%E5%96%9C%E6%AC%A2%E4%B8%80%E4%B8%AA%E4%BA%BA/%E6%95%85%E4%BA%8B%E7%9A%84%E7%BB%93%E5%B0%BE%E5%92%8C%E7%8E%B0%E5%9C%A8/"/>
     <id>http://fatedshadow.github.io/%E9%9D%92%E6%98%A5%E7%BA%AA%E8%A1%8C/%E6%88%91%E6%9B%BE%E7%BB%8F%E5%96%9C%E6%AC%A2%E4%B8%80%E4%B8%AA%E4%BA%BA/%E6%95%85%E4%BA%8B%E7%9A%84%E7%BB%93%E5%B0%BE%E5%92%8C%E7%8E%B0%E5%9C%A8/</id>
     <published>2024-11-28T07:18:23.000Z</published>
-    <updated>2025-11-29T18:54:34.238Z</updated>
+    <updated>2026-08-04T10:10:43.978Z</updated>
     
     
     <summary type="html">终章</summary>
@@ -296,7 +315,7 @@
     <link href="http://fatedshadow.github.io/%E5%B0%8F%E8%AF%B4%E9%A6%86/%E9%A1%BE%E5%BE%80%E6%98%94%E7%9A%84%E8%A7%86%E7%95%8C/%E3%80%90%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D%E3%80%91/"/>
     <id>http://fatedshadow.github.io/%E5%B0%8F%E8%AF%B4%E9%A6%86/%E9%A1%BE%E5%BE%80%E6%98%94%E7%9A%84%E8%A7%86%E7%95%8C/%E3%80%90%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D%E3%80%91/</id>
     <published>2024-09-01T07:00:30.000Z</published>
-    <updated>2024-10-15T05:04:32.651Z</updated>
+    <updated>2026-08-04T10:06:01.426Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;新建文本文档&quot;&gt;&lt;a href=&quot;#新建文本文档&quot; class=&quot;headerlink&quot; title=&quot;新建文本文档&quot;&gt;&lt;/a&gt;新建文本文档&lt;/h2&gt;&lt;p&gt;$&#92;quad&#92;quad$ 我是顾往昔，一名普通高中生。真实身份是一只早就变成骷髅的哥布林。  &lt;/p&gt;</summary>
@@ -426,27 +445,6 @@
     <category term="OI" scheme="http://fatedshadow.github.io/tags/OI/"/>
     
     <category term="模拟赛" scheme="http://fatedshadow.github.io/tags/%E6%A8%A1%E6%8B%9F%E8%B5%9B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何使用 Hexo+Next 美化博客</title>
-    <link href="http://fatedshadow.github.io/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/%E5%8D%9A%E5%AE%A2/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Hexo-Next-%E7%BE%8E%E5%8C%96%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://fatedshadow.github.io/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/%E5%8D%9A%E5%AE%A2/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Hexo-Next-%E7%BE%8E%E5%8C%96%E5%8D%9A%E5%AE%A2/</id>
-    <published>2024-02-27T13:58:06.000Z</published>
-    <updated>2024-10-15T05:35:09.300Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;没看过如何搭建的建议这边走：&lt;a href=&quot;https://fatedshadow.github.io/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/%E5%8D%9A%E5%AE%A2/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-Hexo-Next-%E6%90%AD%E5%BB%BA%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/#more&quot;&gt;link&lt;/a&gt;&lt;br&gt;注意，本博客基于 next 的 Gemini 样式进行美化。&lt;br&gt;（Gemini，在主题的配置文件搜索 &lt;code&gt;scheme&lt;/code&gt;，即可选择样式）&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="实用工具" scheme="http://fatedshadow.github.io/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
-    
-    <category term="博客" scheme="http://fatedshadow.github.io/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/%E5%8D%9A%E5%AE%A2/"/>
-    
-    
-    <category term="博客" scheme="http://fatedshadow.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
